@@ -148,7 +148,7 @@ namespace ICT4Events
 
         public void Borrow()
         {
-            borrow = new Borrow();
+            borrow = new Borrow(DateTime.Now(), DateTime return_date);
         }
     }
 }
