@@ -14,8 +14,10 @@ namespace ICT4Events
     {
         private int id_event;
         private string title;
-        private DateTime date;
-
+        private DateTime startdate;
+        private DateTime enddate;
+        private string campingname;
+        private string location;
         public int ID_event
         {
             get { return id_event; }
@@ -26,16 +28,34 @@ namespace ICT4Events
             get { return title; }
             set { title = value; }
         }
-        public DateTime Date
+        public DateTime StartDate
         {
-            get { return date; }
-            set { date = value; }
+            get { return startdate; }
+            set { startdate = value; }
         }
-        public Event(int ID_event, string Title, DateTime Date)
+        public DateTime EndDate
+        {
+            get { return enddate; }
+            set { enddate = value; }
+        }
+        public string Campingname
+        {
+            get { return campingname; }
+            set { campingname = value; }
+        }
+        public string Location
+        {
+            get { return location; }
+            set { location = value; }
+        }
+        public Event(int ID_event, string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
         {
             this.id_event = ID_event;
             this.title = Title;
-            this.date = Date;
+            this.startdate = StartDate;
+            this.enddate = EndDate;
+            this.campingname = Campingname;
+            this.location = Location;
         }
 
     }
