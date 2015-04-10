@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace ICT4Events
 {
     //Laurent de Vries
-    class Note
+    public class Note
     {
         private string like;
-        private string report;
+        private string report = null;
         public string Like
         {
             get { return like; }
@@ -20,6 +20,11 @@ namespace ICT4Events
         {
             get { return report; }
             set { report = value; }
+        }
+        public Note(string Like)
+        {
+            this.like = Like;
+            
         }
     }
 }
