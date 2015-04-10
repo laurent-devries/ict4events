@@ -10,7 +10,7 @@ namespace ICT4Events
      * Gemaakt door Yoeri Vink
      * Laatste edit op 10-4-2015 10:25.
      */
-    class Event
+    public class Event
     {
         private int id;
         private int id_event;

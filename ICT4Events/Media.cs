@@ -14,8 +14,6 @@ namespace ICT4Events
         int likes;
         int reports;
         int views;
-        List<Tag> tags = new List<Tag>();
-        List<Comment> comments = new List<Comment>();
 
         //Properties
         string Title { get; set; }
