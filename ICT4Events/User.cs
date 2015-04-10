@@ -52,7 +52,7 @@ namespace ICT4Events
         }
 
 
-        public string MyProperty
+        public string Username
         {
             get { return username; }
             set { username = value; }
