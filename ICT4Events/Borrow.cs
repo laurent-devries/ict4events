@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Events
 {
+    //teun van der wijst
     public class Borrow
     {
         private int ID_borrow;
