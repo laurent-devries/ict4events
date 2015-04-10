@@ -18,6 +18,13 @@ namespace ICT4Events
         private DateTime enddate;
         private string campingname;
         private string location;
+        private List<User> participants = new List<User>();
+
+        public List<User> Participants
+        {
+            get { return participants; }
+            set { participants = value; }
+        }
         public int ID_event
         {
             get { return id_event; }
