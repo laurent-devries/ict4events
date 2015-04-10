@@ -14,7 +14,7 @@ namespace ICT4Events
         private string camping_place;
         private DateTime reservation_startdate;
         private DateTime reservation_enddate;
-        Betalingstatus betalingstatus;
+        Betalingstatus betalingstatus = Betalingstatus.Niet_Betaald;
         private List<User> reservationusers = new List<User>();
         public int ID_Reservation
         {
@@ -35,6 +35,11 @@ namespace ICT4Events
         {
             get { return reservation_enddate; }
             set { reservation_enddate = value; }
+        }
+        public Betalingstatus Betalingstatus
+        {
+            get { return betalingstatus; }
+            set { betalingstatus = value; }
         }
 
         public Reservation(int ID_reservation, string Camping_place, DateTime Reservation_startdate, DateTime Reservation_enddate, Event Event)
