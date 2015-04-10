@@ -23,8 +23,6 @@ namespace ICT4Events
         private string profile_pic;
         private string summary;
         private bool present;
-        private Borrow borrow;
-        private Event Event;
 
         public bool Present
         {
@@ -131,18 +129,5 @@ namespace ICT4Events
             this.summary = summary;
             this.present = present;
         }
-
-        public Event GetEvents()
-        {
-            //return alle events
-        }
-
-        public void Borrow()
-        {
-            borrow = new Borrow(DateTime.Now, return_date);
-            //borrow.Products.Add()
-        }
-    }
-}
     }
 }
