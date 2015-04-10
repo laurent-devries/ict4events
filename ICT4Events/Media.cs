@@ -21,7 +21,7 @@ namespace ICT4Events
         string Title { get; set; }
         DateTime Date { get; set; }
         string Summary { get; set; }
-        int Views { get; set { views = value; } }
+        int Views { get { return views; } set { views = value; } }
         string File_path { get; set; }
         string Type_Media { get; set; }
 
