@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Events
 {
+    //Laurent de Vries
     class Category
     {
         //Fields 
