@@ -15,6 +15,7 @@ namespace ICT4Events
         private DateTime reservation_startdate;
         private DateTime reservation_enddate;
         Betalingstatus betalingstatus;
+        private List<User> reservationusers = new List<User>();
         public int ID_Reservation
         {
             get { return id_reservation; }
@@ -35,6 +36,7 @@ namespace ICT4Events
             get { return reservation_enddate; }
             set { reservation_enddate = value; }
         }
+
         public Reservation(int ID_reservation, string Camping_place, DateTime Reservation_startdate, DateTime Reservation_enddate, Event Event)
         {
             this.id_reservation = ID_reservation;
@@ -42,6 +44,14 @@ namespace ICT4Events
             this.event1 = Event;
             reservation_startdate = Reservation_startdate;
             reservation_enddate = Reservation_enddate;
+        }
+        public void Adduser(User user)
+        {
+            reservationusers.Add(user);
+        }
+        public void Removeuser(User user)
+        {
+            reservationusers.Remove(user);
         }
     }
 }
