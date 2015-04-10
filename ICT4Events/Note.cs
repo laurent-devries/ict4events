@@ -9,7 +9,17 @@ namespace ICT4Events
     //Laurent de Vries
     class Note
     {
-        string like;
-        string report;
+        private string like;
+        private string report;
+        public string Like
+        {
+            get { return like; }
+            set { like = value; }
+        }
+        public string Report
+        {
+            get { return report; }
+            set { report = value; }
+        }
     }
 }

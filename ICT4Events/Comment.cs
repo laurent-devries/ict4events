@@ -13,7 +13,7 @@ namespace ICT4Events
         int id_Comment;
         string comment;
         DateTime Date { get; set; }
-        
+
         //Constructor
         public Comment(int id_Comment, DateTime date, string comment)
         {
