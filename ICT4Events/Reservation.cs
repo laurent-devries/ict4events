@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ICT4Events
 {
-
-    class Reservation
+    public enum Betalingstatus { Betaald, Niet_Betaald, Geweigerd, Geannuleerd };
+    public class Reservation
     {
-        private enum Betalingstatus { Betaald, Niet_Betaald, Geweigerd, Geannuleerd };
-        
+
+
         private int id_reservation;
         private int camping_place;
         private DateTime reservation_startdate;
@@ -41,7 +41,7 @@ namespace ICT4Events
             get { return reservation_enddate; }
             set { reservation_enddate = value; }
         }
-        public Reservation(int ID_reservation, int Camping_place)
+        public Reservation(int ID_reservation, int Camping_place, Betalingstatus Betalingsstatus)
         {
 
         }
