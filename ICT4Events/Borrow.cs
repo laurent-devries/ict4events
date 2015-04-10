@@ -9,6 +9,7 @@ namespace ICT4Events
     //teun van der wijst
     public class Borrow
     {
+        private int id;
         private int ID_borrow;
         private DateTime hire_date;
         private DateTime return_date;
@@ -44,14 +45,24 @@ namespace ICT4Events
         public int ID_Borrow
         {
             get { return ID_borrow; }
-            set { ID_borrow = value; }
+            set { id = value; }
         }
         
-        public Borrow(int id_borrow, DateTime hire_date, DateTime return_date)
+        public Borrow(DateTime hire_date, DateTime return_date)
         {
-            this.ID_borrow = id_borrow;
+            id += 1;
             this.hire_date = hire_date;
             this.return_date = return_date;
+        }
+
+        public void AddProduct(Product product)
+        {
+            products.Add(product);
+        }
+
+        public void RemoveProduct(Product product)
+        {
+            products.Remove(product);
         }
 
         public decimal GetTotalPrice()

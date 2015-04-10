@@ -23,6 +23,7 @@ namespace ICT4Events
         private string profile_pic;
         private string summary;
         private bool present;
+        private Borrow borrow;
 
         public bool Present
         {
@@ -147,7 +148,7 @@ namespace ICT4Events
 
         public void Borrow()
         {
-            // borrow shit
+            borrow = new Borrow();
         }
     }
 }
