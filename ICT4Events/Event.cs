@@ -8,20 +8,29 @@ namespace ICT4Events
 {
     /*
      * Gemaakt door Yoeri Vink
-     * Laatste edit op 10-4-2015 10:01.
+     * Laatste edit op 10-4-2015 10:25.
      */
     class Event
     {
+        private int id;
         private int id_event;
         private string title;
         private DateTime startdate;
         private DateTime enddate;
         private string campingname;
         private string location;
+        private List<User> participants = new List<User>();
+
+
+        public List<User> Participants
+        {
+            get { return participants; }
+            set { participants = value; }
+        }
         public int ID_event
         {
             get { return id_event; }
-            set { id_event = value; }
+            set { id = value; }
         }
         public string Title
         {
@@ -48,9 +57,9 @@ namespace ICT4Events
             get { return location; }
             set { location = value; }
         }
-        public Event(int ID_event, string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
+        public Event(string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
         {
-            this.id_event = ID_event;
+            id += 1;
             this.title = Title;
             this.startdate = StartDate;
             this.enddate = EndDate;
@@ -58,5 +67,15 @@ namespace ICT4Events
             this.location = Location;
         }
 
+
+        public void CheckIn(User user)
+        {
+            participants.Add(user);
+        }
+
+        public void CheckOut(User user)
+        {
+            participants.Remove(user);
+        }
     }
 }
