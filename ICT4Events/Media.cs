@@ -14,6 +14,7 @@ namespace ICT4Events
         int likes;
         int reports;
         int views;
+
         //Properties
         string Title { get; set; }
         DateTime Date { get; set; }
