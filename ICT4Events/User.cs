@@ -24,6 +24,7 @@ namespace ICT4Events
         private string summary;
         private bool present;
         private Borrow borrow;
+        private Event Event;
 
         public bool Present
         {
