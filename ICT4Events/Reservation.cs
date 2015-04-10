@@ -9,6 +9,7 @@ namespace ICT4Events
     public enum Betalingstatus { Betaald, Niet_Betaald, Geweigerd, Geannuleerd };
     public class Reservation
     {
+        private static int idnumber = 0;
         private Event event1;
         private int id_reservation;
         private string camping_place;
@@ -19,7 +20,7 @@ namespace ICT4Events
         public int ID_Reservation
         {
             get { return id_reservation; }
-            set { id_reservation = value; }
+            
         }
         public string Camping_place
         {
@@ -42,9 +43,10 @@ namespace ICT4Events
             set { betalingstatus = value; }
         }
 
-        public Reservation(int ID_reservation, string Camping_place, DateTime Reservation_startdate, DateTime Reservation_enddate, Event Event)
+        public Reservation(string Camping_place, DateTime Reservation_startdate, DateTime Reservation_enddate, Event Event)
         {
-            this.id_reservation = ID_reservation;
+            this.id_reservation = idnumber;
+            idnumber++;
             this.camping_place = Camping_place;
             this.event1 = Event;
             reservation_startdate = Reservation_startdate;
