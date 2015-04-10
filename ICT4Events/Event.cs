@@ -12,25 +12,24 @@ namespace ICT4Events
      */
     public class Event
     {
-        private int id;
+        private static int idnumber = 0;
         private int id_event;
         private string title;
         private DateTime startdate;
         private DateTime enddate;
         private string campingname;
         private string location;
-        private List<User> participants = new List<User>();
+        private List<User> participants = new List<User>(); 
 
 
         public List<User> Participants
         {
             get { return participants; }
-            set { participants = value; }
         }
-        public int ID_event
+        public int ID_Event
         {
             get { return id_event; }
-            set { id = value; }
+            set { id_event = value; }
         }
         public string Title
         {
@@ -59,7 +58,8 @@ namespace ICT4Events
         }
         public Event(string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
         {
-            id += 1;
+            id_event = idnumber;
+            idnumber++;
             this.title = Title;
             this.startdate = StartDate;
             this.enddate = EndDate;

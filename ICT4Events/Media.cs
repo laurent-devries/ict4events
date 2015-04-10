@@ -7,26 +7,29 @@ using System.Threading.Tasks;
 namespace ICT4Events
 {
     //Laurent de Vries
-    class Media
+    public class Media
     {
         //Fields
-        int ID_Media;
-        int likes;
-        int reports;
-        int views;
+        private static int idnumber = 0;
+        private int id_media;
+        private int likes;
+        private int reports;
+        private int views;
 
         //Properties
-        string Title { get; set; }
-        DateTime Date { get; set; }
-        string Summary { get; set; }
-        int Views { get { return views; } set { views = value; } }
-        string File_path { get; set; }
-        string Type_Media { get; set; }
+        public string Title { get; set; }
+        public DateTime Date { get; set; }
+        public string Summary { get; set; }
+        public int Views { get { return views; } set { views = value; } }
+        public string File_path { get; set; }
+        public string Type_Media { get; set; }
+        public int ID_Media { get { return id_media; } }
 
         //Methods
-        public Media(int id_Media, string title, DateTime date, string summary, int views, string file_Path, string type_Media)
+        public Media(string title, DateTime date, string summary, int views, string file_Path, string type_Media)
         {
-            this.ID_Media = id_Media;
+            this.id_media = idnumber;
+            idnumber++;
             Title = title;
             Date = date;
             Summary = summary;
@@ -37,7 +40,7 @@ namespace ICT4Events
 
         public bool CheckAbuse(string abusiveWord)
         {
-            return true; 
+            return true;
         }
 
         public int GetLikes()
