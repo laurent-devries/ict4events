@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ICT4Events
 {
+    //teun van der wijst
     public class Product
     {
         private int ID_product;
