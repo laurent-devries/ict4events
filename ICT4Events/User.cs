@@ -132,16 +132,6 @@ namespace ICT4Events
             this.present = present;
         }
 
-        public void CheckIn()
-        {
-            // event.participants.add(user)
-        }
-
-        public void CheckOut()
-        {
-            // event.participants.remove(user)
-        }
-
         public Event GetEvents()
         {
             //return alle events
