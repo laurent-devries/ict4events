@@ -149,7 +149,8 @@ namespace ICT4Events
 
         public void Borrow()
         {
-            borrow = new Borrow(DateTime.Now(), DateTime return_date);
+            borrow = new Borrow(DateTime.Now, return_date);
+            //borrow.Products.Add()
         }
     }
 }
