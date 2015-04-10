@@ -20,7 +20,7 @@ namespace ICT4Events
         private string campingname;
         private string location;
         private List<User> participants = new List<User>();
-        private User user;
+
 
         public List<User> Participants
         {
@@ -67,12 +67,13 @@ namespace ICT4Events
             this.location = Location;
         }
 
-        public void CheckIn()
+
+        public void CheckIn(User user)
         {
             participants.Add(user);
         }
 
-        public void CheckOut()
+        public void CheckOut(User user)
         {
             participants.Remove(user);
         }
