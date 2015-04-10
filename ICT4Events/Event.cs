@@ -12,6 +12,7 @@ namespace ICT4Events
      */
     class Event
     {
+        private int id;
         private int id_event;
         private string title;
         private DateTime startdate;
@@ -28,7 +29,7 @@ namespace ICT4Events
         public int ID_event
         {
             get { return id_event; }
-            set { id_event = value; }
+            set { id = value; }
         }
         public string Title
         {
@@ -55,9 +56,9 @@ namespace ICT4Events
             get { return location; }
             set { location = value; }
         }
-        public Event(int ID_event, string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
+        public Event(string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
         {
-            this.id_event = ID_event;
+            id += 1;
             this.title = Title;
             this.startdate = StartDate;
             this.enddate = EndDate;
