@@ -10,13 +10,27 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
-    public partial class lblLikes2 : Form
+    public partial class FormBasicGUI : Form
     {
-        public lblLikes2()
+        public FormBasicGUI()
         {
             InitializeComponent();
+
+            NewsfeedItem item = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", 50, 50, pnlNewsFeed);
+            TextBox titel = new TextBox();
+            Panel p = new Panel();
+            p.Location = new Point(50, 50);
+            p.BackColor = Color.Red;
+            p.Visible = true;
+            pnlNewsFeed.Controls.Add(p);
             
         }
+
+        /*public void loadItems
+        {
+
+        }
+         */
 
     }
 }

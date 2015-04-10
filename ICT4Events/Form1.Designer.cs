@@ -1,6 +1,6 @@
 ﻿namespace ICT4Events
 {
-    partial class lblLikes2
+    partial class FormBasicGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(lblLikes2));
             this.btnHome = new System.Windows.Forms.Button();
             this.btnCategorie = new System.Windows.Forms.Button();
             this.btnTags = new System.Windows.Forms.Button();
@@ -39,12 +38,13 @@
             this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlCategoryTopLeft = new System.Windows.Forms.Panel();
-            this.pbMedia1 = new System.Windows.Forms.PictureBox();
-            this.lblTitel1 = new System.Windows.Forms.Label();
-            this.lblDatum1 = new System.Windows.Forms.Label();
-            this.lblViews1 = new System.Windows.Forms.Label();
-            this.lblLikes = new System.Windows.Forms.Label();
             this.tbBeschrijving1 = new System.Windows.Forms.RichTextBox();
+            this.lblLikes = new System.Windows.Forms.Label();
+            this.lblViews1 = new System.Windows.Forms.Label();
+            this.lblDatum1 = new System.Windows.Forms.Label();
+            this.lblTitel1 = new System.Windows.Forms.Label();
+            this.pbMedia1 = new System.Windows.Forms.PictureBox();
+            this.pnlNewsFeed = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.pnlCategoryTopLeft.SuspendLayout();
@@ -130,7 +130,6 @@
             // pbProfilePicture
             // 
             this.pbProfilePicture.BackColor = System.Drawing.Color.Transparent;
-            this.pbProfilePicture.Image = ((System.Drawing.Image)(resources.GetObject("pbProfilePicture.Image")));
             this.pbProfilePicture.Location = new System.Drawing.Point(787, 4);
             this.pbProfilePicture.Name = "pbProfilePicture";
             this.pbProfilePicture.Size = new System.Drawing.Size(50, 45);
@@ -168,42 +167,14 @@
             this.pnlCategoryTopLeft.Size = new System.Drawing.Size(200, 216);
             this.pnlCategoryTopLeft.TabIndex = 9;
             // 
-            // pbMedia1
+            // tbBeschrijving1
             // 
-            this.pbMedia1.Image = ((System.Drawing.Image)(resources.GetObject("pbMedia1.Image")));
-            this.pbMedia1.Location = new System.Drawing.Point(18, 54);
-            this.pbMedia1.Name = "pbMedia1";
-            this.pbMedia1.Size = new System.Drawing.Size(160, 100);
-            this.pbMedia1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbMedia1.TabIndex = 0;
-            this.pbMedia1.TabStop = false;
-            // 
-            // lblTitel1
-            // 
-            this.lblTitel1.AutoSize = true;
-            this.lblTitel1.Location = new System.Drawing.Point(15, 9);
-            this.lblTitel1.Name = "lblTitel1";
-            this.lblTitel1.Size = new System.Drawing.Size(27, 13);
-            this.lblTitel1.TabIndex = 1;
-            this.lblTitel1.Text = "Titel";
-            // 
-            // lblDatum1
-            // 
-            this.lblDatum1.AutoSize = true;
-            this.lblDatum1.Location = new System.Drawing.Point(15, 22);
-            this.lblDatum1.Name = "lblDatum1";
-            this.lblDatum1.Size = new System.Drawing.Size(38, 13);
-            this.lblDatum1.TabIndex = 2;
-            this.lblDatum1.Text = "Datum";
-            // 
-            // lblViews1
-            // 
-            this.lblViews1.AutoSize = true;
-            this.lblViews1.Location = new System.Drawing.Point(15, 35);
-            this.lblViews1.Name = "lblViews1";
-            this.lblViews1.Size = new System.Drawing.Size(47, 13);
-            this.lblViews1.TabIndex = 3;
-            this.lblViews1.Text = "Views: 1";
+            this.tbBeschrijving1.BackColor = System.Drawing.Color.Gainsboro;
+            this.tbBeschrijving1.Location = new System.Drawing.Point(18, 157);
+            this.tbBeschrijving1.Name = "tbBeschrijving1";
+            this.tbBeschrijving1.Size = new System.Drawing.Size(160, 56);
+            this.tbBeschrijving1.TabIndex = 5;
+            this.tbBeschrijving1.Text = "Dit is een beschrijving bitches";
             // 
             // lblLikes
             // 
@@ -214,24 +185,60 @@
             this.lblLikes.TabIndex = 4;
             this.lblLikes.Text = "Likes: 1";
             // 
-            // tbBeschrijving1
+            // lblViews1
             // 
-            this.tbBeschrijving1.BackColor = System.Drawing.Color.Gainsboro;
-            this.tbBeschrijving1.Location = new System.Drawing.Point(18, 157);
-            this.tbBeschrijving1.Name = "tbBeschrijving1";
-            this.tbBeschrijving1.Size = new System.Drawing.Size(160, 56);
-            this.tbBeschrijving1.TabIndex = 5;
-            this.tbBeschrijving1.Text = "Dit is een beschrijving bitches";
+            this.lblViews1.AutoSize = true;
+            this.lblViews1.Location = new System.Drawing.Point(15, 35);
+            this.lblViews1.Name = "lblViews1";
+            this.lblViews1.Size = new System.Drawing.Size(47, 13);
+            this.lblViews1.TabIndex = 3;
+            this.lblViews1.Text = "Views: 1";
             // 
-            // lblLikes2
+            // lblDatum1
+            // 
+            this.lblDatum1.AutoSize = true;
+            this.lblDatum1.Location = new System.Drawing.Point(15, 22);
+            this.lblDatum1.Name = "lblDatum1";
+            this.lblDatum1.Size = new System.Drawing.Size(38, 13);
+            this.lblDatum1.TabIndex = 2;
+            this.lblDatum1.Text = "Datum";
+            // 
+            // lblTitel1
+            // 
+            this.lblTitel1.AutoSize = true;
+            this.lblTitel1.Location = new System.Drawing.Point(15, 9);
+            this.lblTitel1.Name = "lblTitel1";
+            this.lblTitel1.Size = new System.Drawing.Size(27, 13);
+            this.lblTitel1.TabIndex = 1;
+            this.lblTitel1.Text = "Titel";
+            // 
+            // pbMedia1
+            // 
+            this.pbMedia1.Location = new System.Drawing.Point(18, 54);
+            this.pbMedia1.Name = "pbMedia1";
+            this.pbMedia1.Size = new System.Drawing.Size(160, 100);
+            this.pbMedia1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMedia1.TabIndex = 0;
+            this.pbMedia1.TabStop = false;
+            // 
+            // pnlNewsFeed
+            // 
+            this.pnlNewsFeed.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.pnlNewsFeed.Location = new System.Drawing.Point(137, 51);
+            this.pnlNewsFeed.Name = "pnlNewsFeed";
+            this.pnlNewsFeed.Size = new System.Drawing.Size(729, 395);
+            this.pnlNewsFeed.TabIndex = 10;
+            // 
+            // FormBasicGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(976, 513);
+            this.Controls.Add(this.pnlNewsFeed);
             this.Controls.Add(this.pnlCategoryTopLeft);
             this.Controls.Add(this.panel1);
-            this.Name = "lblLikes2";
+            this.Name = "FormBasicGUI";
             this.Text = "Basic user interface";
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -261,6 +268,7 @@
         private System.Windows.Forms.Label lblLikes;
         private System.Windows.Forms.Label lblViews1;
         private System.Windows.Forms.RichTextBox tbBeschrijving1;
+        private System.Windows.Forms.Panel pnlNewsFeed;
     }
 }
 
