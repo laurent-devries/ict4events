@@ -9,10 +9,8 @@ namespace ICT4Events
     public enum Betalingstatus { Betaald, Niet_Betaald, Geweigerd, Geannuleerd };
     public class Reservation
     {
-
-
         private int id_reservation;
-        private int camping_place;
+        private string camping_place;
         private DateTime reservation_startdate;
         private DateTime reservation_enddate;
         Betalingstatus betalingstatus;
@@ -26,11 +24,6 @@ namespace ICT4Events
             get { return camping_place; }
             set { camping_place = value; }
         }
-        public Betalingstatus Betalingstatus
-        {
-            get { return betalingstatus; }
-            set { betalingstatus = value; }
-        }
         public DateTime Reservation_StartDate
         {
             get { return reservation_startdate; }
@@ -41,9 +34,10 @@ namespace ICT4Events
             get { return reservation_enddate; }
             set { reservation_enddate = value; }
         }
-        public Reservation(int ID_reservation, int Camping_place, Betalingstatus Betalingsstatus)
+        public Reservation(int ID_reservation, string Camping_place)
         {
-
+            this.id_reservation = ID_reservation;
+            this.camping_place = Camping_place;
         }
     }
 }
