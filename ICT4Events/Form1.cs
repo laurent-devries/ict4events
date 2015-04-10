@@ -16,13 +16,15 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-            NewsfeedItem item = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", 50, 50, pnlNewsFeed);
+            
             TextBox titel = new TextBox();
             Panel p = new Panel();
             p.Location = new Point(50, 50);
+            p.Height = 200;
             p.BackColor = Color.Red;
             p.Visible = true;
             pnlNewsFeed.Controls.Add(p);
+            NewsfeedItem item = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", p);
             
         }
 
