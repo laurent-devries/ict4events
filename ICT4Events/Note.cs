@@ -11,11 +11,20 @@ namespace ICT4Events
     {
         private static int idnumber = 0;
         private int id_note;
-        private string likeOrReport;
-
-        public Note(string likeOrReport)
+        private string likeOrreport;
+        private string soort;
+        public string LikeOrReport { get { return likeOrreport; } set { likeOrreport = value; } }
+        public string Soort { get { return Soort; } }
+        public Note(string likeOrreport,string Soort)
         {
-            this.likeOrReport = likeOrReport;
+
+            if (Soort == "Like" || Soort == "Report")
+            {
+                id_note = idnumber;
+                idnumber++;
+                this.likeOrreport = likeOrreport;
+                this.soort = Soort;
+            }
         }
     }
 }
