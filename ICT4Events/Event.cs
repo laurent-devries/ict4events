@@ -19,7 +19,7 @@ namespace ICT4Events
         private DateTime enddate;
         private string campingname;
         private string location;
-        private List<User> participants = new List<User>();
+        private List<User> participants = new List<User>(); 
 
 
         public List<User> Participants
