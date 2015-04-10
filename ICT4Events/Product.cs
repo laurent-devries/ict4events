@@ -9,6 +9,7 @@ namespace ICT4Events
     //teun van der wijst
     public class Product
     {
+        private static int idnumber = 0;
         private int ID_product;
         private string product_name;
         private decimal bail;
@@ -41,9 +42,10 @@ namespace ICT4Events
             set { ID_product = value; }
         }
         
-        public Product(int ID_product, string product_name, decimal bail, decimal price)
+        public Product(string product_name, decimal bail, decimal price)
         {
-            this.ID_product = ID_product;
+            this.ID_product = idnumber;
+            idnumber++;
             this.product_name = product_name;
             this.bail = bail;
             this.price = price;

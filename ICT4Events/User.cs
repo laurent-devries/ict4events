@@ -9,7 +9,7 @@ namespace ICT4Events
     //teun van der wijst
     public class User
     {
-        private int id = 0;
+        private static int id = 0;
         private int id_user;
         private int rfid_tag;
         private string real_name;
@@ -111,12 +111,13 @@ namespace ICT4Events
         public int ID_User
         {
             get { return id_user; }
-            set { id = value; }
+            
         }
 
         public User(int rfid_tag, string real_name, DateTime birth_date, string email, string city, int phone_number, string loginname, string username, string password, string profile_pic, string summary, bool present)
         {
-            id += 1;
+            id_user = id;
+            id++;
             this.real_name = real_name;
             this.birth_date = birth_date;
             this.email = email;
