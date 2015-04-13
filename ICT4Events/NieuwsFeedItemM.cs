@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
+    class NieuwsFeedItemM
+    {
     class NewsfeedItem
     {
         //Fields
@@ -104,5 +106,8 @@ namespace ICT4Events
             panel.Controls.Add(Report);
 
         }
+    }
+}
+
     }
 }
