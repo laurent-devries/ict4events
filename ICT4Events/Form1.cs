@@ -14,7 +14,7 @@ namespace ICT4Events
     public partial class FormBasicGUI : Form
     {
         int count = 0;
-        List<NewsfeedItem> itemlist = new List<NewsfeedItem>();
+        List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
         public FormBasicGUI()
         {
             InitializeComponent();
@@ -30,20 +30,20 @@ namespace ICT4Events
             pnlNewsFeed.Height = Height / 10 * 8;
 
             Panel p = new Panel();
-            NewsfeedItem item1 = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", p, pnlNewsFeed, count);
+            NewsFeedItem item1 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p, pnlNewsFeed, count);
             count += 1;
             Panel p2 = new Panel();
-            NewsfeedItem item2 = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", p2, pnlNewsFeed, count);
+            NewsFeedItem item2 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p2, pnlNewsFeed, count);
             count += 1;
             Panel p3 = new Panel();
-            NewsfeedItem item3 = new NewsfeedItem("Titel", "datum", "Views", "Likes", "Message", p3, pnlNewsFeed, count);
+            NewsFeedItem item3 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p3, pnlNewsFeed, count);
 
             itemlist.Add(item1);
             itemlist.Add(item2);
             itemlist.Add(item3);
             
 
-            foreach (NewsfeedItem item in itemlist)
+            foreach (NewsFeedItem item in itemlist)
             {
                 pnlNewsFeed.Controls.Add(item.Panel);                
             }
@@ -60,7 +60,7 @@ namespace ICT4Events
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 
-            foreach(NewsfeedItem item in itemlist)
+            foreach(NewsFeedItem item in itemlist)
             {
                 item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
             }

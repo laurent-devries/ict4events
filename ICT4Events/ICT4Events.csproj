@@ -55,8 +55,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Media.cs" />
-    <Compile Include="NieuwsFeedItemM.cs" />
+    <Compile Include="NewsFeedItem.cs" />
+    <Compile Include="NieuwsFeedItem.cs" />
     <Compile Include="Note.cs" />
+    <Compile Include="Permission.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

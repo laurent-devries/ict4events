@@ -10,9 +10,7 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
-    class NieuwsFeedItemM
-    {
-    class NewsfeedItem
+    class NewsFeedItem
     {
         //Fields
         Label Titel;
@@ -39,7 +37,7 @@ namespace ICT4Events
         
 
         //Constructor
-        public NewsfeedItem(string titel, string datum, string views, string likes, string message, Panel panel, Panel nieuwsfeedPanel, int count)
+        public NewsFeedItem(string titel, string datum, string views, string likes, string message, Panel panel, Panel nieuwsfeedPanel, int count)
         {
             this.count = count;
             this.panel = panel;
@@ -106,8 +104,5 @@ namespace ICT4Events
             panel.Controls.Add(Report);
 
         }
-    }
-}
-
     }
 }
