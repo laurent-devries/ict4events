@@ -17,14 +17,13 @@ namespace ICT4Events
         private OracleConnection oracleConn;
 
         private string user = "system";//Wachtwoord van de server
-        private string pw = "";//Wachtwoord van de server
+        private string pw = "visisdood";//Wachtwoord van de server
 
         private void Connect()
         {
             try
             {
                 oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + "//localhost:1521/XE" + ";");
-                MessageBox.Show("Connectie is gelukt");
             }
 
             catch (Exception e)
