@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace ICT4Events
 {
@@ -16,9 +18,11 @@ namespace ICT4Events
         private int reports;
         private int views;
 
+        private List<Media> mediaList;
+
         //Properties
         public string Title { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Summary { get; set; }
         public int Views { get { return views; } set { views = value; } }
         public string File_path { get; set; }
@@ -26,7 +30,7 @@ namespace ICT4Events
         public int ID_Media { get { return id_media; } }
 
         //Methods
-        public Media(string title, DateTime date, string summary, int views, string file_Path, string type_Media)
+        public Media(string title, string date, string summary, int views, string file_Path, string type_Media)
         {
             this.id_media = idnumber;
             idnumber++;
@@ -36,6 +40,30 @@ namespace ICT4Events
             Views = views;
             File_path = file_Path;
             Type_Media = type_Media;
+        }
+
+        public Media()
+        {
+            mediaList = new List<Media>();
+
+        }
+        
+        public List<Media> RequestMedia()
+        {
+            DatabaseConnection con = new DatabaseConnection();
+            string Querry1 = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA) FROM ICT4_MEDIA";
+
+            OracleDataReader reader = con.SelectFromDatabase(Querry1);
+            Media media;
+            while (reader.Read())
+            {
+                media = new Media(reader.GetString(0), reader.GetString(2), reader.GetString(1), 1, "tttt", "VIDEO");
+                mediaList.Add(media);
+            }
+
+            return mediaList;
+
+            
         }
 
         public bool CheckAbuse(string abusiveWord)
