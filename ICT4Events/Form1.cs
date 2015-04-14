@@ -19,6 +19,20 @@ namespace ICT4Events
         {
             InitializeComponent();
 
+            Media test = new Media();
+            List<Media> testList = test.RequestMedia();
+
+            foreach (Media s in testList)
+            {
+                MessageBox.Show(s.Title);
+                MessageBox.Show(s.Date);
+                MessageBox.Show(s.Summary);
+            }
+
+
+
+
+
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 

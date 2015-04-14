@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 
-namespace test
+namespace ICT4Events
 {
     public class DatabaseConnection
     {
@@ -34,7 +34,7 @@ namespace test
         }
 
         
-        public List<string> SelectFromDatabase(string Querry)
+        public OracleDataReader SelectFromDatabase(string Querry)
         {
             List<string> dataList = new List<string>();
             try
@@ -46,13 +46,7 @@ namespace test
                 cmd.CommandType = CommandType.Text;
                 oracleConn.Open();
                 OracleDataReader reader = cmd.ExecuteReader();
-
-                MessageBox.Show(reader.RowSize.ToString());
-                while (reader.Read())
-                {
-                    dataList.Add(reader.GetString(0));
-                }
-                return dataList;
+                return reader;
             }
 
             catch (Exception e)
