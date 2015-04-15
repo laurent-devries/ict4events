@@ -74,7 +74,7 @@ namespace ICT4Events
         public List<User> RequestUsers()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
+            string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, COUNTRY  FROM ICT4_USER";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             User user;
