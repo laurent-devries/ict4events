@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponents()
+        private void InitializeComponent()
         {
             this.btnHome = new System.Windows.Forms.Button();
             this.btnCategorie = new System.Windows.Forms.Button();
@@ -38,6 +38,9 @@
             this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNewsFeed = new System.Windows.Forms.Panel();
+            this.btnNextPage = new System.Windows.Forms.Button();
+            this.btnPreviousPage = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +57,7 @@
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnCategorie
             // 
@@ -131,6 +135,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pbProfilePicture);
             this.panel1.Controls.Add(this.btnMateriaalHuren);
             this.panel1.Controls.Add(this.lblIngelogdNaam);
@@ -152,23 +157,58 @@
             this.pnlNewsFeed.Size = new System.Drawing.Size(729, 395);
             this.pnlNewsFeed.TabIndex = 10;
             // 
-            // FormBasicGUI
+            // btnNextPage
+            // 
+            this.btnNextPage.Location = new System.Drawing.Point(889, 478);
+            this.btnNextPage.Name = "btnNextPage";
+            this.btnNextPage.Size = new System.Drawing.Size(75, 23);
+            this.btnNextPage.TabIndex = 11;
+            this.btnNextPage.Text = "Next Page";
+            this.btnNextPage.UseVisualStyleBackColor = true;
+            this.btnNextPage.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPreviousPage
+            // 
+            this.btnPreviousPage.Location = new System.Drawing.Point(12, 478);
+            this.btnPreviousPage.Name = "btnPreviousPage";
+            this.btnPreviousPage.Size = new System.Drawing.Size(91, 23);
+            this.btnPreviousPage.TabIndex = 12;
+            this.btnPreviousPage.Text = "Previous Page";
+            this.btnPreviousPage.UseVisualStyleBackColor = true;
+            this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Wheat;
+            this.button2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button2.Location = new System.Drawing.Point(422, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Uploaden";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // SocialSharing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(976, 513);
+            this.Controls.Add(this.btnPreviousPage);
+            this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.pnlNewsFeed);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(992, 552);
             this.MinimumSize = new System.Drawing.Size(992, 552);
-            this.Name = "FormBasicGUI";
+            this.Name = "SocialSharing";
             this.Text = "Basic user interface";
-           // this.Resize += new System.EventHandler(this.FormBasicGUI_Resize);
+            this.Resize += new System.EventHandler(this.SocialSharing_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -183,5 +223,8 @@
         private System.Windows.Forms.PictureBox pbProfilePicture;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlNewsFeed;
+        private System.Windows.Forms.Button btnNextPage;
+        private System.Windows.Forms.Button btnPreviousPage;
+        private System.Windows.Forms.Button button2;
     }
 }

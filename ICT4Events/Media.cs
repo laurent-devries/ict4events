@@ -57,7 +57,7 @@ namespace ICT4Events
             Media media;
             while (reader.Read())
             {
-                media = new Media(reader.GetString(0), reader.GetString(2), reader.GetString(1), Convert.ToInt32(reader.GetString(3)), "tttt", "VIDEO");
+                media = new Media(reader.GetString(0), Convert.ToString(reader.GetString(2)), reader.GetString(1), Convert.ToInt32(reader.GetString(3)), "tttt", "VIDEO");
                 mediaList.Add(media);
             }
 
