@@ -118,7 +118,7 @@ namespace ICT4Events
             try
             {
                 DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER WHERE rfid = " + rfid;
+                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER WHERE rfidtag = " + "'"+ rfid +"'";
 
                 OracleDataReader reader = con.SelectFromDatabase(Querry);
                 User user;
@@ -127,7 +127,7 @@ namespace ICT4Events
                     user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)));
                     return user;
                 }
-                MessageBox.Show("Username and password combination does not excist");
+                MessageBox.Show("RFID_Tag not in system");
                 return null;
             }
 
