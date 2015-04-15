@@ -163,7 +163,7 @@
             this.MinimumSize = new System.Drawing.Size(992, 552);
             this.Name = "FormBasicGUI";
             this.Text = "Basic user interface";
-            this.Resize += new System.EventHandler(this.FormBasicGUI_Resize);
+           // this.Resize += new System.EventHandler(this.FormBasicGUI_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
