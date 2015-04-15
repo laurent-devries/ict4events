@@ -35,11 +35,13 @@ namespace ICT4Events
             h.Show();
         }
 
-        /*private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            //EventBeheerReservering E = new EventBeheerReservering();
-            //E.Show();
+            EventBeheerReservering E = new EventBeheerReservering();
+            E.Show();
         }
-         * */
+
+
     }
 }
+    
