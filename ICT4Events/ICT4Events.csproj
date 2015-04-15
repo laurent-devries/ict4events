@@ -73,24 +73,28 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="EventBeheerReservering.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EventBeheerReservering.Designer.cs">
-      <DependentUpon>EventBeheerReservering.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormGathering.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGathering.Designer.cs">
       <DependentUpon>FormGathering.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hiresystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hiresystem.Designer.cs">
+      <DependentUpon>Hiresystem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SocialSharing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SocialSharing.Designer.cs">
+      <DependentUpon>SocialSharing.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="LoginForm.Designer.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
@@ -99,12 +103,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
-    <Compile Include="SocialSharing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SocialSharing.Designer.cs">
-      <DependentUpon>SocialSharing.cs</DependentUpon>
-    </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
     <EmbeddedResource Include="EventBeheerReservering.resx">
@@ -113,9 +111,10 @@
     <EmbeddedResource Include="FormGathering.resx">
       <DependentUpon>FormGathering.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="Hiresystem.resx">
+      <DependentUpon>Hiresystem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
