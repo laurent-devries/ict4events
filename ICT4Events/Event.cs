@@ -69,7 +69,7 @@ namespace ICT4Events
         }
         public Event()
         {
-            evenementen = new List<Event>;
+            evenementen = new List<Event>();
         }
         public List<Event> RequestEvent()
         {
