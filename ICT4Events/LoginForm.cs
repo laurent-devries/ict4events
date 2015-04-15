@@ -23,7 +23,7 @@ namespace ICT4Events
             User dataUser = new User();
             string userName = tbUsername.Text;
             string password = tbPassword.Text;
-            user = dataUser.LoginUser(userName, password);
+           // user = dataUser.LoginUser(userName, password);
 
             MessageBox.Show(user.Username);
         }

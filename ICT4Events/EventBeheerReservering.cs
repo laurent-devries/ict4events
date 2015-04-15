@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,7 @@ namespace ICT4Events
                 evenementen.Add(event1);
             }
             User Users = new User();
-            List<User> userList = Users.Requestuser();
+            userList = Users.RequestUsers();
             lists();
         }
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -60,7 +61,8 @@ namespace ICT4Events
                 Listb_gebruikers.Items.Clear();
                 foreach (User user in userList)
                 {
-                    Listb_gebruikers.Items.Add(user.ID_User + "," + user.First_Name + ", " + user.Sur_Name);
+                    MessageBox.Show(user.First_Name + user.RFID_Tag);
+                    Listb_gebruikers.Items.Add(user.ID_User + "," + user.First_Name + ", " + user.Sur_Name + ", " + user.RFID_Tag);
                 }
             }
             if (evenementen != null)
@@ -68,7 +70,7 @@ namespace ICT4Events
                 Listb_Events.Items.Clear();
                 foreach (Event event1 in evenementen)
                 {
-                    Listb_gebruikers.Items.Add(event1.ID_Event + "," + event1.Campingname + ", " + event1.Location);
+                    Listb_Events.Items.Add(event1.ID_Event + "," + event1.Campingname + ", " + event1.Location);
                 }
             }
 
