@@ -40,7 +40,7 @@
             this.pnlNewsFeed = new System.Windows.Forms.Panel();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -175,14 +175,14 @@
             this.btnPreviousPage.UseVisualStyleBackColor = true;
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
-            // label1
+            // button1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(5, 274);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Select Categorie:";
+            this.button1.Location = new System.Drawing.Point(417, 488);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Upload Media!";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // SocialSharing
             // 
@@ -190,7 +190,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(976, 513);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.pnlNewsFeed);
@@ -202,7 +202,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -220,6 +219,6 @@
         private System.Windows.Forms.Panel pnlNewsFeed;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }
