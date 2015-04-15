@@ -107,6 +107,9 @@
     </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="EventBeheerReservering.resx">
+      <DependentUpon>EventBeheerReservering.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGathering.resx">
       <DependentUpon>FormGathering.cs</DependentUpon>
     </EmbeddedResource>

@@ -61,19 +61,19 @@
             this.btn_nieuwe_gebruiker = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Event_End_Date = new System.Windows.Forms.DateTimePicker();
+            this.Event_Start_Date = new System.Windows.Forms.DateTimePicker();
+            this.btn_create_event = new System.Windows.Forms.Button();
+            this.Event_Camping_Location = new System.Windows.Forms.TextBox();
+            this.Event_Camping_Name = new System.Windows.Forms.TextBox();
+            this.Event_Title = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.Listb_Events = new System.Windows.Forms.ListBox();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Event_Title = new System.Windows.Forms.TextBox();
-            this.Event_Camping_Name = new System.Windows.Forms.TextBox();
-            this.Event_Camping_Location = new System.Windows.Forms.TextBox();
-            this.btn_create_event = new System.Windows.Forms.Button();
-            this.Event_Start_Date = new System.Windows.Forms.DateTimePicker();
-            this.Event_End_Date = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.gb_gebruikercreatie.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -433,6 +433,7 @@
             this.Listb_gebruikers.Name = "Listb_gebruikers";
             this.Listb_gebruikers.Size = new System.Drawing.Size(426, 199);
             this.Listb_gebruikers.TabIndex = 2;
+            this.Listb_gebruikers.SelectedIndexChanged += new System.EventHandler(this.Listb_gebruikers_SelectedIndexChanged);
             // 
             // btn_nieuwe_gebruiker
             // 
@@ -475,79 +476,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Event Create / Change";
             // 
-            // Listb_Events
+            // Event_End_Date
             // 
-            this.Listb_Events.FormattingEnabled = true;
-            this.Listb_Events.Location = new System.Drawing.Point(12, 48);
-            this.Listb_Events.Name = "Listb_Events";
-            this.Listb_Events.Size = new System.Drawing.Size(426, 199);
-            this.Listb_Events.TabIndex = 6;
+            this.Event_End_Date.Location = new System.Drawing.Point(103, 65);
+            this.Event_End_Date.Name = "Event_End_Date";
+            this.Event_End_Date.Size = new System.Drawing.Size(317, 20);
+            this.Event_End_Date.TabIndex = 12;
             // 
-            // label4
+            // Event_Start_Date
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Event Title:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Event EndDate:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 46);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Event StartDate:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 96);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Camping Name:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 120);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Camping Location:";
-            // 
-            // Event_Title
-            // 
-            this.Event_Title.Location = new System.Drawing.Point(103, 20);
-            this.Event_Title.Name = "Event_Title";
-            this.Event_Title.Size = new System.Drawing.Size(317, 20);
-            this.Event_Title.TabIndex = 5;
-            // 
-            // Event_Camping_Name
-            // 
-            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 93);
-            this.Event_Camping_Name.Name = "Event_Camping_Name";
-            this.Event_Camping_Name.Size = new System.Drawing.Size(317, 20);
-            this.Event_Camping_Name.TabIndex = 6;
-            // 
-            // Event_Camping_Location
-            // 
-            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 117);
-            this.Event_Camping_Location.Name = "Event_Camping_Location";
-            this.Event_Camping_Location.Size = new System.Drawing.Size(317, 20);
-            this.Event_Camping_Location.TabIndex = 9;
+            this.Event_Start_Date.Location = new System.Drawing.Point(103, 40);
+            this.Event_Start_Date.Name = "Event_Start_Date";
+            this.Event_Start_Date.Size = new System.Drawing.Size(317, 20);
+            this.Event_Start_Date.TabIndex = 11;
             // 
             // btn_create_event
             // 
@@ -558,28 +499,88 @@
             this.btn_create_event.Text = "Create / Change Event";
             this.btn_create_event.UseVisualStyleBackColor = true;
             // 
-            // Event_Start_Date
+            // Event_Camping_Location
             // 
-            this.Event_Start_Date.Location = new System.Drawing.Point(103, 40);
-            this.Event_Start_Date.Name = "Event_Start_Date";
-            this.Event_Start_Date.Size = new System.Drawing.Size(317, 20);
-            this.Event_Start_Date.TabIndex = 11;
+            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 117);
+            this.Event_Camping_Location.Name = "Event_Camping_Location";
+            this.Event_Camping_Location.Size = new System.Drawing.Size(317, 20);
+            this.Event_Camping_Location.TabIndex = 9;
             // 
-            // Event_End_Date
+            // Event_Camping_Name
             // 
-            this.Event_End_Date.Location = new System.Drawing.Point(103, 65);
-            this.Event_End_Date.Name = "Event_End_Date";
-            this.Event_End_Date.Size = new System.Drawing.Size(317, 20);
-            this.Event_End_Date.TabIndex = 12;
+            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 93);
+            this.Event_Camping_Name.Name = "Event_Camping_Name";
+            this.Event_Camping_Name.Size = new System.Drawing.Size(317, 20);
+            this.Event_Camping_Name.TabIndex = 6;
             // 
-            // Form1
+            // Event_Title
+            // 
+            this.Event_Title.Location = new System.Drawing.Point(103, 20);
+            this.Event_Title.Name = "Event_Title";
+            this.Event_Title.Size = new System.Drawing.Size(317, 20);
+            this.Event_Title.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 120);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Camping Location:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 96);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Camping Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 13);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Event StartDate:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(11, 71);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Event EndDate:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Event Title:";
+            // 
+            // Listb_Events
+            // 
+            this.Listb_Events.FormattingEnabled = true;
+            this.Listb_Events.Location = new System.Drawing.Point(12, 48);
+            this.Listb_Events.Name = "Listb_Events";
+            this.Listb_Events.Size = new System.Drawing.Size(426, 199);
+            this.Listb_Events.TabIndex = 6;
+            // 
+            // EventBeheerReservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(919, 596);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "EventBeheerReservering";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.gb_gebruikercreatie.ResumeLayout(false);

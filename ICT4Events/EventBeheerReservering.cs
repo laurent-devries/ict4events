@@ -12,9 +12,16 @@ namespace ICT4Events
 {
     public partial class EventBeheerReservering : Form
     {
+
         public EventBeheerReservering()
         {
             InitializeComponent();
+            User Users = new User();
+            List<User> userList = Users.Requestuser();
+            foreach (User user in userList)
+            {
+                Listb_gebruikers.Items.Add(user.ID_User +"," + user.Real_Name);
+            }
         }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -31,6 +38,11 @@ namespace ICT4Events
             gb_gebruikercreatie.Enabled = false;
             Listb_gebruikers.Items.Add(tb_naam_gebruiker.Text);
             tb_naam_gebruiker.Clear();
+        }
+
+        private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
