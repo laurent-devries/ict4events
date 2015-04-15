@@ -33,5 +33,11 @@ namespace ICT4Events
             Hiresystem h = new Hiresystem();
             h.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EventBeheerReservering E = new EventBeheerReservering();
+            E.Show();
+        }
     }
 }

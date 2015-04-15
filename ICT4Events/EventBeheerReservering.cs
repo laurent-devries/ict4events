@@ -18,9 +18,10 @@ namespace ICT4Events
             InitializeComponent();
             User Users = new User();
             List<User> userList = Users.Requestuser();
+            Listb_gebruikers.Items.Clear();
             foreach (User user in userList)
             {
-                Listb_gebruikers.Items.Add(user.ID_User +"," + user.Real_Name);
+                Listb_gebruikers.Items.Add(user.ID_User + "," + user.First_Name+", " + user.Sur_Name);
             }
         }
         private void groupBox1_Enter(object sender, EventArgs e)
