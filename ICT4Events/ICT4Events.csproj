@@ -73,6 +73,18 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="FormGathering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGathering.Designer.cs">
+      <DependentUpon>FormGathering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
@@ -89,6 +101,12 @@
     </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="FormGathering.resx">
+      <DependentUpon>FormGathering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
