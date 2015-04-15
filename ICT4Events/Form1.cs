@@ -19,17 +19,6 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-            //Media test = new Media();
-            //List<Media> testList = test.RequestMedia();
-
-            //foreach (Media s in testList)
-            //{
-            //    MessageBox.Show(s.Title);
-            //    MessageBox.Show(s.Date);
-            //    MessageBox.Show(s.Summary);
-            //}
-
-
 
 
 
@@ -43,14 +32,7 @@ namespace ICT4Events
             pnlNewsFeed.Width = Width / 6 * 4;
             pnlNewsFeed.Height = Height / 10 * 8;
 
-            //Panel p = new Panel();
-            //NewsFeedItem item1 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p, pnlNewsFeed, count);
-            //count += 1;
-            //Panel p2 = new Panel();
-            //NewsFeedItem item2 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p2, pnlNewsFeed, count);
-            //count += 1;
-            //Panel p3 = new Panel();
-            //NewsFeedItem item3 = new NewsFeedItem("Titel", "datum", "Views", "Likes", "Message", p3, pnlNewsFeed, count);
+
 
             Media mediaData = new Media();
             List<Media> mediaList = mediaData.RequestMedia();
@@ -60,12 +42,7 @@ namespace ICT4Events
                 Panel p = new Panel();
                 NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i);
                 itemlist.Add(item);
-            }
-
-            //itemlist.Add(item);
-            //itemlist.Add(item2);
-            //itemlist.Add(item3);
-            
+            }           
 
             foreach (NewsFeedItem item in itemlist)
             {
