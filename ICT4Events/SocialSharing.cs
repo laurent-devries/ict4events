@@ -12,14 +12,29 @@ namespace ICT4Events
 {
     public partial class SocialSharing : Form
     {
-        private Button button1;
         int countWidth = 0;
         int countHeight = 0;
-        //int count = 0;
+
+        int loadStarter = 0;
+        int loadEnder = 6;
+
+        bool startup = false;
+
         List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
+        List<Media> mediaList;
+
+
         public SocialSharing()
         {
-            InitializeComponents();
+            InitializeComponent();
+
+            //ScrollBar scrollbar = new VScrollBar();
+            //scrollbar.Dock = DockStyle.Right;
+            //scrollbar.Scroll += (sender, e) => {pnlNewsFeed.VerticalScroll.Value = scrollbar.Value;};
+            //scrollbar.Maximum = 20;
+            //pnlNewsFeed.Controls.Add(scrollbar);
+            Media mediaData = new Media();
+            mediaList = mediaData.RequestMedia();
 
 
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
@@ -32,36 +47,50 @@ namespace ICT4Events
             pnlNewsFeed.Width = Width / 6 * 4;
             pnlNewsFeed.Height = Height / 10 * 8;
 
-
-
-            Media mediaData = new Media();
-            List<Media> mediaList = mediaData.RequestMedia();
-            for (int i = 0; i < mediaList.Count ; i++)
+            
+            if (startup == false)
             {
-                Media media = mediaList[i];
-                Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i, countWidth, countHeight);
+                loadMedia(0, 6);
 
-                if (i < 3)
-                {
-                    countWidth++;
-                }
-                if (i == 2)
-                {
-                    countHeight = 1;
-                    countWidth = 0;
-                }
-                
-                itemlist.Add(item);
-            }           
+            }
+             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            loadStarter = loadStarter + 6;
+            loadEnder = loadStarter + 6;
+            loadMedia(loadStarter, loadEnder);
+
+            btnPreviousPage.Enabled = true;
+        }
+
+        private void btnPreviousPage_Click(object sender, EventArgs e)
+        {
+            loadStarter = loadStarter -= 6;
+            loadEnder -= 6;
+            loadMedia(loadStarter, loadEnder);
+
+            btnNextPage.Enabled = true;            
+        }
+
+        
+             
+
+        public void loadMedia(int start, int end)
+        {
+            LoadMediaFiles(start, end);
 
             foreach (NewsFeedItem item in itemlist)
             {
-                pnlNewsFeed.Controls.Add(item.Panel);                
+                pnlNewsFeed.Controls.Add(item.Panel);
+                Panel p = item.Panel;
+                p.ForeColor = Color.CadetBlue;
+                p.BringToFront();
             }
         }
 
-       /* private void FormBasicGUI_Resize(object sender, EventArgs e)
+        /* private void SocialSharing_Resize(object sender, EventArgs e)
         {
             pnlNewsFeed.Refresh();
             panel1.Width = this.Width;
@@ -71,35 +100,51 @@ namespace ICT4Events
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 
-            foreach(NewsFeedItem item in itemlist)
+            foreach (NewsFeedItem item in itemlist)
             {
                 item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, pnlNewsFeed.Width / 3 * item.Count + 10);
             }
         }
         */
-        private void InitializeComponent()
+
+
+        public void LoadMediaFiles(int start, int end)
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(154, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // SocialSharing
-            // 
-            this.ClientSize = new System.Drawing.Size(374, 317);
-            this.Controls.Add(this.button1);
-            this.Name = "SocialSharing";
-            this.ResumeLayout(false);
+            if (mediaList.Count < end)
+            {
+                end = mediaList.Count;
+                btnNextPage.Enabled = false;
+            }
 
+            if (end <= 6)
+            {
+                btnPreviousPage.Enabled = false;
+            }
+
+            pnlNewsFeed.Controls.Clear();
+            itemlist.Clear();
+            countWidth = 0;
+            countHeight = 0;
+
+            for (int i = start; i < end; i++)
+            {
+                Media media = mediaList[i];
+                Panel p = new Panel();
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i, countWidth, countHeight);
+
+                countWidth++;
+
+
+                if (countWidth > 2)
+                {
+                    countHeight++;
+                    countWidth = 0;
+                }
+
+                itemlist.Add(item);
+            }
         }
 
-        }
-    }
+       }
+   }
 

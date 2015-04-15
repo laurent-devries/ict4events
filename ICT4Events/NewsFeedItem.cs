@@ -56,8 +56,10 @@ namespace ICT4Events
             Titel.Location = new Point(wSpace, 5);
             Titel.Text = titel;
             Titel.ForeColor = Color.DarkOrange;
-            Titel.Font = new Font("Georgia", 15);
+            Titel.Font = new Font("Georgia", 11);
+            Titel.Width = panel.Width - wSpace;
             panel.Controls.Add(Titel);
+            Titel.BringToFront();
 
             Datum = new Label();
             Datum.Location = new Point(wSpace, 10 + hSpace);
