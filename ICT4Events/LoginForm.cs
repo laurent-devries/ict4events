@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HireSystemICT4All
+namespace ICT4Events
 {
     public partial class Form1 : Form
     {

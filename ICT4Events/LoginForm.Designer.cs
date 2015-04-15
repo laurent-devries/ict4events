@@ -1,4 +1,4 @@
-﻿namespace HireSystemICT4All
+﻿namespace ICT4Events
 {
     partial class Form1
     {
@@ -57,7 +57,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::HireSystemICT4All.Properties.Resources.ICT4EventsSmall;
+            
             resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
@@ -115,7 +115,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::HireSystemICT4All.Properties.Resources.Inlog_Scherm_huur;
+           
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.lblInfo);
