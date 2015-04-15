@@ -13,11 +13,14 @@ namespace ICT4Events
     public partial class SocialSharing : Form
     {
         private Button button1;
+        int countWidth = 0;
+        int countHeight = 0;
         //int count = 0;
         List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
         public SocialSharing()
         {
             InitializeComponents();
+
 
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
@@ -37,7 +40,18 @@ namespace ICT4Events
             {
                 Media media = mediaList[i];
                 Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i);
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i, countWidth, countHeight);
+
+                if (i < 3)
+                {
+                    countWidth++;
+                }
+                if (i == 2)
+                {
+                    countHeight = 1;
+                    countWidth = 0;
+                }
+                
                 itemlist.Add(item);
             }           
 
@@ -45,14 +59,9 @@ namespace ICT4Events
             {
                 pnlNewsFeed.Controls.Add(item.Panel);                
             }
-
-            foreach (NewsFeedItem item in itemlist)
-            {
-                item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
-            }
         }
 
-        private void FormBasicGUI_Resize(object sender, EventArgs e)
+       /* private void FormBasicGUI_Resize(object sender, EventArgs e)
         {
             pnlNewsFeed.Refresh();
             panel1.Width = this.Width;
@@ -64,10 +73,10 @@ namespace ICT4Events
 
             foreach(NewsFeedItem item in itemlist)
             {
-                item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
+                item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, pnlNewsFeed.Width / 3 * item.Count + 10);
             }
         }
-
+        */
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();

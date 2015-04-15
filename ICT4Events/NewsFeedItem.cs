@@ -18,6 +18,7 @@ namespace ICT4Events
         Label Views;
         Label Likes;
         LinkLabel Report;
+        LinkLabel Like;
         private int count;
 
         public int Count
@@ -37,24 +38,18 @@ namespace ICT4Events
         
 
         //Constructor
-        public NewsFeedItem(string titel, string datum, string views, string likes, string message, Panel panel, Panel nieuwsfeedPanel, int count)
+        public NewsFeedItem(string titel, string datum, string views, string likes, string message, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight)
         {
             this.count = count;
             this.panel = panel;
 
-
-            if (count < 3)
-            {
-
-            }
-
-            //panel.Location = new Point(nieuwsfeedPanel.Width/ 3 * 2 + 10, 10);
-            panel.Height = 200;
+            panel.Location = new Point(nieuwsfeedPanel.Width / 3 * countWidth + 10, nieuwsfeedPanel.Height / 2 * countHeight + 10);
+            panel.Height = nieuwsfeedPanel.Height / 2 - 20;
             panel.BackColor = Color.BlanchedAlmond;
             panel.Visible = true;
             
             int wSpace = 10;
-            int hSpace = panel.Width / 10;
+            int hSpace = panel.Height / 10;
             
 
             Titel = new Label();
@@ -67,20 +62,21 @@ namespace ICT4Events
             Datum = new Label();
             Datum.Location = new Point(wSpace, 10 + hSpace);
             Datum.Text = datum;
+            Datum.Height = 15;
             Datum.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Datum);
 
             Views = new Label();
             Views.Location = new Point(wSpace, 10 + hSpace * 2);
-            Views.Text = views;
+            Views.Text = "Views: " + views;
             Views.ForeColor = Color.DarkOrange;
-            Views.Width = panel.Width / 4;
+            Views.Width = panel.Width / 2 - wSpace;
             Views.Height = 15;
             panel.Controls.Add(Views);            
 
             Likes = new Label();
             Likes.Location = new Point(panel.Width / 2, 10 + hSpace * 2);
-            Likes.Text = likes;
+            Likes.Text = "Likes: " + likes;
             Likes.Height = 15;
             Likes.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Likes);
@@ -108,6 +104,14 @@ namespace ICT4Events
             Report.Font = new Font("Georgia", 6);
             Report.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Report);
+
+            Like = new LinkLabel();
+            Like.Location = new Point(wSpace, 10 + hSpace * 9);
+            Like.Text = "Like";
+            Like.Height = 15;
+            Like.Font = new Font("Georgia", 6);
+            Like.ForeColor = Color.DarkOrange;
+            panel.Controls.Add(Like);
 
         }
     }
