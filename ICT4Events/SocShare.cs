@@ -19,7 +19,6 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-            //Create baselocation for top information in gui
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 
@@ -31,7 +30,7 @@ namespace ICT4Events
             pnlNewsFeed.Height = Height / 10 * 8;
 
 
-            //Load media that is in database
+
             Media mediaData = new Media();
             List<Media> mediaList = mediaData.RequestMedia();
             for (int i = 0; i < mediaList.Count ; i++)
@@ -49,7 +48,6 @@ namespace ICT4Events
             
         }
 
-        //Scale when form is Resized
         private void FormBasicGUI_Resize(object sender, EventArgs e)
         {
             pnlNewsFeed.Refresh();
@@ -64,13 +62,7 @@ namespace ICT4Events
             {
                 item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
             }
-        }
-
-        /*public void loadItems
-        {
-
-        }
-         */
+        } 
 
     }
 }
