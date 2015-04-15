@@ -1,6 +1,6 @@
 ﻿namespace ICT4Events
 {
-    partial class FormBasicGUI
+    partial class SocialSharing
     {
         /// <summary>
         /// Required designer variable.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private void InitializeComponents()
         {
             this.btnHome = new System.Windows.Forms.Button();
             this.btnCategorie = new System.Windows.Forms.Button();
@@ -185,4 +185,3 @@
         private System.Windows.Forms.Panel pnlNewsFeed;
     }
 }
-
