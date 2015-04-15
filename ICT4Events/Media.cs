@@ -51,7 +51,7 @@ namespace ICT4Events
         public List<Media> RequestMedia()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA) FROM ICT4_MEDIA";
+            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), filepath FROM ICT4_MEDIA";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             Media media;
