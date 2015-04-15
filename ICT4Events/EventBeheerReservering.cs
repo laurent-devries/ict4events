@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,23 @@ namespace ICT4Events
 {
     public partial class EventBeheerReservering : Form
     {
-
+        List<Event> evenementen;
+        List<User> userList;
         public EventBeheerReservering()
         {
             InitializeComponent();
+            evenementen = new List<Event>();
+            DatabaseConnection conn = new DatabaseConnection();
+            string Querry = "SELECT ID_EVENT, TITLE, DATEICT, STARTDATE, ENDDATE, CAMPINGNAME, LOCATION FROM ICT4_EVENT";
+            OracleDataReader reader = conn.SelectFromDatabase(Querry);
+            while (reader.Read())
+            {
+                Event event1 = new Event(reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6));
+                evenementen.Add(event1);
+            }
             User Users = new User();
             List<User> userList = Users.Requestuser();
-            Listb_gebruikers.Items.Clear();
-            foreach (User user in userList)
-            {
-                Listb_gebruikers.Items.Add(user.ID_User + "," + user.First_Name+", " + user.Sur_Name);
-            }
+            lists();
         }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -43,6 +50,27 @@ namespace ICT4Events
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        private void lists()
+        {
+            
+            if (userList != null)
+            {
+                Listb_gebruikers.Items.Clear();
+                foreach (User user in userList)
+                {
+                    Listb_gebruikers.Items.Add(user.ID_User + "," + user.First_Name + ", " + user.Sur_Name);
+                }
+            }
+            if (evenementen != null)
+            {
+                Listb_Events.Items.Clear();
+                foreach (Event event1 in evenementen)
+                {
+                    Listb_gebruikers.Items.Add(event1.ID_Event + "," + event1.Campingname + ", " + event1.Location);
+                }
+            }
 
         }
     }
