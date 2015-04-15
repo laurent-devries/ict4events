@@ -42,7 +42,14 @@ namespace ICT4Events
             this.count = count;
             this.panel = panel;
 
-            panel.Location = new Point(nieuwsfeedPanel.Width/ 3 * count + 10, 10);
+            int WidthCount;
+
+            if (count < 3)
+            {
+
+            }
+
+            panel.Location = new Point(nieuwsfeedPanel.Width/ 3 * WidthCount + 10, 10);
             panel.Height = 200;
             panel.BackColor = Color.BlanchedAlmond;
             panel.Visible = true;
