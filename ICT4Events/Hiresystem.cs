@@ -23,6 +23,16 @@ namespace ICT4Events
 
         }
 
+        private void Hiresystem_Load(object sender, EventArgs e)
+        {
+            
+
+
+            
+         
+
+        }
+
 
         private bool scanned = false;
 
@@ -74,69 +84,49 @@ namespace ICT4Events
         {
 
             lblWaiting.Text = "Scan succesfull";
-            //RFIDtext.Text = (e.Tag);
+            
             scanned = true;
             User user;
             User dataCollect = new User();
             user = dataCollect.SearchByRfid(e.Tag);
-            RFIDtext.Text = user.RFID_Tag;
-            lblFirstHR.Text = user.First_Name;
-            lblSureNameHR.Text = user.Sur_Name;
-            lblRFIDinfoUser.Text = user.RFID_Tag; 
-            lblBirthDHR.Text = user.Birth_Date;
-            lblEmailHR.Text = user.Email;
-            lblCountryHR.Text = 
-            lblStreetHR.Text
-            lblHouseNBHR.Text = 
-            lblCityHR.Text = 
-            lblCellPhoneNBHR.Text = 
-            lblLoginHR.Text = 
-            lbluserHS.Text = 
-
-
+            if (user == null)
+            {
+                RFIDtext.Text = (e.Tag);
+            }
+            else 
+            { 
+                RFIDtext.Text = user.RFID_Tag;
+                lblFirstHR.Text = user.First_Name;
+                lblSureNameHR.Text = user.Sur_Name;
+                lblRFIDinfoUser.Text = user.RFID_Tag; 
+                lblBirthDHR.Text = Convert.ToString(user.Birth_Date);
+                lblEmailHR.Text = user.Email;
+                lblCountryHR.Text = user.Country;
+               // lblStreetHR.Text = user.
+               // lblHouseNBHR.Text = user.
+                lblCityHR.Text = user.City;
+                lblCellPhoneNBHR.Text = user.Phone_Number;
+                lblLoginHR.Text = user.Login_Name;
+                lbluserHS.Text = user.Username;
+            }
         }
 
         private void rfid_Error(object sender, ErrorEventArgs e)
         {
             MessageBox.Show(e.Description);
         }
-
-
-        private void BttngetInfo_Click(object sender, EventArgs e)
-        {
-            
-
-
-        //    lblRFIDinfoUser.Text = RFIDtext.Text;
-        //    DatabaseConnection conn = new DatabaseConnection();
-
-        //    OracleDataReader reader = conn.SelectFromDatabase("SELECT SURNAME, ID_USER, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME FROM ICT4_USER where RFIDTAG =" + "'"+ RFIDtext.Text +"'");
-            
-        //    while(reader.Read())
-        //    {
-        //        try
-        //        {
-
-        //            
-
-                    
-
-        //        }
-        //        catch(Exception s)
-        //        {
-        //            MessageBox.Show(s.ToString());
-        //        }
-
-        //    }
-            
-
-        //    reader.Dispose();
-        //
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void BttngetInfo_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+        
     }
 }
