@@ -23,6 +23,17 @@ namespace ICT4Events
 
         }
 
+        private void Hiresystem_Load(object sender, EventArgs e)
+        {
+            dataGridView1 = lol;
+            prod
+
+
+            
+         
+
+        }
+
 
         private bool scanned = false;
 
@@ -112,8 +123,10 @@ namespace ICT4Events
 
         private void BttngetInfo_Click_1(object sender, EventArgs e)
         {
-
+            
         }
+
+        
 
         
     }
