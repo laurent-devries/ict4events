@@ -41,12 +41,12 @@ namespace ICT4Events
             Listb_gebruikers.Items.Add(tb_voornaam_gebruiker.Text);
             tb_voornaam_gebruiker.Clear();
             DatabaseConnection conn = new DatabaseConnection();
-            conn.InsertOrUpdate("INSERT INTO ICT4_USER VALUES(" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "," + Convert.ToInt32(tb_Event_ID_user.Text) + "," + Convert.ToInt32(tb_Res_ID_user.Text) + "," + 1 + "," + ")"    );
+            conn.InsertOrUpdate("INSERT INTO ICT4_USER VALUES(" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "," + Convert.ToInt32(tb_Event_ID_user.Text) + "," + Convert.ToInt32(tb_Res_ID_user.Text) + "," + 1 + ","+ tb_voornaam_gebruiker.Text +","+tb_achternaam_user.Text+","+ dtp_geboortedatum_gebruiker.Value.Day.ToString()+dtp_geboortedatum_gebruiker.Value.Month.ToString()+dtp_geboortedatum_gebruiker.Value.Year.ToString()+","+ tb_email_gebruiker.Text +","    );
         }
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
         private void lists()
         {
