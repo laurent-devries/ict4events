@@ -11,7 +11,7 @@ namespace ICT4Events
     //teun van der wijst
     public class User
     {
-        private List<User> userlist;
+        
         private static int id = 0;
         private int id_user;
         private int rfid_tag;
@@ -26,6 +26,8 @@ namespace ICT4Events
         private string profile_pic;
         private string summary;
         private char present;
+
+        private List<User> userList;
 
         public char Present { get { return present; } set { present = value; } }
         public string Summary { get { return summary; } set { summary = value; } }
@@ -57,6 +59,10 @@ namespace ICT4Events
             this.summary = summary;
             this.present = present;
         }
+        public User()
+        {
+            userList = new List<User>();
+        }
         public List<User> Requestuser()
         {
             DatabaseConnection con = new DatabaseConnection();
@@ -67,12 +73,12 @@ namespace ICT4Events
             while (reader.Read())
             {
                 user = new User(reader.GetInt16(20), reader.GetString(5) + " " + reader.GetString(6), reader.GetDateTime(7), reader.GetString(8), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), reader.GetString(18), reader.GetChar(19));
-                userlist.Add(user);
+                userList.Add(user);
             }
 
             reader.Dispose();
 
-            return userlist;
+            return userList;
         }
     }
 }

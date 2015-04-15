@@ -1,6 +1,6 @@
 ﻿namespace ICT4Events
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,110 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.PasswordTxt = new System.Windows.Forms.TextBox();
-            this.usernameTxt = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblInfo = new System.Windows.Forms.Label();
-            this.BtnExit = new System.Windows.Forms.Button();
+            this.tbUsername = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // PasswordTxt
+            // tbUsername
             // 
-            resources.ApplyResources(this.PasswordTxt, "PasswordTxt");
-            this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.TextChanged += new System.EventHandler(this.PasswordTxt_TextChanged);
+            this.tbUsername.Location = new System.Drawing.Point(68, 33);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(100, 20);
+            this.tbUsername.TabIndex = 0;
             // 
-            // usernameTxt
+            // tbPassword
             // 
-            resources.ApplyResources(this.usernameTxt, "usernameTxt");
-            this.usernameTxt.Name = "usernameTxt";
+            this.tbPassword.Location = new System.Drawing.Point(68, 59);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbPassword.TabIndex = 1;
             // 
-            // pictureBox1
+            // lblUsername
             // 
-            
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(12, 36);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(61, 13);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "Username: ";
             // 
-            // pictureBox3
+            // lblPassword
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Name = "label1";
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Name = "label2";
-            // 
-            // lblInfo
-            // 
-            resources.ApplyResources(this.lblInfo, "lblInfo");
-            this.lblInfo.BackColor = System.Drawing.Color.Transparent;
-            this.lblInfo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblInfo.Name = "lblInfo";
-            // 
-            // BtnExit
-            // 
-            resources.ApplyResources(this.BtnExit, "BtnExit");
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.UseVisualStyleBackColor = true;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Location = new System.Drawing.Point(12, 62);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblPassword.TabIndex = 3;
+            this.lblPassword.Text = "Password:";
             // 
             // btnLogin
             // 
-            resources.ApplyResources(this.btnLogin, "btnLogin");
+            this.btnLogin.Location = new System.Drawing.Point(188, 33);
             this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.TabIndex = 4;
+            this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form1
+            // LoginForm
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-           
+            this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.BtnExit);
-            this.Controls.Add(this.lblInfo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.usernameTxt);
-            this.Controls.Add(this.PasswordTxt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimizeBox = false;
-            this.Name = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Controls.Add(this.lblPassword);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.tbUsername);
+            this.Name = "LoginForm";
+            this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,16 +95,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox PasswordTxt;
-        private System.Windows.Forms.TextBox usernameTxt;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblInfo;
-        private System.Windows.Forms.Button BtnExit;
+        private System.Windows.Forms.TextBox tbUsername;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
     }
 }
-

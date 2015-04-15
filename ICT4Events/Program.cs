@@ -16,7 +16,7 @@ namespace ICT4Events
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SocialSharing());
+            Application.Run(new FormGathering());
         }
     }
 }
