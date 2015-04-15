@@ -40,7 +40,7 @@
             this.pnlNewsFeed = new System.Windows.Forms.Panel();
             this.btnNextPage = new System.Windows.Forms.Button();
             this.btnPreviousPage = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +134,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.pbProfilePicture);
             this.panel1.Controls.Add(this.btnMateriaalHuren);
             this.panel1.Controls.Add(this.lblIngelogdNaam);
@@ -175,14 +176,18 @@
             this.btnPreviousPage.UseVisualStyleBackColor = true;
             this.btnPreviousPage.Click += new System.EventHandler(this.btnPreviousPage_Click);
             // 
-            // button1
+            // button2
             // 
-            this.button1.Location = new System.Drawing.Point(417, 488);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(204, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Upload Media!";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button2.BackColor = System.Drawing.Color.Wheat;
+            this.button2.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkOrange;
+            this.button2.Location = new System.Drawing.Point(422, 13);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(134, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Uploaden";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SocialSharing
             // 
@@ -190,7 +195,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(976, 513);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPreviousPage);
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.pnlNewsFeed);
@@ -219,6 +223,6 @@
         private System.Windows.Forms.Panel pnlNewsFeed;
         private System.Windows.Forms.Button btnNextPage;
         private System.Windows.Forms.Button btnPreviousPage;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
