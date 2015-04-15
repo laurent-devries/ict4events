@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Phidgets; //voor het gebruik van RFID
 using Phidgets.Events; //voor het gebruik van EVENTS (Attach etc.)
+using Oracle.ManagedDataAccess.Client; 
 
 namespace ICT4Events
 {
@@ -18,6 +19,8 @@ namespace ICT4Events
         {
             InitializeComponent();
             lblWaiting.Text = "Waiting for RFID scan....";
+            
+
         }
 
 
@@ -29,9 +32,7 @@ namespace ICT4Events
             {
                 if (scanned == false)
                 {
-                    RFID rfid = new RFID(); //Declare an RFID object
-
-                    //initialize our Phidgets RFID reader and hook the event handlers
+                    RFID rfid = new RFID(); //RFID object
                     rfid.Attach += new AttachEventHandler(rfid_Attach);
                     rfid.Detach += new DetachEventHandler(rfid_Detach);
                     rfid.Error += new ErrorEventHandler(rfid_Error);
@@ -73,14 +74,47 @@ namespace ICT4Events
         {
 
             lblWaiting.Text = "Scan succesfull";
-            RFIDtext.Text = (e.Tag);
+            
             scanned = true;
-
+            User user;
+            User dataCollect = new User();
+            user = dataCollect.SearchByRfid(e.Tag);
+            if (user == null)
+            {
+                RFIDtext.Text = (e.Tag);
+            }
+            else 
+            { 
+                RFIDtext.Text = user.RFID_Tag;
+                lblFirstHR.Text = user.First_Name;
+                lblSureNameHR.Text = user.Sur_Name;
+                lblRFIDinfoUser.Text = user.RFID_Tag; 
+                lblBirthDHR.Text = Convert.ToString(user.Birth_Date);
+                lblEmailHR.Text = user.Email;
+                lblCountryHR.Text = user.Country;
+               // lblStreetHR.Text = user.
+               // lblHouseNBHR.Text = user.
+                lblCityHR.Text = user.City;
+                lblCellPhoneNBHR.Text = user.Phone_Number;
+                lblLoginHR.Text = user.Login_Name;
+                lbluserHS.Text = user.Username;
+            }
         }
 
         private void rfid_Error(object sender, ErrorEventArgs e)
         {
             MessageBox.Show(e.Description);
         }
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BttngetInfo_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

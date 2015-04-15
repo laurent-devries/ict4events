@@ -31,13 +31,32 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.SearchTxtHR = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblCityHR = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblEmailHR = new System.Windows.Forms.Label();
+            this.lblCellPhoneNBHR = new System.Windows.Forms.Label();
+            this.lblHouseNBHR = new System.Windows.Forms.Label();
+            this.lblStreetHR = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.lblLoginHR = new System.Windows.Forms.Label();
+            this.lblCountryHR = new System.Windows.Forms.Label();
+            this.lblBirthDHR = new System.Windows.Forms.Label();
+            this.lblFirstHR = new System.Windows.Forms.Label();
+            this.lblSureNameHR = new System.Windows.Forms.Label();
+            this.lbluserHS = new System.Windows.Forms.Label();
             this.lblRFIDinfoUser = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BttngetInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblWaiting = new System.Windows.Forms.Label();
             this.RFIDtext = new System.Windows.Forms.TextBox();
@@ -52,12 +71,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -79,35 +99,235 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblCityHR);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblEmailHR);
+            this.groupBox3.Controls.Add(this.lblCellPhoneNBHR);
+            this.groupBox3.Controls.Add(this.lblHouseNBHR);
+            this.groupBox3.Controls.Add(this.lblStreetHR);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.lblLoginHR);
+            this.groupBox3.Controls.Add(this.lblCountryHR);
+            this.groupBox3.Controls.Add(this.lblBirthDHR);
+            this.groupBox3.Controls.Add(this.lblFirstHR);
+            this.groupBox3.Controls.Add(this.lblSureNameHR);
+            this.groupBox3.Controls.Add(this.lbluserHS);
             this.groupBox3.Controls.Add(this.lblRFIDinfoUser);
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Location = new System.Drawing.Point(953, 154);
+            this.groupBox3.Location = new System.Drawing.Point(987, 150);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(302, 523);
+            this.groupBox3.Size = new System.Drawing.Size(376, 301);
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "User info:";
             // 
+            // lblCityHR
+            // 
+            this.lblCityHR.AutoSize = true;
+            this.lblCityHR.Location = new System.Drawing.Point(187, 263);
+            this.lblCityHR.Name = "lblCityHR";
+            this.lblCityHR.Size = new System.Drawing.Size(18, 17);
+            this.lblCityHR.TabIndex = 27;
+            this.lblCityHR.Text = "--";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 263);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 17);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "City:";
+            // 
+            // lblEmailHR
+            // 
+            this.lblEmailHR.AutoSize = true;
+            this.lblEmailHR.Location = new System.Drawing.Point(187, 116);
+            this.lblEmailHR.Name = "lblEmailHR";
+            this.lblEmailHR.Size = new System.Drawing.Size(18, 17);
+            this.lblEmailHR.TabIndex = 25;
+            this.lblEmailHR.Text = "--";
+            // 
+            // lblCellPhoneNBHR
+            // 
+            this.lblCellPhoneNBHR.AutoSize = true;
+            this.lblCellPhoneNBHR.Location = new System.Drawing.Point(187, 246);
+            this.lblCellPhoneNBHR.Name = "lblCellPhoneNBHR";
+            this.lblCellPhoneNBHR.Size = new System.Drawing.Size(18, 17);
+            this.lblCellPhoneNBHR.TabIndex = 24;
+            this.lblCellPhoneNBHR.Text = "--";
+            // 
+            // lblHouseNBHR
+            // 
+            this.lblHouseNBHR.AutoSize = true;
+            this.lblHouseNBHR.Location = new System.Drawing.Point(187, 229);
+            this.lblHouseNBHR.Name = "lblHouseNBHR";
+            this.lblHouseNBHR.Size = new System.Drawing.Size(18, 17);
+            this.lblHouseNBHR.TabIndex = 23;
+            this.lblHouseNBHR.Text = "--";
+            // 
+            // lblStreetHR
+            // 
+            this.lblStreetHR.AutoSize = true;
+            this.lblStreetHR.Location = new System.Drawing.Point(187, 212);
+            this.lblStreetHR.Name = "lblStreetHR";
+            this.lblStreetHR.Size = new System.Drawing.Size(18, 17);
+            this.lblStreetHR.TabIndex = 22;
+            this.lblStreetHR.Text = "--";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(6, 99);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(86, 17);
+            this.label28.TabIndex = 21;
+            this.label28.Text = "Login name:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(6, 229);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(97, 17);
+            this.label27.TabIndex = 20;
+            this.label27.Text = "Housenumber";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 246);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(127, 17);
+            this.label26.TabIndex = 19;
+            this.label26.Text = "Cellphone number:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(6, 212);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(50, 17);
+            this.label25.TabIndex = 18;
+            this.label25.Text = "Street:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(6, 195);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(61, 17);
+            this.label24.TabIndex = 17;
+            this.label24.Text = "Country:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 116);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 17);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "Email:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 166);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(69, 17);
+            this.label22.TabIndex = 15;
+            this.label22.Text = "Birthdate:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(6, 82);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(77, 17);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Surename:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 48);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(57, 17);
+            this.label20.TabIndex = 13;
+            this.label20.Text = "ID user:";
+            // 
+            // lblLoginHR
+            // 
+            this.lblLoginHR.AutoSize = true;
+            this.lblLoginHR.Location = new System.Drawing.Point(187, 99);
+            this.lblLoginHR.Name = "lblLoginHR";
+            this.lblLoginHR.Size = new System.Drawing.Size(18, 17);
+            this.lblLoginHR.TabIndex = 12;
+            this.lblLoginHR.Text = "--";
+            // 
+            // lblCountryHR
+            // 
+            this.lblCountryHR.AutoSize = true;
+            this.lblCountryHR.Location = new System.Drawing.Point(187, 195);
+            this.lblCountryHR.Name = "lblCountryHR";
+            this.lblCountryHR.Size = new System.Drawing.Size(18, 17);
+            this.lblCountryHR.TabIndex = 11;
+            this.lblCountryHR.Text = "--";
+            // 
+            // lblBirthDHR
+            // 
+            this.lblBirthDHR.AutoSize = true;
+            this.lblBirthDHR.Location = new System.Drawing.Point(187, 166);
+            this.lblBirthDHR.Name = "lblBirthDHR";
+            this.lblBirthDHR.Size = new System.Drawing.Size(18, 17);
+            this.lblBirthDHR.TabIndex = 9;
+            this.lblBirthDHR.Text = "--";
+            // 
+            // lblFirstHR
+            // 
+            this.lblFirstHR.AutoSize = true;
+            this.lblFirstHR.Location = new System.Drawing.Point(187, 65);
+            this.lblFirstHR.Name = "lblFirstHR";
+            this.lblFirstHR.Size = new System.Drawing.Size(18, 17);
+            this.lblFirstHR.TabIndex = 8;
+            this.lblFirstHR.Text = "--";
+            // 
+            // lblSureNameHR
+            // 
+            this.lblSureNameHR.AutoSize = true;
+            this.lblSureNameHR.Location = new System.Drawing.Point(187, 82);
+            this.lblSureNameHR.Name = "lblSureNameHR";
+            this.lblSureNameHR.Size = new System.Drawing.Size(18, 17);
+            this.lblSureNameHR.TabIndex = 7;
+            this.lblSureNameHR.Text = "--";
+            // 
+            // lbluserHS
+            // 
+            this.lbluserHS.AutoSize = true;
+            this.lbluserHS.Location = new System.Drawing.Point(187, 48);
+            this.lbluserHS.Name = "lbluserHS";
+            this.lbluserHS.Size = new System.Drawing.Size(18, 17);
+            this.lbluserHS.TabIndex = 6;
+            this.lbluserHS.Text = "--";
+            // 
             // lblRFIDinfoUser
             // 
             this.lblRFIDinfoUser.AutoSize = true;
-            this.lblRFIDinfoUser.Location = new System.Drawing.Point(105, 31);
+            this.lblRFIDinfoUser.Location = new System.Drawing.Point(187, 31);
             this.lblRFIDinfoUser.Name = "lblRFIDinfoUser";
             this.lblRFIDinfoUser.Size = new System.Drawing.Size(18, 17);
             this.lblRFIDinfoUser.TabIndex = 5;
             this.lblRFIDinfoUser.Text = "--";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 17);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Birth Year:";
             // 
             // label5
             // 
@@ -129,33 +349,23 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 61);
+            this.label7.Location = new System.Drawing.Point(6, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 17);
+            this.label7.Size = new System.Drawing.Size(78, 17);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Name:";
+            this.label7.Text = "First name:";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.BttngetInfo);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.lblWaiting);
             this.groupBox2.Controls.Add(this.RFIDtext);
-            this.groupBox2.Location = new System.Drawing.Point(953, 3);
+            this.groupBox2.Location = new System.Drawing.Point(996, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(302, 126);
+            this.groupBox2.Size = new System.Drawing.Size(367, 106);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "RFID TAG:";
-            // 
-            // BttngetInfo
-            // 
-            this.BttngetInfo.Location = new System.Drawing.Point(108, 67);
-            this.BttngetInfo.Name = "BttngetInfo";
-            this.BttngetInfo.Size = new System.Drawing.Size(124, 34);
-            this.BttngetInfo.TabIndex = 5;
-            this.BttngetInfo.Text = "GET INFO";
-            this.BttngetInfo.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -178,13 +388,13 @@
             // 
             this.RFIDtext.Location = new System.Drawing.Point(108, 39);
             this.RFIDtext.Name = "RFIDtext";
-            this.RFIDtext.Size = new System.Drawing.Size(188, 22);
+            this.RFIDtext.Size = new System.Drawing.Size(220, 22);
             this.RFIDtext.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(822, 84);
+            this.label3.Location = new System.Drawing.Point(755, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 17);
             this.label3.TabIndex = 22;
@@ -193,7 +403,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(822, 59);
+            this.label2.Location = new System.Drawing.Point(755, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 21;
@@ -202,7 +412,7 @@
             // lblconnectedInfo
             // 
             this.lblconnectedInfo.AutoSize = true;
-            this.lblconnectedInfo.Location = new System.Drawing.Point(917, 84);
+            this.lblconnectedInfo.Location = new System.Drawing.Point(854, 79);
             this.lblconnectedInfo.Name = "lblconnectedInfo";
             this.lblconnectedInfo.Size = new System.Drawing.Size(18, 17);
             this.lblconnectedInfo.TabIndex = 20;
@@ -211,7 +421,7 @@
             // lblserialInfo
             // 
             this.lblserialInfo.AutoSize = true;
-            this.lblserialInfo.Location = new System.Drawing.Point(917, 59);
+            this.lblserialInfo.Location = new System.Drawing.Point(854, 62);
             this.lblserialInfo.Name = "lblserialInfo";
             this.lblserialInfo.Size = new System.Drawing.Size(18, 17);
             this.lblserialInfo.TabIndex = 19;
@@ -219,7 +429,7 @@
             // 
             // bttnEnableRFID
             // 
-            this.bttnEnableRFID.Location = new System.Drawing.Point(823, 12);
+            this.bttnEnableRFID.Location = new System.Drawing.Point(758, 12);
             this.bttnEnableRFID.Name = "bttnEnableRFID";
             this.bttnEnableRFID.Size = new System.Drawing.Size(124, 34);
             this.bttnEnableRFID.TabIndex = 18;
@@ -278,41 +488,33 @@
             this.listBox3.ItemHeight = 16;
             this.listBox3.Location = new System.Drawing.Point(12, 150);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(935, 212);
+            this.listBox3.Size = new System.Drawing.Size(969, 212);
             this.listBox3.TabIndex = 25;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Location = new System.Drawing.Point(698, 385);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(249, 292);
-            this.listBox2.TabIndex = 24;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 385);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(680, 292);
-            this.listBox1.TabIndex = 23;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(953, 683);
+            this.button2.Location = new System.Drawing.Point(987, 474);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(301, 50);
+            this.button2.Size = new System.Drawing.Size(376, 47);
             this.button2.TabIndex = 31;
             this.button2.Text = "LEND";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(12, 394);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Size = new System.Drawing.Size(969, 261);
+            this.splitContainer1.SplitterDistance = 634;
+            this.splitContainer1.TabIndex = 32;
             // 
             // Hiresystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1410, 746);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -320,8 +522,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblconnectedInfo);
@@ -338,6 +538,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,12 +551,10 @@
         private System.Windows.Forms.TextBox SearchTxtHR;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblRFIDinfoUser;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button BttngetInfo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWaiting;
         private System.Windows.Forms.TextBox RFIDtext;
@@ -369,8 +569,28 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label lblEmailHR;
+        private System.Windows.Forms.Label lblCellPhoneNBHR;
+        private System.Windows.Forms.Label lblHouseNBHR;
+        private System.Windows.Forms.Label lblStreetHR;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblLoginHR;
+        private System.Windows.Forms.Label lblCountryHR;
+        private System.Windows.Forms.Label lblBirthDHR;
+        private System.Windows.Forms.Label lblFirstHR;
+        private System.Windows.Forms.Label lblSureNameHR;
+        private System.Windows.Forms.Label lbluserHS;
+        private System.Windows.Forms.Label lblCityHR;
+        private System.Windows.Forms.Label label4;
     }
 }
