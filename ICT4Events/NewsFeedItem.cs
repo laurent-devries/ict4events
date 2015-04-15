@@ -48,7 +48,7 @@ namespace ICT4Events
 
             }
 
-            panel.Location = new Point(nieuwsfeedPanel.Width/ 3 *  + 10, 10);
+            //panel.Location = new Point(nieuwsfeedPanel.Width/ 3 * 2 + 10, 10);
             panel.Height = 200;
             panel.BackColor = Color.BlanchedAlmond;
             panel.Visible = true;
