@@ -79,8 +79,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginForm.cs" />
+    <Compile Include="LoginForm.Designer.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
+    <Compile Include="NieuwsFeedItem.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Permission.cs" />
     <Compile Include="Product.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Reservation.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +102,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
