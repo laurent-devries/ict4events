@@ -27,5 +27,11 @@ namespace ICT4Events
         {
         
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hiresystem h = new Hiresystem();
+            h.Show();
+        }
     }
 }

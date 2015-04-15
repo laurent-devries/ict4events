@@ -73,7 +73,15 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="Hiresystem.cs" />
+    <Compile Include="FormGathering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGathering.Designer.cs">
+      <DependentUpon>FormGathering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hiresystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hiresystem.Designer.cs">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </Compile>
@@ -97,6 +105,9 @@
     <Compile Include="Reservation.cs" />
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="FormGathering.resx">
+      <DependentUpon>FormGathering.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hiresystem.resx">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </EmbeddedResource>
