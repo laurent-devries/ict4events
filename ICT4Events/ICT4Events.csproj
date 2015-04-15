@@ -73,14 +73,6 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="SocialSharing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SocialSharing.Designer.cs">
-      <DependentUpon>SocialSharing.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LoginForm.cs" />
-    <Compile Include="LoginForm.Designer.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
@@ -89,9 +81,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
+    <Compile Include="SocialSharing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SocialSharing.Designer.cs">
+      <DependentUpon>SocialSharing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
-    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
