@@ -19,15 +19,8 @@ namespace ICT4Events
         public EventBeheerReservering()
         {
             InitializeComponent();
-            evenementen = new List<Event>();
-            DatabaseConnection conn = new DatabaseConnection();
-            string Querry = "SELECT ID_EVENT, TITLE, DATEICT, STARTDATE, ENDDATE, CAMPINGNAME, LOCATION FROM ICT4_EVENT";
-            OracleDataReader reader = conn.SelectFromDatabase(Querry);
-            while (reader.Read())
-            {
-                Event event1 = new Event(reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6));
-                evenementen.Add(event1);
-            }
+            Event Event = new Event();
+            evenementen = Event.RequestEvent();
             User Users = new User();
             userList = Users.RequestUsers();
             lists();
