@@ -41,7 +41,7 @@ namespace ICT4Events
             Listb_gebruikers.Items.Add(tb_voornaam_gebruiker.Text);
             tb_voornaam_gebruiker.Clear();
             DatabaseConnection conn = new DatabaseConnection();
-            conn.InsertOrUpdate("INSERT INTO ICT4_USER VALUES(" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "," + Convert.ToInt32(tb_Event_ID_user.Text) + "," + Convert.ToInt32(tb_Res_ID_user.Text) + "," + 1 + ","+ tb_voornaam_gebruiker.Text +","+tb_achternaam_user.Text+","+ dtp_geboortedatum_gebruiker.Value.Day.ToString()+dtp_geboortedatum_gebruiker.Value.Month.ToString()+dtp_geboortedatum_gebruiker.Value.Year.ToString()+","+ tb_email_gebruiker.Text +","    );
+            conn.InsertOrUpdate("INSERT INTO ICT4_USER VALUES('" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "','" + Convert.ToInt32(tb_Event_ID_user.Text) + "','" + Convert.ToInt32(tb_Res_ID_user.Text) + "','" + 1 + "','" + tb_voornaam_gebruiker.Text + "','" + tb_achternaam_user.Text + "'," + "to_date('"+dtp_geboortedatum_gebruiker.Value.Day + dtp_geboortedatum_gebruiker.Value.Month + dtp_geboortedatum_gebruiker.Value.Year+"','DDMMYYYY')" + "','" + tb_email_gebruiker.Text + "','" + cb_land_gebruiker.Text + "','" + textBox1.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + tb_telnr_gebruiker.Text + "','" + tb_loginname_gebruiker.Text + "','" + tb_username_gebruiker + "','" + tb_password_gebruiker.Text + "','"+"'C:/'"+"'No Summary'"+"'N'");
         }
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)

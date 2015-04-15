@@ -49,8 +49,6 @@
             this.lb_Username_gebruiker = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_telnr_gebruiker = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.lb_addres_postcode_gebruiker = new System.Windows.Forms.Label();
             this.lb_addres_stad_gebruiker = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -139,8 +137,6 @@
             this.gb_gebruikercreatie.Controls.Add(this.lb_Username_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.label1);
             this.gb_gebruikercreatie.Controls.Add(this.tb_telnr_gebruiker);
-            this.gb_gebruikercreatie.Controls.Add(this.textBox5);
-            this.gb_gebruikercreatie.Controls.Add(this.lb_addres_postcode_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.lb_addres_stad_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.textBox4);
             this.gb_gebruikercreatie.Controls.Add(this.textBox3);
@@ -307,22 +303,6 @@
             this.tb_telnr_gebruiker.Size = new System.Drawing.Size(325, 20);
             this.tb_telnr_gebruiker.TabIndex = 16;
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(332, 230);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(88, 20);
-            this.textBox5.TabIndex = 15;
-            // 
-            // lb_addres_postcode_gebruiker
-            // 
-            this.lb_addres_postcode_gebruiker.AutoSize = true;
-            this.lb_addres_postcode_gebruiker.Location = new System.Drawing.Point(272, 233);
-            this.lb_addres_postcode_gebruiker.Name = "lb_addres_postcode_gebruiker";
-            this.lb_addres_postcode_gebruiker.Size = new System.Drawing.Size(64, 13);
-            this.lb_addres_postcode_gebruiker.TabIndex = 14;
-            this.lb_addres_postcode_gebruiker.Text = "Postal Code";
-            // 
             // lb_addres_stad_gebruiker
             // 
             this.lb_addres_stad_gebruiker.AutoSize = true;
@@ -342,7 +322,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(332, 204);
+            this.textBox3.Location = new System.Drawing.Point(332, 208);
             this.textBox3.MaxLength = 10;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(88, 20);
@@ -351,7 +331,7 @@
             // lb_addres_nummer_gebruiker
             // 
             this.lb_addres_nummer_gebruiker.AutoSize = true;
-            this.lb_addres_nummer_gebruiker.Location = new System.Drawing.Point(272, 207);
+            this.lb_addres_nummer_gebruiker.Location = new System.Drawing.Point(272, 211);
             this.lb_addres_nummer_gebruiker.Name = "lb_addres_nummer_gebruiker";
             this.lb_addres_nummer_gebruiker.Size = new System.Drawing.Size(44, 13);
             this.lb_addres_nummer_gebruiker.TabIndex = 10;
@@ -701,8 +681,6 @@
         private System.Windows.Forms.Label lb_Username_gebruiker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_telnr_gebruiker;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label lb_addres_postcode_gebruiker;
         private System.Windows.Forms.Button btn_create_user;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox3;
