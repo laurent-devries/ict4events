@@ -44,7 +44,6 @@ namespace ICT4Events
                 cmd.CommandType = CommandType.Text;
                 oracleConn.Open();
                 OracleDataReader reader = cmd.ExecuteReader();
-                oracleConn.Dispose();
                 return reader;
             }
 

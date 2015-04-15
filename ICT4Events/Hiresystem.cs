@@ -81,6 +81,18 @@ namespace ICT4Events
             user = dataCollect.SearchByRfid(e.Tag);
             RFIDtext.Text = user.RFID_Tag;
             lblFirstHR.Text = user.First_Name;
+            lblSureNameHR.Text = user.Sur_Name;
+            lblRFIDinfoUser.Text = user.RFID_Tag; 
+            lblBirthDHR.Text = user.Birth_Date;
+            lblEmailHR.Text = user.Email;
+            lblCountryHR.Text = 
+            lblStreetHR.Text
+            lblHouseNBHR.Text = 
+            lblCityHR.Text = 
+            lblCellPhoneNBHR.Text = 
+            lblLoginHR.Text = 
+            lbluserHS.Text = 
+
 
         }
 
@@ -105,19 +117,7 @@ namespace ICT4Events
         //        try
         //        {
 
-        //            //lblSureNameHR.Text = reader.GetString(0);
-        //            //lblRFIDinfoUser.Text = reader.GetString(1);
-        //            //lblFirstHR.Text = reader.GetString(2);
-        //            //lblSureNameHR.Text = reader.GetString(3);
-        //            //lblBirthDHR.Text = Convert.ToString(reader.GetDateTime(4));
-        //            //lblEmailHR.Text = reader.GetString(5);
-        //            //lblCountryHR.Text = reader.GetString(6);
-        //            //lblStreetHR.Text = reader.GetString(7);
-        //            //lblHouseNBHR.Text = reader.GetString(8);
-        //            //lblCityHR.Text = reader.GetString(9);
-        //            //lblCellPhoneNBHR.Text = reader.GetString(10);
-        //            //lblLoginHR.Text = reader.GetString(11);
-        //            //lbluserHS.Text = reader.GetInt32(12);
+        //            
 
                     
 

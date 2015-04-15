@@ -188,7 +188,6 @@
             this.BttngetInfo.TabIndex = 5;
             this.BttngetInfo.Text = "GET INFO";
             this.BttngetInfo.UseVisualStyleBackColor = true;
-            this.BttngetInfo.Click += new System.EventHandler(this.BttngetInfo_Click);
             // 
             // label1
             // 
