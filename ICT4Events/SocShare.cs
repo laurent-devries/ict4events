@@ -19,9 +19,6 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-
-
-
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 
@@ -65,13 +62,7 @@ namespace ICT4Events
             {
                 item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
             }
-        }
-
-        /*public void loadItems
-        {
-
-        }
-         */
+        } 
 
     }
 }
