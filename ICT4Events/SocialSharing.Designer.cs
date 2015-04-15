@@ -57,6 +57,7 @@
             this.btnHome.TabIndex = 0;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnCategorie
             // 
@@ -158,7 +159,7 @@
             // 
             // btnNextPage
             // 
-            this.btnNextPage.Location = new System.Drawing.Point(870, 459);
+            this.btnNextPage.Location = new System.Drawing.Point(889, 478);
             this.btnNextPage.Name = "btnNextPage";
             this.btnNextPage.Size = new System.Drawing.Size(75, 23);
             this.btnNextPage.TabIndex = 11;
@@ -168,7 +169,7 @@
             // 
             // btnPreviousPage
             // 
-            this.btnPreviousPage.Location = new System.Drawing.Point(38, 459);
+            this.btnPreviousPage.Location = new System.Drawing.Point(12, 478);
             this.btnPreviousPage.Name = "btnPreviousPage";
             this.btnPreviousPage.Size = new System.Drawing.Size(91, 23);
             this.btnPreviousPage.TabIndex = 12;
@@ -199,14 +200,15 @@
             this.Controls.Add(this.btnNextPage);
             this.Controls.Add(this.pnlNewsFeed);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(992, 552);
             this.MinimumSize = new System.Drawing.Size(992, 552);
             this.Name = "SocialSharing";
             this.Text = "Basic user interface";
+            this.Resize += new System.EventHandler(this.SocialSharing_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion

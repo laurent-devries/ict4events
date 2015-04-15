@@ -25,19 +25,16 @@ namespace ICT4Events
         List<Media> mediaList;
 
         TextBox tTitleOfMedia;
-        RichTextBox tMediaDescription;
         TextBox tMediaPath;
+        RichTextBox tMediaDescription;
 
+        OpenFileDialog fDialog;
 
         public SocialSharing()
         {
             InitializeComponent();
+            
 
-            //ScrollBar scrollbar = new VScrollBar();
-            //scrollbar.Dock = DockStyle.Right;
-            //scrollbar.Scroll += (sender, e) => {pnlNewsFeed.VerticalScroll.Value = scrollbar.Value;};
-            //scrollbar.Maximum = 20;
-            //pnlNewsFeed.Controls.Add(scrollbar);
             Media mediaData = new Media();
             mediaList = mediaData.RequestMedia();
 
@@ -61,6 +58,18 @@ namespace ICT4Events
              
         }
 
+        private void SocialSharing_Resize(object sender, EventArgs e)
+        {
+            pnlNewsFeed.Refresh();
+            panel1.Width = this.Width;
+            pnlNewsFeed.Width = this.Width / 6 * 4;
+            pnlNewsFeed.Height = this.Height / 10 * 8;
+
+            lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
+            pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             loadStarter = loadStarter + 6;
@@ -77,9 +86,7 @@ namespace ICT4Events
             loadMedia(loadStarter, loadEnder);
 
             btnNextPage.Enabled = true;            
-        }
-
-        
+        }     
              
 
         public void loadMedia(int start, int end)
@@ -94,23 +101,7 @@ namespace ICT4Events
                 p.BringToFront();
             }
         }
-
-        /* private void SocialSharing_Resize(object sender, EventArgs e)
-        {
-            pnlNewsFeed.Refresh();
-            panel1.Width = this.Width;
-            pnlNewsFeed.Width = this.Width / 6 * 4;
-            pnlNewsFeed.Height = this.Height / 10 * 8;
-
-            lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
-            pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
-
-            foreach (NewsFeedItem item in itemlist)
-            {
-                item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, pnlNewsFeed.Width / 3 * item.Count + 10);
-            }
-        }
-        */
+        
 
 
         public void LoadMediaFiles(int start, int end)
@@ -149,12 +140,20 @@ namespace ICT4Events
                 itemlist.Add(item);
             }
         }
+        //HomeButton
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            btnNextPage.Visible = true;
+            btnPreviousPage.Visible = true;
+            loadMedia(loadStarter, loadEnder);
+        }
 
+        //UploadButton
         private void button2_Click(object sender, EventArgs e)
         {
             pnlNewsFeed.Controls.Clear();
             btnNextPage.Visible = false;
-
+            btnPreviousPage.Visible = false;
             loadUploadingScreen();
         }
 
@@ -162,15 +161,15 @@ namespace ICT4Events
         {
             //Titel
             Label Titel = new Label();
-            Titel.Location = new Point(pnlNewsFeed.Width / 2, 5);
+            Titel.Location = new Point(0, 5);
             Titel.Text = "Upload";
             Titel.ForeColor = Color.DarkOrange;
             Titel.Font = new Font("Georgia", 20, FontStyle.Underline);
-            Titel.Width = pnlNewsFeed.Width - 10;
+            Titel.AutoSize = false;
+            Titel.TextAlign = ContentAlignment.MiddleCenter;
+            Titel.Width = pnlNewsFeed.Width;
             Titel.Height = 40;
-            pnlNewsFeed.Controls.Add(Titel);
-
-            
+            pnlNewsFeed.Controls.Add(Titel);            
 
             //TitelOfMedia
             Label lTitleOfMedia = new Label();
@@ -217,11 +216,13 @@ namespace ICT4Events
             bMediaPath.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 - 1);
             bMediaPath.Text = "Browse";
             pnlNewsFeed.Controls.Add(bMediaPath);
+            bMediaPath.Click += new EventHandler(this.MyButtonHandler);
 
             Button bUpload = new Button();
             bUpload.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 + bMediaPath.Height );
             bUpload.Text = "Upload";
             pnlNewsFeed.Controls.Add(bUpload);
+            bUpload.Click += new EventHandler(this.MyButtonHandler);
 
             tMediaPath = new TextBox();
             tMediaPath.Location = new Point(lTitleOfMedia.Width + bMediaPath.Width + 10, pnlNewsFeed.Height / 10 * 5);
@@ -237,6 +238,11 @@ namespace ICT4Events
             lPreview.Width = 140;
             lPreview.Height = 20;
             pnlNewsFeed.Controls.Add(lPreview);
+        }
+
+        private void MyButtonHandler(object sender, EventArgs e)
+        {
+            MessageBox.Show("Anal penetration");
         }
 
        }

@@ -114,7 +114,8 @@ namespace ICT4Events
             Like.Font = new Font("Georgia", 6);
             Like.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Like);
-
+            
+            
         }
     }
 }
