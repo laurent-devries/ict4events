@@ -73,6 +73,12 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="EventBeheerReservering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EventBeheerReservering.Designer.cs">
+      <DependentUpon>EventBeheerReservering.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGathering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SocialSharing.resx">
+      <DependentUpon>SocialSharing.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
