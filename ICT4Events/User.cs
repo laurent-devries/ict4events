@@ -15,8 +15,7 @@ namespace ICT4Events
         private static int id = 0;
         private int id_user;
         private int rfid_tag;
-        private string first_Name;
-        private string sur_Name;
+        private string real_name;
         private DateTime birth_date;
         private string email;
         private string city;
@@ -40,7 +39,7 @@ namespace ICT4Events
         public string City { get { return city; } set { city = value; } }
         public string Email { get { return email; } set { email = value; } }
         public DateTime Birth_Date { get { return birth_date; } set { birth_date = value; } }
-        public string First_Name { get { return first_Name; } set { first_Name = value; } }
+        public string Real_Name { get { return real_name; } set { real_name = value; } }
         public int RFID_Tag { get { return rfid_tag; } set { rfid_tag = value; } }
         public int ID_User { get { return id_user; } }
 
@@ -48,7 +47,7 @@ namespace ICT4Events
         {
             id_user = id;
             id++;
-            //this.real_name = real_name;
+            this.real_name = real_name;
             this.birth_date = birth_date;
             this.email = email;
             this.city = city;
@@ -80,19 +79,6 @@ namespace ICT4Events
             reader.Dispose();
 
             return userList;
-        }
-
-        public User RequestSpecificUser(string username, string password)
-        {
-            DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT * FROM ICT4_USER WHERE username =" + username + "AND password = " + password;
-
-            OracleDataReader reader = con.SelectFromDatabase(Querry);
-            User user;
-            reader.Read();
-            //user = new User(reader.GetString())
-
-            return null;
         }
     }
 }
