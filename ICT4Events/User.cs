@@ -47,10 +47,9 @@ namespace ICT4Events
         public string RFID_Tag { get { return rfid_tag; } set { rfid_tag = value; } }
         public int ID_User { get { return id_user; } }
 
-        public User(string rfid_tag, string first_name, string sur_name, DateTime birth_date, string email, string city, string phone_number, string loginname, string username, string password, string profile_pic, string summary, char present)
+        public User(int id_user, string rfid_tag, string first_name, string sur_name, DateTime birth_date, string email, string city, string phone_number, string loginname, string username, string password, string profile_pic, string summary, char present)
         {
-            id_user = id;
-            id++;
+            this.id_user = id_user;
             this.rfid_tag = rfid_tag;
             this.first_name = first_name;
             this.sur_name = sur_name;
@@ -78,9 +77,7 @@ namespace ICT4Events
             User user;
             while (reader.Read())
             {
-                MessageBox.Show(Convert.ToString( reader.GetInt32(1)));
-                
-                user = new User( reader.GetString((0)), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetChar(12));
+                user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)));
                 userList.Add(user);
             }
             
@@ -89,30 +86,31 @@ namespace ICT4Events
             return userList;
         }
 
-//        public User LoginUser(string userName, string password)
-//        {
+        public User LoginUser(string userName, string password)
+        {
 
-//            //try
-//            //{
-//                DatabaseConnection con = new DatabaseConnection();
-//                string Querry = "SELECT RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
-//                OracleDataReader reader = con.SelectFromDatabase(Querry);
-     
-//                User user;
-//                while (reader.Read())
-//                {
-//                    user = new User(Convert.ToInt32(reader.GetString((0))), reader.GetString(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), Convert.ToChar("Y"));
-//                    return user;
-//                }
-//                return null;
-//            //}
+            try
+            {
+                DatabaseConnection con = new DatabaseConnection();
+                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
 
-//            //catch (Exception e)
-//            //{
-//            //    MessageBox.Show(e.ToString());
-//            //    return null;
-//            //}
+                OracleDataReader reader = con.SelectFromDatabase(Querry);
+                User user;
+                while (reader.Read())
+                {
+                    user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)));
+                    return user;
+                }
+                MessageBox.Show("Username and password combination does not excist");
+                return null;
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return null;
+            }
             
-//        }
+        }
     }
 }
