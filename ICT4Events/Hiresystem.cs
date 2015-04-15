@@ -15,21 +15,21 @@ namespace ICT4Events
 {
     public partial class Hiresystem : Form
     {
+        List<Product> Product;
         public Hiresystem()
         {
             InitializeComponent();
-            lblWaiting.Text = "Waiting for RFID scan....";
-            
-
+           // Product Product = new Product();
+          //  Product = Product.RequestProducts();
+           // lblWaiting.Text = "Waiting for RFID scan....";
+      
         }
 
         private void Hiresystem_Load(object sender, EventArgs e)
         {
-            
+           
+ 
 
-
-            
-         
 
         }
 
