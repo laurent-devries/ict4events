@@ -38,8 +38,10 @@ namespace ICT4Events
         private void btn_create_gebruiker_Click(object sender, EventArgs e)
         {
             gb_gebruikercreatie.Enabled = false;
-            Listb_gebruikers.Items.Add(tb_naam_gebruiker.Text);
-            tb_naam_gebruiker.Clear();
+            Listb_gebruikers.Items.Add(tb_voornaam_gebruiker.Text);
+            tb_voornaam_gebruiker.Clear();
+            DatabaseConnection conn = new DatabaseConnection();
+            conn.InsertOrUpdate("INSERT INTO ICT4_USER VALUES(" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "," + Convert.ToInt32(tb_Event_ID_user.Text) + "," + Convert.ToInt32(tb_Res_ID_user.Text) + "," + 1 + "," + ")"    );
         }
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
