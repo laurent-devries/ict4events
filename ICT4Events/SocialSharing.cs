@@ -45,7 +45,11 @@ namespace ICT4Events
             {
                 pnlNewsFeed.Controls.Add(item.Panel);                
             }
-            
+
+            foreach (NewsFeedItem item in itemlist)
+            {
+                item.Panel.Location = new Point(pnlNewsFeed.Width / 3 * item.Count + 10, 10);
+            }
         }
 
         private void FormBasicGUI_Resize(object sender, EventArgs e)
