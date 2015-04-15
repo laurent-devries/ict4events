@@ -44,6 +44,7 @@ namespace ICT4Events
                 cmd.CommandType = CommandType.Text;
                 oracleConn.Open();
                 OracleDataReader reader = cmd.ExecuteReader();
+                oracleConn.Dispose();
                 return reader;
             }
 
@@ -53,6 +54,26 @@ namespace ICT4Events
                 return null;
             }
 
+        }
+        public bool InsertOrUpdate(string Querry)
+        {
+            try
+            {
+                Connect();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = oracleConn;
+                cmd.CommandText = Querry;
+                cmd.CommandType = CommandType.Text;
+                oracleConn.Open();
+                OracleDataReader reader = cmd.ExecuteReader();
+                oracleConn.Dispose();
+                return true;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
         }
     }
 }
