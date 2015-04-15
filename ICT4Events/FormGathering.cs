@@ -25,13 +25,20 @@ namespace ICT4Events
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-        
+            LoginForm l = new LoginForm();
+            l.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Hiresystem h = new Hiresystem();
-            h.Show();
+            //Hiresystem h = new Hiresystem();
+            //h.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            EventBeheerReservering E = new EventBeheerReservering();
+            E.Show();
         }
     }
 }
