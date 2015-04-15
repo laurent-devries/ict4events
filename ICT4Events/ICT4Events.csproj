@@ -83,7 +83,6 @@
     <Compile Include="LoginForm.Designer.cs" />
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
-    <Compile Include="NieuwsFeedItem.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Permission.cs" />
     <Compile Include="Product.cs" />
