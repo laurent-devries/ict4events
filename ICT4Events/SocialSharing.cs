@@ -212,17 +212,42 @@ namespace ICT4Events
             lMediaPath.Height = 20;
             pnlNewsFeed.Controls.Add(lMediaPath);
 
+            //Preview image
+            PictureBox previewImage = new PictureBox();
+            previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 3);
+            previewImage.BackColor = Color.Black;
+            previewImage.SizeMode = PictureBoxSizeMode.Zoom;
+            pnlNewsFeed.Controls.Add(previewImage);
+
+            //Button mediapath
             Button bMediaPath = new Button();
             bMediaPath.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 - 1);
             bMediaPath.Text = "Browse";
             pnlNewsFeed.Controls.Add(bMediaPath);
-            bMediaPath.Click += new EventHandler(this.MyButtonHandler);
+            bMediaPath.Click += delegate
+            {
+                OpenFileDialog fDialog = new OpenFileDialog();
+                fDialog.Title = "Open media";
+                fDialog.Filter = "IMAGE Files|*.jpg";
+                fDialog.InitialDirectory = @"C:\";
 
-            Button bUpload = new Button();
-            bUpload.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 + bMediaPath.Height );
-            bUpload.Text = "Upload";
-            pnlNewsFeed.Controls.Add(bUpload);
-            bUpload.Click += new EventHandler(this.MyButtonHandler);
+                if (fDialog.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show(fDialog.FileName.ToString());
+                    tMediaPath.Text = fDialog.FileName.ToString();
+                }
+            };
+            
+
+            Button bTry = new Button();
+            bTry.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 + bMediaPath.Height );
+            bTry.Text = "Try";
+            pnlNewsFeed.Controls.Add(bTry);
+            bTry.Click += delegate
+            {
+                previewImage.Load(tMediaPath.Text);
+            };
+
 
             tMediaPath = new TextBox();
             tMediaPath.Location = new Point(lTitleOfMedia.Width + bMediaPath.Width + 10, pnlNewsFeed.Height / 10 * 5);
@@ -238,12 +263,9 @@ namespace ICT4Events
             lPreview.Width = 140;
             lPreview.Height = 20;
             pnlNewsFeed.Controls.Add(lPreview);
+
         }
 
-        private void MyButtonHandler(object sender, EventArgs e)
-        {
-            MessageBox.Show("Anal penetration");
-        }
 
        }
    }
