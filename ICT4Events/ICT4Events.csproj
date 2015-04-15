@@ -73,11 +73,11 @@
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
-    <Compile Include="SocShare.cs">
+    <Compile Include="SocialSharing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SocShare.Designer.cs">
-      <DependentUpon>SocShare.cs</DependentUpon>
+    <Compile Include="SocialSharing.Designer.cs">
+      <DependentUpon>SocialSharing.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs" />
     <Compile Include="LoginForm.Designer.cs" />
