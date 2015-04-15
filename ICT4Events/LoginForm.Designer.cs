@@ -1,4 +1,4 @@
-﻿namespace HireSystemICT4All
+﻿namespace ICT4Events
 {
     partial class Form1
     {
