@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace ICT4Events
 {
-    //teun van der wijst
+    //Mario Schipper
     public class Product
     {
         private static int idnumber = 0;
@@ -14,6 +16,8 @@ namespace ICT4Events
         private string product_name;
         private decimal bail;
         private decimal price;
+
+        private List<Product> productList;
 
         public decimal Price
         {
@@ -42,7 +46,7 @@ namespace ICT4Events
             set { ID_product = value; }
         }
         
-        public Product(string product_name, decimal bail, decimal price)
+        public Product(int ID_product, string product_name, decimal bail, decimal price)
         {
             this.ID_product = idnumber;
             idnumber++;
@@ -56,5 +60,29 @@ namespace ICT4Events
             decimal a = bail + price;
             return a;
         }
+
+        
+           public Product()
+        {
+            productList = new List<Product>();
+        }
+
+         public List<Product> RequestProducts()
+         {
+             DatabaseConnection con = new DatabaseConnection();
+             string Querry = "SELECT ID_PRODUCT, PRODUCTNAME, BAIL, PRICE FROM ICT4_PRODUCT";
+
+             OracleDataReader reader = con.SelectFromDatabase(Querry);
+             Product product;
+             while (reader.Read())
+             {
+                 product = new Product(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2), reader.GetDecimal(3));
+                 productList.Add(product);
+             }
+
+             reader.Dispose();
+
+             return productList;
+         }
     }
 }

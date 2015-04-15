@@ -73,11 +73,14 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
@@ -486,9 +489,9 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 16;
-            this.listBox3.Location = new System.Drawing.Point(12, 150);
+            this.listBox3.Location = new System.Drawing.Point(0, 3);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(969, 212);
+            this.listBox3.Size = new System.Drawing.Size(969, 196);
             this.listBox3.TabIndex = 25;
             // 
             // button2
@@ -505,15 +508,29 @@
             // 
             this.splitContainer1.Location = new System.Drawing.Point(12, 394);
             this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.listBox3);
             this.splitContainer1.Size = new System.Drawing.Size(969, 261);
             this.splitContainer1.SplitterDistance = 634;
             this.splitContainer1.TabIndex = 32;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 127);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(969, 219);
+            this.dataGridView1.TabIndex = 33;
             // 
             // Hiresystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1410, 746);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
@@ -521,7 +538,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblconnectedInfo);
@@ -532,14 +548,17 @@
             this.Controls.Add(this.groupBox4);
             this.Name = "Hiresystem";
             this.Text = "Hiresystem";
+            this.Load += new System.EventHandler(this.Hiresystem_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,5 +611,6 @@
         private System.Windows.Forms.Label lbluserHS;
         private System.Windows.Forms.Label lblCityHR;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
