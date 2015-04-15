@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
+using System.Windows.Forms;
 
 namespace ICT4Events
 {
@@ -67,22 +68,48 @@ namespace ICT4Events
         {
             userList = new List<User>();
         }
-        public List<User> Requestuser()
+        public List<User> RequestUsers()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT * FROM ICT4_USER";
+            string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, to_char(BIRTHDATE), EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             User user;
             while (reader.Read())
             {
-                //user
-                //userList.Add(user);
+                user = new User(reader.GetInt32((0)), reader.GetString(1), reader.GetString(2), Convert.ToDateTime(reader.GetString(3)), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), Convert.ToChar(reader.GetString(12)));
+                userList.Add(user);
             }
 
             reader.Dispose();
 
             return userList;
+        }
+
+        public User LoginUser(string userName, string password)
+        {
+
+            //try
+            //{
+                DatabaseConnection con = new DatabaseConnection();
+                string Querry = "SELECT RFIDTAG, FIRSTNAME, SURNAME, to_char(BIRTHDATE), EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
+                OracleDataReader reader = con.SelectFromDatabase(Querry);
+     
+                User user;
+                while (reader.Read())
+                {
+                    user = new User(Convert.ToInt32(reader.GetString((0))), reader.GetString(1), reader.GetString(2), Convert.ToDateTime(reader.GetString(3)), reader.GetString(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), Convert.ToChar("Y"));
+                    return user;
+                }
+                return null;
+            //}
+
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show(e.ToString());
+            //    return null;
+            //}
+            
         }
     }
 }
