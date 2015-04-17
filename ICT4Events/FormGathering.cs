@@ -19,14 +19,14 @@ namespace ICT4Events
 
         private void btnSocial_Click(object sender, EventArgs e)
         {
-            User user = new User(11111111, "2800c48fcf", "Frank", "Hartman", new DateTime(1,1,1), "frankhartman96@gmail.com", "Helmond", "06-36127912", "frankhartman96", "MightyFrenkel", "hunter1", "C:/", "hoi", 'Y', "NED");
+            User user = new User(11111111, 111, 11111111, 2, "Frank", "Hartman", new DateTime(1, 1, 1), "frankhartman96@gmail.com","Nederland","straat","15", "Helmond", "06-36127912", "frankhartman96", "MightyFrenkel", "hunter1", "C:/", "hoi", 'Y', "2800c48fcf");
             SocialSharing s = new SocialSharing(user);
             s.Show();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginForm l = new LoginForm();
+            LoginFormStart l = new LoginFormStart();
             l.Show();
         }
 

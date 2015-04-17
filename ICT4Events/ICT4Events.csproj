@@ -57,7 +57,7 @@
       <HintPath>..\packages\odp.net.managed.121.1.2\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Phidget21.NET">
-      <HintPath>..\..\..\..\Google Drive\PTS2 ICT4Events\Software\Phidget21.NET.dll</HintPath>
+      <HintPath>References\Phidget21.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -94,10 +94,12 @@
     <Compile Include="Hiresystem.Designer.cs">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="LoginFormStart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs" />
+    <Compile Include="LoginFormStart.Designer.cs">
+      <DependentUpon>LoginFormStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Media.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
@@ -106,6 +108,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
+    <Compile Include="ReserveringSysteem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveringSysteem.Designer.cs">
+      <DependentUpon>ReserveringSysteem.cs</DependentUpon>
+    </Compile>
     <Compile Include="SocialSharing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,7 +131,6 @@
     <EmbeddedResource Include="Hiresystem.resx">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -132,7 +139,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReserveringSysteem.resx">
+      <DependentUpon>ReserveringSysteem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SocialSharing.resx">
       <DependentUpon>SocialSharing.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camping_ReeënDal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
