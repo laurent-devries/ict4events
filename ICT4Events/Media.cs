@@ -29,9 +29,9 @@ namespace ICT4Events
         public string Type_Media { get; set; }
         public int ID_Media { get { return id_media; } }
         public int Likes { get { return likes; } set { likes = value; } }
-
+        public int Reports { get { return reports; } set { reports = value; } }
         //Methods
-        public Media(string title, string date, string summary, int views, int likes, string file_Path, string type_Media)
+        public Media(string title, string date, string summary, int views, int likes, int reports, string file_Path, string type_Media)
         {
             this.id_media = idnumber;
             idnumber++;
@@ -42,6 +42,7 @@ namespace ICT4Events
             File_path = file_Path;
             Type_Media = type_Media;
             Likes = likes;
+            Reports = reports;
         }
 
         public Media()
