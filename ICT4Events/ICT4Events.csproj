@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="EventBeheerReservering.resx">
       <DependentUpon>EventBeheerReservering.cs</DependentUpon>
     </EmbeddedResource>
