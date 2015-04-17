@@ -28,9 +28,10 @@ namespace ICT4Events
         public string File_path { get; set; }
         public string Type_Media { get; set; }
         public int ID_Media { get { return id_media; } }
+        public int Likes { get { return likes; } set { likes = value; } }
 
         //Methods
-        public Media(string title, string date, string summary, int views, string file_Path, string type_Media)
+        public Media(string title, string date, string summary, int views, int likes, string file_Path, string type_Media)
         {
             this.id_media = idnumber;
             idnumber++;
@@ -40,24 +41,24 @@ namespace ICT4Events
             Views = views;
             File_path = file_Path;
             Type_Media = type_Media;
+            Likes = likes;
         }
 
         public Media()
         {
             mediaList = new List<Media>();
-
         }
 
         public List<Media> RequestMedia()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), to_char(viewMedia) FROM ICT4_MEDIA";
+            string Querry = "SELECT TITLE, to_char(DATEMEDIA), SUMMARYMEDIA,  to_char(viewMedia), to_char(likes), FILEPATH  FROM ICT4_MEDIA";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             Media media;
             while (reader.Read())
             {
-                media = new Media(reader.GetString(0), Convert.ToString(reader.GetString(2)), reader.GetString(1), Convert.ToInt32(reader.GetString(3)), "tttt", "VIDEO");
+                media = new Media(reader.GetString(0), reader.GetString(1), reader.GetString(2), Convert.ToInt32(reader.GetString(3)), Convert.ToInt32(reader.GetString(4)), reader.GetString(5), "VIDEO");
                 mediaList.Add(media);
             }
 

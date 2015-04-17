@@ -204,7 +204,6 @@
             this.MinimumSize = new System.Drawing.Size(992, 552);
             this.Name = "SocialSharing";
             this.Text = "Basic user interface";
-            this.Resize += new System.EventHandler(this.SocialSharing_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
