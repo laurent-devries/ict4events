@@ -80,7 +80,7 @@ namespace ICT4Events
 
         public override string ToString()
         {
-            return title + " - " + campingname;
+            return title;
         }
     }
 }

@@ -82,7 +82,7 @@
             this.cbEvents.FormattingEnabled = true;
             this.cbEvents.Location = new System.Drawing.Point(113, 29);
             this.cbEvents.Name = "cbEvents";
-            this.cbEvents.Size = new System.Drawing.Size(121, 21);
+            this.cbEvents.Size = new System.Drawing.Size(200, 21);
             this.cbEvents.TabIndex = 4;
             this.cbEvents.DropDown += new System.EventHandler(this.cbEvents_DropDown);
             // 
@@ -114,7 +114,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(113, 116);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 8;
             // 
             // ReserveringSysteem
