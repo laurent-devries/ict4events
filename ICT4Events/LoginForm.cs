@@ -30,7 +30,7 @@ namespace ICT4Events
 
                 if (cbFormLoader.Text == "Social media")
                 {
-                    SocialSharing s = new SocialSharing();
+                    SocialSharing s = new SocialSharing(user);
                     this.Close();
                     s.Show();
                 }

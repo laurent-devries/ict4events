@@ -19,8 +19,8 @@ namespace ICT4Events
 
         private void btnSocial_Click(object sender, EventArgs e)
         {
-            SocialSharing s = new SocialSharing();
-            s.Show();
+
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
