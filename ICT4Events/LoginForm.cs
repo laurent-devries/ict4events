@@ -27,6 +27,8 @@ namespace ICT4Events
             try
             {
                 user = dataUser.LoginUser(userName, password);
+                MessageBox.Show(user.Username);
+                Permission p = new Permission();
 
                 if (cbFormLoader.Text == "Social media")
                 {
@@ -34,29 +36,45 @@ namespace ICT4Events
                     this.Close();
                     s.Show();
                 }
-
+                
                 else if (cbFormLoader.Text == "Event beheer")
                 {
-                    EventBeheerReservering ev = new EventBeheerReservering();
-                    this.Close();
-                    ev.Show();
+                    if (p.GetPermissionUser(user).Permission_Value >= 80)
+                    {
+                        EventBeheerReservering ev = new EventBeheerReservering();
+                        this.Close();
+                        ev.Show();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Gebruiker heeft geen rechten");
+                    }
                 }
 
                 else if (cbFormLoader.Text == "Materiaal verhuur")
                 {
-                    Hiresystem h = new Hiresystem();
-                    this.Close();
-                    h.Show();
+                    if (p.GetPermissionUser(user).Permission_Value >= 50)
+                    {
+                        Hiresystem h = new Hiresystem();
+                        this.Close();
+                        h.Show();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Gebruiker heeft geen rechten");
+                    }
                 }
             }
 
             catch (Exception)
             {
-                MessageBox.Show("Login error");
+                
             }
             
 
-            MessageBox.Show(user.Username);
+          
         }
     }
 }
