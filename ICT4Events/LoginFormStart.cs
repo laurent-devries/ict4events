@@ -21,6 +21,11 @@ namespace ICT4Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
             User dataUser = new User();
+
+            tbUsername.Text = "frankhartman96";
+            tbPassword.Text = "hunter1";
+            cbFormLoader.SelectedIndex = 0;
+
             string userName = tbUsername.Text;
             string password = tbPassword.Text;
 
