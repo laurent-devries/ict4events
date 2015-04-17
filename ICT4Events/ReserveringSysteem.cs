@@ -15,10 +15,6 @@ namespace ICT4Events
         public ReserveringSysteem()
         {
             InitializeComponent();
-        }
-
-        private void cbEvents_DropDown(object sender, EventArgs e)
-        {
             EventManager eventManager = new EventManager();
             List<Event> eventList = eventManager.RequestEvent();
 
@@ -26,6 +22,11 @@ namespace ICT4Events
             {
                 cbEvents.Items.Add(ev);
             }
+        }
+
+        private void cbEvents_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
