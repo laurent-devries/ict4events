@@ -91,7 +91,7 @@ namespace ICT4Events
 
             scanned = true;
             User user;
-            User dataCollect = new User();
+            UserManager dataCollect = new UserManager();
             user = dataCollect.SearchByRfid(e.Tag);
             if (user == null)
             {

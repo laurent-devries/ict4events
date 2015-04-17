@@ -28,9 +28,10 @@ namespace ICT4Events
         public string File_path { get; set; }
         public string Type_Media { get; set; }
         public int ID_Media { get { return id_media; } }
+        public int Likes { get { return likes; } set { likes = value; } }
 
         //Methods
-        public Media(string title, string date, string summary, int views, string file_Path, string type_Media)
+        public Media(string title, string date, string summary, int views, int likes, string file_Path, string type_Media)
         {
             this.id_media = idnumber;
             idnumber++;
@@ -40,46 +41,13 @@ namespace ICT4Events
             Views = views;
             File_path = file_Path;
             Type_Media = type_Media;
+            Likes = likes;
         }
 
         public Media()
         {
             mediaList = new List<Media>();
-
         }
-
-        public List<Media> RequestMedia()
-        {
-            DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), to_char(viewMedia) FROM ICT4_MEDIA";
-
-            OracleDataReader reader = con.SelectFromDatabase(Querry);
-            Media media;
-            while (reader.Read())
-            {
-                media = new Media(reader.GetString(0), Convert.ToString(reader.GetString(2)), reader.GetString(1), Convert.ToInt32(reader.GetString(3)), "tttt", "VIDEO");
-                mediaList.Add(media);
-            }
-
-            reader.Dispose();
-
-            return mediaList;
-        }
-
-        public void InsertMedia(string title, string summaryMedia, string filePath, string typeMedia, DateTime currentDate)
-        {
-            DatabaseConnection con = new DatabaseConnection();
-
-            string dateMonth = Convert.ToString(currentDate.Month);
-            if (currentDate.Month < 10)
-            {
-                dateMonth = "0" + dateMonth;
-            }
-
-            string Query = "INSERT INTO ICT4_MEDIA(ID_MEDIA,TITLE,DATEMEDIA,SUMMARYMEDIA,VIEWMEDIA,FILEPATH,TYPEMEDIA) VALUES(232323,'" + title + "', to_date('" + Convert.ToString(currentDate.Day) + dateMonth + Convert.ToString(currentDate.Year) + "', 'DDMMYYYY'),'" + summaryMedia + "', 50000,'" + filePath + "','" + typeMedia + "')";
-            bool writer = con.InsertOrUpdate(Query);
-        }
-
 
         public bool CheckAbuse(string abusiveWord)
         {
