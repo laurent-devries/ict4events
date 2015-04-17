@@ -79,6 +79,7 @@ namespace ICT4Events
                 {
                     Listb_Events.Items.Add(event1.ToString());
                     cB_Event_ID_User.Items.Add(event1.ID_Event);
+                    
                 }
             }
 
