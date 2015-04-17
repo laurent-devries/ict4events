@@ -12,7 +12,7 @@ namespace ICT4Events
     //teun van der wijst
     public class User
     {
-        
+
         private static int id = 0;
         private int id_user;
         private int permissionFk;
@@ -45,7 +45,7 @@ namespace ICT4Events
         public DateTime Birth_Date { get { return birth_date; } set { birth_date = value; } }
         public string First_Name { get { return first_name; } set { first_name = value; } }
 
-        public string Country { get { return country; } set { country = value; } } 
+        public string Country { get { return country; } set { country = value; } }
         public string Sur_Name { get { return sur_name; } set { sur_name = value; } }
         public string RFID_Tag { get { return rfid_tag; } set { rfid_tag = value; } }
         public int ID_User { get { return id_user; } }
@@ -111,16 +111,16 @@ namespace ICT4Events
         public List<User> RequestUsers()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT ID_USER, id_permissionFK, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, COUNTRY  FROM ICT4_USER";
+            string Querry = "SELECT ID_USER, ID_EVENTFK, ID_RESERVATIONFK, id_permissionFK, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, RFIDTAG  FROM ICT4_USER";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             User user;
             while (reader.Read())
             {
-                user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), Convert.ToChar(reader.GetString(14)),reader.GetString(15));
+                user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)), reader.GetString(19));
                 userList.Add(user);
             }
-            
+
             reader.Dispose();
 
             return userList;
@@ -131,12 +131,12 @@ namespace ICT4Events
             try
             {
                 DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, id_permissionFK, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, COUNTRY FROM ICT4_USER WHERE UPPER(LOGINNAME) = '" + us.ToUpper() + "' AND PASSWORDUSER = '" + ps + "'";
+                string Querry = "SELECT SELECT ID_USER, ID_EVENTFK, ID_RESERVATIONFK, id_permissionFK, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, RFIDTAG  FROM ICT4_USER WHERE UPPER(LOGINNAME) = '" + us.ToUpper() + "' AND PASSWORDUSER = '" + ps + "'";
                 OracleDataReader reader = con.SelectFromDatabase(Querry);
                 User user;
                 while (reader.Read())
                 {
-                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), Convert.ToChar(reader.GetString(14)), reader.GetString(15));
+                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)), reader.GetString(19));
                     return user;
                 }
                 MessageBox.Show("Username and password combination does not excist");
@@ -148,7 +148,7 @@ namespace ICT4Events
                 MessageBox.Show(e.ToString());
                 return null;
             }
-            
+
         }
 
         public User SearchByRfid(string rfid)
@@ -156,13 +156,13 @@ namespace ICT4Events
             try
             {
                 DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, country FROM ICT4_USER WHERE rfidtag = " + "'" + rfid + "'";
+                string Querry = "SELECT SELECT ID_USER, ID_EVENTFK, ID_RESERVATIONFK, id_permissionFK, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, RFIDTAG  FROM ICT4_USER WHERE rfidtag = " + "'" + rfid + "'";
 
                 OracleDataReader reader = con.SelectFromDatabase(Querry);
                 User user;
                 while (reader.Read())
                 {
-                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetDateTime(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), Convert.ToChar(reader.GetString(14)), reader.GetString(15));
+                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)), reader.GetString(19));
                     return user;
                 }
                 MessageBox.Show("RFID_Tag not in system");
