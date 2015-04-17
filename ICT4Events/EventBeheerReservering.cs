@@ -21,7 +21,7 @@ namespace ICT4Events
             InitializeComponent();
             Event Event = new Event();
             evenementen = Event.RequestEvent();
-            User Users = new User();
+            UserManager Users = new UserManager();
             userList = Users.RequestUsers();
             lists();
         }
