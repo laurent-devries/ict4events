@@ -119,6 +119,7 @@
     <Compile Include="FormGathering.Designer.cs">
       <DependentUpon>FormGathering.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTPConnection.cs" />
     <Compile Include="Hiresystem.cs">
       <SubType>Form</SubType>
     </Compile>

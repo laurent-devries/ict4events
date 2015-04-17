@@ -37,16 +37,17 @@ namespace ICT4Events
         {
             try
             {
-                Connect();
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = oracleConn;
-                cmd.CommandText = Querry;
-                cmd.CommandType = CommandType.Text;
-                oracleConn.Open();
-                OracleDataReader reader = cmd.ExecuteReader();
-                return reader;
+                using (oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + "//172.16.0.15:1521/XE" + ";"))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = oracleConn;
+                    cmd.CommandText = Querry;
+                    cmd.CommandType = CommandType.Text;
+                    oracleConn.Open();
+                    OracleDataReader reader = cmd.ExecuteReader();
+                    return reader;
+                }
             }
-
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
@@ -58,15 +59,17 @@ namespace ICT4Events
         {
             try
             {
-                Connect();
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = oracleConn;
-                cmd.CommandText = Querry;
-                cmd.CommandType = CommandType.Text;
-                oracleConn.Open();
-                OracleDataReader reader = cmd.ExecuteReader();
-                oracleConn.Dispose();
-                return true;
+                using (oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + "//172.16.0.15:1521/XE" + ";"))
+                {
+                    OracleCommand cmd = new OracleCommand();
+                    cmd.Connection = oracleConn;
+                    cmd.CommandText = Querry;
+                    cmd.CommandType = CommandType.Text;
+                    oracleConn.Open();
+                    OracleDataReader reader = cmd.ExecuteReader();
+                    oracleConn.Dispose();
+                    return true;
+                }
             }
             catch(Exception e)
             {
