@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ICT4Events
 {
@@ -38,7 +39,7 @@ namespace ICT4Events
         
 
         //Constructor
-        public NewsFeedItem(string titel, string datum, string views, string likes, string message, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight)
+        public NewsFeedItem(string titel, string datum, string views, string likes, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight)
         {
             this.count = count;
             this.panel = panel;
@@ -87,6 +88,13 @@ namespace ICT4Events
             p.Location = new Point(wSpace, 10 + hSpace * 3);
             p.BackColor = Color.Black;
             p.Width = panel.Width - wSpace * 2;
+            p.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (File.Exists(imagePath))
+            {
+              p.Load(imagePath);
+            }
+            
+
             panel.Controls.Add(p);
 
             RichTextBox Message = new RichTextBox();

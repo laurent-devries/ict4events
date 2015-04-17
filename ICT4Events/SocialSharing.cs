@@ -18,22 +18,16 @@ namespace ICT4Events
     {
         int countWidth = 0;
         int countHeight = 0;
-
         int loadStarter = 0;
         int loadEnder = 6;
-
         bool startup = false;
-
         List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
         List<Media> mediaList;
-
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
         RichTextBox tMediaDescription;
-
         OpenFileDialog fDialog;
-
-        Image previewImag;
+        Image previewImag;       
 
         int mediaHeight = 80;
         int mediaWidth = 120;
@@ -42,10 +36,8 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-
             Media mediaData = new Media();
             mediaList = mediaData.RequestMedia();
-
 
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
@@ -57,27 +49,17 @@ namespace ICT4Events
             pnlNewsFeed.Width = Width / 6 * 4;
             pnlNewsFeed.Height = Height / 10 * 8;
 
-
             if (startup == false)
             {
                 loadMedia(0, 6);
 
             }
 
-        }
-
-        private void SocialSharing_Resize(object sender, EventArgs e)
-        {
-            pnlNewsFeed.Refresh();
-            panel1.Width = this.Width;
-            pnlNewsFeed.Width = this.Width / 6 * 4;
-            pnlNewsFeed.Height = this.Height / 10 * 8;
-
-            lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
-            pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
+            lblIngelogdNaam.Text = user.Username;
 
         }
 
+        //btnNextPage
         private void button1_Click(object sender, EventArgs e)
         {
             loadStarter = loadStarter + 6;
@@ -87,6 +69,7 @@ namespace ICT4Events
             btnPreviousPage.Enabled = true;
         }
 
+        //btnPreviousPage
         private void btnPreviousPage_Click(object sender, EventArgs e)
         {
             loadStarter = loadStarter -= 6;
@@ -111,7 +94,7 @@ namespace ICT4Events
         }
 
 
-
+        //CreateNewsFeedItems
         public void LoadMediaFiles(int start, int end)
         {
             if (mediaList.Count < end)
@@ -134,7 +117,7 @@ namespace ICT4Events
             {
                 Media media = mediaList[i];
                 Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), "Likes", media.Summary, p, pnlNewsFeed, i, countWidth, countHeight);
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight);
 
                 countWidth++;
 
@@ -151,10 +134,12 @@ namespace ICT4Events
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
         {
+            Media mediaData = new Media();
+            mediaList = mediaData.RequestMedia();
+
             btnNextPage.Visible = true;
             btnPreviousPage.Visible = true;            
             loadMedia(loadStarter, loadEnder);
-            InitializeComponent();
         }
 
         //UploadButton
