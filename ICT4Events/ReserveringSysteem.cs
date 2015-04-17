@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
-    public partial class Reservering_systeem : Form
+    public partial class ReserveringSysteem : Form
     {
-        public Reservering_systeem()
+        public ReserveringSysteem()
         {
             InitializeComponent();
-            Event eventData = new Event();
-            List<Event> events = eventData.RequestEvent();
+        }
+
+        private void cbEvents_DropDown(object sender, EventArgs e)
+        {
+
         }
     }
 }
