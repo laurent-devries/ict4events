@@ -41,7 +41,7 @@ namespace ICT4Events
         private void btn_create_gebruiker_Click(object sender, EventArgs e)
         {
             gb_gebruikercreatie.Enabled = false;
-
+            gb_gebruikercreatie.Text = null;
             DatabaseConnection conn = new DatabaseConnection();
             string maand;
             if (dtp_geboortedatum_gebruiker.Value.Month < 10)
