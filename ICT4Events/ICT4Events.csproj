@@ -94,11 +94,6 @@
     <Compile Include="Hiresystem.Designer.cs">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.Designer.cs">
-      <DependentUpon>LoginForm.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="LoginFormStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,10 +130,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hiresystem.resx">
       <DependentUpon>Hiresystem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>LoginForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
