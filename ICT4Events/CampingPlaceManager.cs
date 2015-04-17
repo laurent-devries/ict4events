@@ -13,10 +13,11 @@ namespace ICT4Events
     {
         List<CampingPlace> campingPlaceList = new List<CampingPlace>();
 
-        public List<CampingPlace> RequestEvents()
+        public List<CampingPlace> RequestCampingPlaces(Event e)
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT ID_USER, ID_EVENTFK, ID_RESERVATIONFK, id_permissionFK, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, RFIDTAG  FROM ICT4_USER";
+            MessageBox.Show(e.ID_Event.ToString());
+            string Querry = "SELECT * FROM ICT4_CAMPING_PLACE WHERE ID_EVENTFK = " + Convert.ToString(e.ID_Event);
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             CampingPlace campingPlace;

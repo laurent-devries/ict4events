@@ -25,7 +25,6 @@ namespace ICT4Events
             UserManager Users = new UserManager();
             userList = Users.RequestUsers();
             Reservation Reservation = new Reservation();
-            
             lists();
         }
         private void groupBox1_Enter(object sender, EventArgs e)

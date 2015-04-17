@@ -57,10 +57,10 @@ namespace ICT4Events
             get { return location; }
             set { location = value; }
         }
-        public Event(string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location)
+
+        public Event(string Title, DateTime StartDate, DateTime EndDate, string Campingname, string Location, int id)
         {
-            id_event = idnumber;
-            idnumber++;
+            ID_Event = id;
             this.title = Title;
             this.startdate = StartDate;
             this.enddate = EndDate;

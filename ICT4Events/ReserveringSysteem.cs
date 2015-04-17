@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +26,19 @@ namespace ICT4Events
             }
         }
 
-        private void cbEvents_TextChanged(object sender, EventArgs e)
+        private void cbEvents_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+            Event el = cbEvents.SelectedItem as Event;
+            CampingPlaceManager cpManager = new CampingPlaceManager();
+            List<CampingPlace> campingPlaceList = cpManager.RequestCampingPlaces(el);
+            cbPlaces.Items.Clear();
+
+            foreach (CampingPlace place in campingPlaceList)
+            {
+                cbPlaces.Items.Add(place);
+                MessageBox.Show(place.PlaceNumber);
+            }
+
         }
     }
 }

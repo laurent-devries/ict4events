@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbCampingPlace = new System.Windows.Forms.PictureBox();
+            this.pbCampingPlaces = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAankomst = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,19 +36,19 @@
             this.dtpAankomst = new System.Windows.Forms.DateTimePicker();
             this.dtpVertrek = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.cbCampingPlace)).BeginInit();
+            this.cbPlaces = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbCampingPlace
+            // pbCampingPlaces
             // 
-            this.cbCampingPlace.Image = global::ICT4Events.Properties.Resources.Camping_ReeënDal;
-            this.cbCampingPlace.Location = new System.Drawing.Point(341, 79);
-            this.cbCampingPlace.Name = "cbCampingPlace";
-            this.cbCampingPlace.Size = new System.Drawing.Size(1044, 862);
-            this.cbCampingPlace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.cbCampingPlace.TabIndex = 0;
-            this.cbCampingPlace.TabStop = false;
+            this.pbCampingPlaces.Image = global::ICT4Events.Properties.Resources.Camping_ReeënDal;
+            this.pbCampingPlaces.Location = new System.Drawing.Point(341, 79);
+            this.pbCampingPlaces.Name = "pbCampingPlaces";
+            this.pbCampingPlaces.Size = new System.Drawing.Size(1044, 862);
+            this.pbCampingPlaces.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCampingPlaces.TabIndex = 0;
+            this.pbCampingPlaces.TabStop = false;
             // 
             // label1
             // 
@@ -84,7 +84,7 @@
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(200, 21);
             this.cbEvents.TabIndex = 4;
-            this.cbEvents.TextChanged += new System.EventHandler(this.cbEvents_TextChanged);
+            this.cbEvents.SelectedValueChanged += new System.EventHandler(this.cbEvents_SelectedValueChanged);
             // 
             // dtpAankomst
             // 
@@ -109,20 +109,20 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Kies een plaats:";
             // 
-            // comboBox1
+            // cbPlaces
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(113, 116);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 8;
+            this.cbPlaces.FormattingEnabled = true;
+            this.cbPlaces.Location = new System.Drawing.Point(113, 116);
+            this.cbPlaces.Name = "cbPlaces";
+            this.cbPlaces.Size = new System.Drawing.Size(200, 21);
+            this.cbPlaces.TabIndex = 8;
             // 
             // ReserveringSysteem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 819);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbPlaces);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpVertrek);
             this.Controls.Add(this.dtpAankomst);
@@ -130,10 +130,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblAankomst);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbCampingPlace);
+            this.Controls.Add(this.pbCampingPlaces);
             this.Name = "ReserveringSysteem";
             this.Text = "ReserveringSysteem";
-            ((System.ComponentModel.ISupportInitialize)(this.cbCampingPlace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,7 +141,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox cbCampingPlace;
+        private System.Windows.Forms.PictureBox pbCampingPlaces;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAankomst;
         private System.Windows.Forms.Label label2;
@@ -149,6 +149,6 @@
         private System.Windows.Forms.DateTimePicker dtpAankomst;
         private System.Windows.Forms.DateTimePicker dtpVertrek;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPlaces;
     }
 }
