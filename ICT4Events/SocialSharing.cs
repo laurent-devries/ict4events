@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace ICT4Events
 {
@@ -24,6 +26,7 @@ namespace ICT4Events
 
         List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
         List<Media> mediaList;
+        List<string> categories;
 
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
@@ -217,8 +220,7 @@ namespace ICT4Events
             lMediaPath.Width = 140;
             lMediaPath.Height = 20;
             pnlNewsFeed.Controls.Add(lMediaPath);
-
-      
+    
             
 
             //Button mediapath
@@ -244,10 +246,11 @@ namespace ICT4Events
             //Preview image
             
             PictureBox previewImage = new PictureBox();
-            previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 3);
+            previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 2 + 20, pnlNewsFeed.Height / 10 * 2 + pnlNewsFeed.Height / 20);
             previewImage.BackColor = Color.Transparent;
             previewImage.SizeMode = PictureBoxSizeMode.Zoom; 
-            previewImage.MaximumSize = new System.Drawing.Size(300, 100);
+            previewImage.MaximumSize = new System.Drawing.Size(600, 600);
+            previewImage.MinimumSize = new System.Drawing.Size(200, 200);
             pnlNewsFeed.Controls.Add(previewImage);
             
             Button bTry = new Button();
@@ -270,7 +273,7 @@ namespace ICT4Events
 
             //Preview
             Label lPreview = new Label();
-            lPreview.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 2);
+            lPreview.Location = new Point(pnlNewsFeed.Width / 4 * 2 + 20, pnlNewsFeed.Height / 10 * 2);
             lPreview.Text = "Preview";
             lPreview.ForeColor = Color.DarkOrange;
             lPreview.Font = new Font("Georgia", 13);
@@ -278,9 +281,57 @@ namespace ICT4Events
             lPreview.Height = 20;
             pnlNewsFeed.Controls.Add(lPreview);
 
+
+            //Categorie
+            Label lCategorie = new Label();
+            lCategorie.Location = new Point(10, pnlNewsFeed.Height / 20 * 13);
+            lCategorie.Text = "Categorie";
+            lCategorie.ForeColor = Color.DarkOrange;
+            lCategorie.Font = new Font("Georgia", 13);
+            lCategorie.Width = 140;
+            lCategorie.Height = 30;
+            pnlNewsFeed.Controls.Add(lCategorie);
+
+
+            ComboBox cbCategorie = new ComboBox();
+            cbCategorie.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 20 * 13);
+            cbCategorie.Width = 150;
+            cbCategorie.Height = tTitleOfMedia.Height * 3;
+            pnlNewsFeed.Controls.Add(cbCategorie);
+
+            Category categoryData = new Category();
+            foreach (Category c in categoryData.RequestCategories())
+            {
+                cbCategorie.Items.Add(c);
+            }
+
+            //Upload
+            Button bUpload = new Button();
+            bUpload.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 20 * 15);
+            bUpload.Text = "Upload";
+            bUpload.ForeColor = Color.DarkOrange;
+            bUpload.Font = new Font("Georgia", 13);
+            bUpload.Width = 140;
+            bUpload.Height = 30;
+            pnlNewsFeed.Controls.Add(bUpload);
+
+            bUpload.Click += delegate
+            {
+                Media media = new Media();
+                DateTime currentDate = DateTime.Now;
+                media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
+            };
+            
+            
+
+        }
+
+
+
+
         }
 
 
        }
-   }
+   
 

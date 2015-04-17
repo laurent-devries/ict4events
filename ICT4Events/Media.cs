@@ -63,10 +63,23 @@ namespace ICT4Events
 
             reader.Dispose();
 
-            return mediaList;
-
-            
+            return mediaList;            
         }
+
+        public void InsertMedia(string title, string summaryMedia, string filePath, string typeMedia, DateTime currentDate)
+        {
+            DatabaseConnection con = new DatabaseConnection();
+
+            string dateMonth = Convert.ToString(currentDate.Month);
+            if (currentDate.Month < 10)
+            {
+                dateMonth = "0" + dateMonth;
+            }
+
+            string Query = "INSERT INTO ICT4_MEDIA VALUES(232323, " + "'" + title + "'," + "'" +  "to_date(" + Convert.ToString( currentDate.Day) + dateMonth + Convert.ToString(currentDate.Year) + "', DDMMYYYYY)'" + "', " + "'" + summaryMedia + "', 50000, " + "'" + filePath + "', " +"'"+ typeMedia + "')";
+            bool writer = con.InsertOrUpdate(Query); 
+        }
+
 
         public bool CheckAbuse(string abusiveWord)
         {
