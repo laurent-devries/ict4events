@@ -19,7 +19,13 @@ namespace ICT4Events
 
         private void cbEvents_DropDown(object sender, EventArgs e)
         {
+            EventManager eventManager = new EventManager();
+            List<Event> eventList = eventManager.RequestEvent();
 
+            foreach (Event ev in eventList)
+            {
+                cbEvents.Items.Add(ev);
+            }
         }
     }
 }
