@@ -12,9 +12,8 @@ namespace ICT4Events
     //teun van der wijst
     public class User
     {
-        
-        private static int id = 0;
         private int id_user;
+        private int permissionFk;
         private string rfid_tag;
         private string first_name;
         private string sur_name;
@@ -44,19 +43,30 @@ namespace ICT4Events
         public DateTime Birth_Date { get { return birth_date; } set { birth_date = value; } }
         public string First_Name { get { return first_name; } set { first_name = value; } }
 
-        public string Country { get { return country; } set { country = value; } } 
+        public string Country { get { return country; } set { country = value; } }
         public string Sur_Name { get { return sur_name; } set { sur_name = value; } }
         public string RFID_Tag { get { return rfid_tag; } set { rfid_tag = value; } }
         public int ID_User { get { return id_user; } }
+        public int ID_EventFK { get; set; }
+        public int ID_ReservationFK { get; set; }
+        public string Street { get; set; }
+        public string Housenumber { get; set; }
 
-        public User(int id_user, string rfid_tag, string first_name, string sur_name, DateTime birth_date, string email, string city, string phone_number, string loginname, string username, string password, string profile_pic, string summary, char present, string country)
+        public int Permissionfk { get { return permissionFk; } set { permissionFk = value; } }
+
+        public User(int id_user, int id_event, int id_reservation, int permission, string first_name, string sur_name, DateTime birth_date, string email, string country, string street, string housenumber, string city, string phone_number, string loginname, string username, string password, string profile_pic, string summary, char present, string rfid_tag)
         {
             this.id_user = id_user;
-            this.rfid_tag = rfid_tag;
+            ID_EventFK = id_event;
+            ID_ReservationFK = id_reservation;
+            this.permissionFk = permission;
             this.first_name = first_name;
             this.sur_name = sur_name;
             this.birth_date = birth_date;
             this.email = email;
+            this.country = country;
+            Street = street;
+            Housenumber = housenumber;
             this.city = city;
             this.phone_number = phone_number;
             this.loginname = loginname;
@@ -65,81 +75,37 @@ namespace ICT4Events
             this.profile_pic = profile_pic;
             this.summary = summary;
             this.present = present;
+            this.present = present;
+            this.rfid_tag = rfid_tag;
+        }
+        public User(int id_user, int id_event, int id_reservation, int permission, string first_name, string sur_name, DateTime birth_date, string email, string country, string street, string housenumber, string city, string phone_number, string loginname, string username, string password, string profile_pic, string summary, char present)
+        {
+            this.id_user = id_user;
+            ID_EventFK = id_event;
+            ID_ReservationFK = id_reservation;
+            this.permissionFk = permission;
+            this.first_name = first_name;
+            this.sur_name = sur_name;
+            this.birth_date = birth_date;
+            this.email = email;
             this.country = country;
+            Street = street;
+            Housenumber = housenumber;
+            this.city = city;
+            this.phone_number = phone_number;
+            this.loginname = loginname;
+            this.username = username;
+            this.password = password;
+            this.profile_pic = profile_pic;
+            this.summary = summary;
+            this.present = present;
+            this.present = present;
+
         }
-        public User()
+        
+        public override string ToString()
         {
-            userList = new List<User>();
-        }
-        public List<User> RequestUsers()
-        {
-            DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, COUNTRY  FROM ICT4_USER";
-
-            OracleDataReader reader = con.SelectFromDatabase(Querry);
-            User user;
-            while (reader.Read())
-            {
-                user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)),reader.GetString(14));
-                userList.Add(user);
-            }
-            
-            reader.Dispose();
-
-            return userList;
-        }
-
-        public User LoginUser(string userName, string password)
-        {
-
-            try
-            {
-                DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
-
-                OracleDataReader reader = con.SelectFromDatabase(Querry);
-                User user;
-                while (reader.Read())
-                {
-                    user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)), reader.GetString(14));
-                    return user;
-                }
-                MessageBox.Show("Username and password combination does not excist");
-                return null;
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                return null;
-            }
-            
-        }
-
-        public User SearchByRfid(string rfid)
-        {
-            try
-            {
-                DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, country FROM ICT4_USER WHERE rfidtag = " + "'" + rfid + "'";
-
-                OracleDataReader reader = con.SelectFromDatabase(Querry);
-                User user;
-                while (reader.Read())
-                {
-                    user = new User(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), Convert.ToChar(reader.GetString(13)), reader.GetString(14));
-                    return user;
-                }
-                MessageBox.Show("RFID_Tag not in system");
-                return null;
-            }
-
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                return null;
-            }
-
+            return id_user.ToString() + "\t" + ID_EventFK.ToString() + "\t" + ID_ReservationFK.ToString() + "\t" + first_name + " " + sur_name;
         }
     }
 }

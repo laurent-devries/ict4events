@@ -15,20 +15,26 @@ namespace ICT4Events
 {
     public partial class Hiresystem : Form
     {
-        List<Product> Product;
+        List<Product> producten;
+        //private List<Product> producten;
         public Hiresystem()
         {
             InitializeComponent();
-           // Product Product = new Product();
-          //  Product = Product.RequestProducts();
-           // lblWaiting.Text = "Waiting for RFID scan....";
-      
+            LoadProducts();
+           
+            //CreateMyListView();
+
+
+            // Product Product = new Product();
+            //  Product = Product.RequestProducts();
+            // lblWaiting.Text = "Waiting for RFID scan....";
+
         }
 
         private void Hiresystem_Load(object sender, EventArgs e)
         {
-           
- 
+
+
 
 
         }
@@ -58,15 +64,13 @@ namespace ICT4Events
                     RFIDtext.Text = "";
                 }
             }
-            
             catch (PhidgetException ex)
             {
                 MessageBox.Show(ex.Description);
             }
-            
         }
-                
-        
+
+
 
         private void rfid_Attach(object sender, AttachEventArgs e)
         {
@@ -84,26 +88,26 @@ namespace ICT4Events
         {
 
             lblWaiting.Text = "Scan succesfull";
-            
+
             scanned = true;
             User user;
-            User dataCollect = new User();
+            UserManager dataCollect = new UserManager();
             user = dataCollect.SearchByRfid(e.Tag);
             if (user == null)
             {
                 RFIDtext.Text = (e.Tag);
             }
-            else 
-            { 
+            else
+            {
                 RFIDtext.Text = user.RFID_Tag;
                 lblFirstHR.Text = user.First_Name;
                 lblSureNameHR.Text = user.Sur_Name;
-                lblRFIDinfoUser.Text = user.RFID_Tag; 
+                lblRFIDinfoUser.Text = user.RFID_Tag;
                 lblBirthDHR.Text = Convert.ToString(user.Birth_Date);
                 lblEmailHR.Text = user.Email;
                 lblCountryHR.Text = user.Country;
-               // lblStreetHR.Text = user.
-               // lblHouseNBHR.Text = user.
+                // lblStreetHR.Text = user.
+                // lblHouseNBHR.Text = user.
                 lblCityHR.Text = user.City;
                 lblCellPhoneNBHR.Text = user.Phone_Number;
                 lblLoginHR.Text = user.Login_Name;
@@ -115,18 +119,59 @@ namespace ICT4Events
         {
             MessageBox.Show(e.Description);
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void BttngetInfo_Click_1(object sender, EventArgs e)
         {
-            
+
+        }
+
+
+        public void LoadProducts()
+        {
+            Product productData = new Product();
+            producten = productData.RequestProducts();
+            foreach (Product product in producten)
+            {
+                listBox3.Items.Add(product);
+
+
+
+            }
+        }
+
+        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         
 
-        
+           
+
+            private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+            }
+
+            private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+
+            private void bttnLend_Click(object sender, EventArgs e)
+            {
+
+
+            }
+
+            private void refresh()
+            {
+                
+
+            }
+            
+            
+            
     }
 }

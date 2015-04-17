@@ -11,8 +11,8 @@ namespace ICT4Events
     //Mario Schipper
     public class Product
     {
-        private static int idnumber = 0;
-        private int ID_product;
+        //private static int idnumber = 0;
+        private int iD_product;
         private string product_name;
         private decimal bail;
         private decimal price;
@@ -42,14 +42,15 @@ namespace ICT4Events
 
         public int ID_Product
         {
-            get { return ID_product; }
-            set { ID_product = value; }
+            get { return iD_product; }
+            set { iD_product = value; }
         }
         
-        public Product(int ID_product, string product_name, decimal bail, decimal price)
+        public Product(int iD_product, string product_name, decimal bail, decimal price)
         {
-            this.ID_product = idnumber;
-            idnumber++;
+           // this.ID_product = idnumber;
+           // idnumber++;
+            this.iD_product = iD_product;
             this.product_name = product_name;
             this.bail = bail;
             this.price = price;
@@ -71,6 +72,7 @@ namespace ICT4Events
          {
              DatabaseConnection con = new DatabaseConnection();
              string Querry = "SELECT ID_PRODUCT, PRODUCTNAME, BAIL, PRICE FROM ICT4_PRODUCT";
+             
 
              OracleDataReader reader = con.SelectFromDatabase(Querry);
              Product product;
@@ -82,7 +84,12 @@ namespace ICT4Events
 
              reader.Dispose();
 
-             return productList;
+          return productList;
+         }
+
+         public override string ToString()
+         {
+             return iD_product + "\t" + "\t" + "\t" + product_name + "\t" + "\t" + "\t" + "€"+bail + "\t" + "\t" + "\t" + "€"+ price; 
          }
     }
 }

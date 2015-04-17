@@ -85,7 +85,7 @@
       <HintPath>..\packages\odp.net.managed.121.1.2\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Phidget21.NET">
-      <HintPath>..\..\..\..\Downloads\Phidget21.NET.dll</HintPath>
+      <HintPath>..\..\..\..\Google Drive\PTS2 ICT4Events\Software\Phidget21.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -100,6 +100,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Borrow.cs" />
+    <Compile Include="CampingPlace.cs" />
+    <Compile Include="CampingPlaceManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="EventBeheerReservering.Designer.cs">
       <DependentUpon>EventBeheerReservering.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventManager.cs" />
     <Compile Include="FormGathering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,11 +125,14 @@
     <Compile Include="Hiresystem.Designer.cs">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="LoginFormStart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs" />
+    <Compile Include="LoginFormStart.Designer.cs">
+      <DependentUpon>LoginFormStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Media.cs" />
+    <Compile Include="MediaManager.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Permission.cs" />
@@ -134,6 +140,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />
+    <Compile Include="ReserveringSysteem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReserveringSysteem.Designer.cs">
+      <DependentUpon>ReserveringSysteem.cs</DependentUpon>
+    </Compile>
     <Compile Include="SocialSharing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,7 @@
     </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserManager.cs" />
     <EmbeddedResource Include="EventBeheerReservering.resx">
       <DependentUpon>EventBeheerReservering.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,7 +164,6 @@
     <EmbeddedResource Include="Hiresystem.resx">
       <DependentUpon>Hiresystem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -160,7 +172,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReserveringSysteem.resx">
+      <DependentUpon>ReserveringSysteem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SocialSharing.resx">
       <DependentUpon>SocialSharing.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,23 +194,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
