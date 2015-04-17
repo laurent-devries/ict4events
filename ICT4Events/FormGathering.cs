@@ -26,7 +26,7 @@ namespace ICT4Events
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoginForm l = new LoginForm();
+            LoginFormStart l = new LoginFormStart();
             l.Show();
         }
 
