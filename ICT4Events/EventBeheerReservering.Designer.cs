@@ -79,6 +79,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Listb_Events = new System.Windows.Forms.ListBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tb_idevent_event = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.gb_gebruikercreatie.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -519,6 +521,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.tb_idevent_event);
+            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.Event_End_Date);
             this.groupBox3.Controls.Add(this.Event_Start_Date);
             this.groupBox3.Controls.Add(this.btn_create_event);
@@ -539,14 +543,14 @@
             // 
             // Event_End_Date
             // 
-            this.Event_End_Date.Location = new System.Drawing.Point(103, 65);
+            this.Event_End_Date.Location = new System.Drawing.Point(103, 102);
             this.Event_End_Date.Name = "Event_End_Date";
             this.Event_End_Date.Size = new System.Drawing.Size(317, 20);
             this.Event_End_Date.TabIndex = 12;
             // 
             // Event_Start_Date
             // 
-            this.Event_Start_Date.Location = new System.Drawing.Point(103, 40);
+            this.Event_Start_Date.Location = new System.Drawing.Point(103, 77);
             this.Event_Start_Date.Name = "Event_Start_Date";
             this.Event_Start_Date.Size = new System.Drawing.Size(317, 20);
             this.Event_Start_Date.TabIndex = 11;
@@ -559,24 +563,25 @@
             this.btn_create_event.TabIndex = 10;
             this.btn_create_event.Text = "Create / Change Event";
             this.btn_create_event.UseVisualStyleBackColor = true;
+            this.btn_create_event.Click += new System.EventHandler(this.btn_create_event_Click);
             // 
             // Event_Camping_Location
             // 
-            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 117);
+            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 154);
             this.Event_Camping_Location.Name = "Event_Camping_Location";
             this.Event_Camping_Location.Size = new System.Drawing.Size(317, 20);
             this.Event_Camping_Location.TabIndex = 9;
             // 
             // Event_Camping_Name
             // 
-            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 93);
+            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 130);
             this.Event_Camping_Name.Name = "Event_Camping_Name";
             this.Event_Camping_Name.Size = new System.Drawing.Size(317, 20);
             this.Event_Camping_Name.TabIndex = 6;
             // 
             // Event_Title
             // 
-            this.Event_Title.Location = new System.Drawing.Point(103, 20);
+            this.Event_Title.Location = new System.Drawing.Point(103, 57);
             this.Event_Title.Name = "Event_Title";
             this.Event_Title.Size = new System.Drawing.Size(317, 20);
             this.Event_Title.TabIndex = 5;
@@ -584,7 +589,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 120);
+            this.label8.Location = new System.Drawing.Point(11, 157);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 4;
@@ -593,7 +598,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 96);
+            this.label7.Location = new System.Drawing.Point(11, 133);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 3;
@@ -602,7 +607,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 46);
+            this.label6.Location = new System.Drawing.Point(11, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 2;
@@ -611,7 +616,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 71);
+            this.label5.Location = new System.Drawing.Point(11, 108);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 1;
@@ -620,7 +625,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 23);
+            this.label4.Location = new System.Drawing.Point(11, 60);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 0;
@@ -633,6 +638,22 @@
             this.Listb_Events.Name = "Listb_Events";
             this.Listb_Events.Size = new System.Drawing.Size(432, 199);
             this.Listb_Events.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(11, 36);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "ID_Event:";
+            // 
+            // tb_idevent_event
+            // 
+            this.tb_idevent_event.Location = new System.Drawing.Point(103, 33);
+            this.tb_idevent_event.Name = "tb_idevent_event";
+            this.tb_idevent_event.Size = new System.Drawing.Size(317, 20);
+            this.tb_idevent_event.TabIndex = 14;
             // 
             // EventBeheerReservering
             // 
@@ -706,6 +727,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tb_idevent_event;
+        private System.Windows.Forms.Label label13;
     }
 }
 
