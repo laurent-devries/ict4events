@@ -42,6 +42,13 @@ namespace ICT4Events
             E.Show();
         }
 
+        private void btnReservering_Click(object sender, EventArgs e)
+        {
+            ReserveringSysteem r = new ReserveringSysteem();
+            r.Show();
+
+        }
+
 
     }
 }

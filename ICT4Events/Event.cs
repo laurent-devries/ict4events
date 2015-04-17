@@ -77,5 +77,10 @@ namespace ICT4Events
         {
             participants.Remove(user);
         }
+
+        public override string ToString()
+        {
+            return title;
+        }
     }
 }
