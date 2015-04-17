@@ -21,7 +21,7 @@ namespace ICT4Events
         private string campingname;
         private string location;
         private List<User> participants = new List<User>();
-        private List<Event> evenementen;
+       
 
         public List<User> Participants
         {
@@ -67,22 +67,6 @@ namespace ICT4Events
             this.campingname = Campingname;
             this.location = Location;
         }
-        public Event()
-        {
-            evenementen = new List<Event>();
-        }
-        public List<Event> RequestEvent()
-        {
-            DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT ID_EVENT, TITLE, DATEICT, STARTDATE, ENDDATE, CAMPINGNAME, LOCATION FROM ICT4_EVENT";
-            OracleDataReader reader = con.SelectFromDatabase(Querry);
-            while (reader.Read())
-            {
-                Event event1 = new Event(reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6));
-                evenementen.Add(event1);
-            }
-            return evenementen;
-        }
 
         public void CheckIn(User user)
         {
@@ -92,6 +76,11 @@ namespace ICT4Events
         public void CheckOut(User user)
         {
             participants.Remove(user);
+        }
+
+        public override string ToString()
+        {
+            return title;
         }
     }
 }
