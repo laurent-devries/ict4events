@@ -167,11 +167,11 @@ namespace ICT4Events
 
             private void refresh()
             {
-                foreach (Product product in producten)
-                {
-                    if(product.)
-                    listBox2.
-                }
+                //foreach (Product product in producten)
+                //{
+                //    if(product.)
+                //    listBox2.
+                //}
                 
 
             }
