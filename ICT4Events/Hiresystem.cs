@@ -21,7 +21,7 @@ namespace ICT4Events
         {
             InitializeComponent();
             LoadProducts();
-           loadasdasda();
+           
             //CreateMyListView();
 
 
@@ -145,98 +145,38 @@ namespace ICT4Events
 
         }
 
-        public void loadasdasda()
-        {
-            
-			listView1.View = View.Details;
-			listView1.LabelEdit = true;
-			listView1.AllowColumnReorder = true;
-			listView1.FullRowSelect = true;
-			listView1.GridLines = true;
-			listView1.Sorting = SortOrder.Ascending;
-            
-            Product productData = new Product();
-            producten = productData.RequestProducts();
-            listView1.Items.Clear();
-            ListViewItem productname = new ListViewItem("productName", 1);
-            ListViewItem productID = new ListViewItem("Product ID", 0);
-            ListViewItem productBail = new ListViewItem("Bail", 2);
-            ListViewItem productPrice = new ListViewItem("Price", 3);
-           listView1.Columns.Add("Product ID", -2, HorizontalAlignment.Left);
-           listView1.Columns.Add("Product Name", -2, HorizontalAlignment.Left);
-           listView1.Columns.Add("Bail Price", -2, HorizontalAlignment.Left);
-           listView1.Columns.Add("Product Price", -2, HorizontalAlignment.Left);
-           listView1.Items.AddRange(new ListViewItem[] { productname, productID, productBail, productPrice });
-               
-            foreach (Product product in producten)
-            {
+        
 
-                productname.SubItems.Add(product.Product_Name);
-                productID.SubItems.Add(product.ID_Product.ToString());
-                productBail.SubItems.Add(product.Bail.ToString());
-                productPrice.SubItems.Add(product.Price.ToString());
-
-                
-            }
-        }
-
-
-            private void CreateMyListView()
-		{
-			// Create a new ListView control.
-            
-			
-
-			// Set the view to show details.
-			listView1.View = View.Details;
-			// Allow the user to edit item text.
-			listView1.LabelEdit = true;
-			// Allow the user to rearrange columns.
-			listView1.AllowColumnReorder = true;
-			
-			// Select the item and subitems when selection is made.
-			listView1.FullRowSelect = true;
-			// Display grid lines.
-			listView1.GridLines = true;
-			// Sort the items in the list in ascending order.
-			listView1.Sorting = SortOrder.Ascending;
-            			
-			// Create three items and three sets of subitems for each item.
-			ListViewItem item1 = new ListViewItem("item1",0);
-			// Place a check mark next to the item.
-			
-			item1.SubItems.Add("1");
-			item1.SubItems.Add("2");
-			item1.SubItems.Add("3");
-			ListViewItem item2 = new ListViewItem("item2",1);
-			item2.SubItems.Add("4");
-			item2.SubItems.Add("5");
-			item2.SubItems.Add("6");
-			ListViewItem item3 = new ListViewItem("item3",0);
-			// Place a check mark next to the item.
-			
-			item3.SubItems.Add("7");
-			item3.SubItems.Add("8");
-			item3.SubItems.Add("9");
-
-			// Create columns for the items and subitems. 
-			
-			listView1.Columns.Add("Item Column");
-			listView1.Columns.Add("Column 2");
-			listView1.Columns.Add("Column 3");
-			listView1.Columns.Add("Column 4");
-
-			//Add the items to the ListView.
-            listView1.Items.AddRange(new ListViewItem[]{item1,item2,item3});
-
-			// Add the ListView to the control collection. 
-           // this.Controls.Add(listView1);
-		
-        }
+           
 
             private void listView1_SelectedIndexChanged(object sender, EventArgs e)
             {
 
             }
+
+            private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+            {
+
+            }
+
+            private void bttnLend_Click(object sender, EventArgs e)
+            {
+
+
+            }
+
+            private void refresh()
+            {
+                foreach (Product product in producten)
+                {
+                    if(product.)
+                    listBox2.
+                }
+                
+
+            }
+            
+            
+            
     }
 }
