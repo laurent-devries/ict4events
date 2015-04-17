@@ -34,9 +34,6 @@ namespace ICT4Events
         private void Hiresystem_Load(object sender, EventArgs e)
         {
 
-
-
-
         }
 
 

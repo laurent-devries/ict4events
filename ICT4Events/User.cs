@@ -105,7 +105,7 @@ namespace ICT4Events
         
         public override string ToString()
         {
-            return id_user.ToString() + "\t" + ID_EventFK.ToString() + "\t" + ID_ReservationFK.ToString() + "\t" + first_name + " " + sur_name;
+            return id_user.ToString() + "\t" + ID_EventFK.ToString() + "\t" + "\t" + ID_ReservationFK.ToString() + "\t" + first_name + " " + sur_name;
         }
     }
 }
