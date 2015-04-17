@@ -50,9 +50,8 @@ namespace ICT4Events
                 maand = Convert.ToString(dtp_geboortedatum_gebruiker.Value.Month);
             }
             MessageBox.Show(maand);
-            conn.InsertOrUpdate("INSERT INTO ICT4_USER (id_user,id_eventFK,id_reservationFK,id_permissionFK,firstName,surName,birthDate,email,country,street,houseNumber,city,cellphoneNumber,loginName,userName,passwordUser,profilePic,summaryUser,presentUser) VALUES(" + Convert.ToInt32(tb_User_id_gebruiker.Text) + "," + Convert.ToInt32(tb_Event_ID_user.Text) + "," + Convert.ToInt32(tb_Res_ID_user.Text) + "," + 1 + ",'" + tb_voornaam_gebruiker.Text + "','" + tb_achternaam_user.Text + "', to_date('" + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day)+ maand + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Year) + "','DDMMYYYY') ,'" + tb_email_gebruiker.Text + "','" + cb_land_gebruiker.Text + "','" + tb_straat_user.Text + "','" + tb_number_user.Text + "','" + tb_stad_user.Text + "','" + tb_telnr_gebruiker.Text + "','" + tb_loginname_gebruiker.Text + "','" + tb_username_gebruiker.Text + "','" + tb_password_gebruiker.Text + "','C:/','No Summary','N')");
-            userList.Add(new User(Convert.ToInt32(tb_User_id_gebruiker.Text),Convert.ToInt32(tb_Event_ID_user.Text) ,Convert.ToInt32(tb_Res_ID_user.Text), 1, tb_voornaam_gebruiker.Text, tb_achternaam_user.Text,new DateTime(dtp_geboortedatum_gebruiker.Value.Year, dtp_geboortedatum_gebruiker.Value.Month,dtp_geboortedatum_gebruiker.Value.Day), tb_email_gebruiker.Text , cb_land_gebruiker.Text , tb_straat_user.Text , tb_number_user.Text , tb_stad_user.Text, tb_telnr_gebruiker.Text , tb_loginname_gebruiker.Text , tb_username_gebruiker.Text , tb_password_gebruiker.Text,"C:/","No Summary",'N'));
-        }
+            conn.InsertOrUpdate("INSERT INTO ICT4_USER (id_user,id_eventFK,id_reservationFK,id_permissionFK,firstName,surName,birthDate,email,country,street,houseNumber,city,cellphoneNumber,loginName,userName,passwordUser,profilePic,summaryUser,presentUser) VALUES(USER_SEQ.NEXTVAL," + Convert.ToInt32(cB_Event_ID_User.Text) + "," + Convert.ToInt32(cB_Reservation_ID_User.Text) + "," + 1 + ",'" + tb_voornaam_gebruiker.Text + "','" + tb_achternaam_user.Text + "', to_date('" + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day) + maand + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Year) + "','DDMMYYYY') ,'" + tb_email_gebruiker.Text + "','" + cb_land_gebruiker.Text + "','" + tb_straat_user.Text + "','" + tb_number_user.Text + "','" + tb_stad_user.Text + "','" + tb_telnr_gebruiker.Text + "','" + tb_loginname_gebruiker.Text + "','" + tb_username_gebruiker.Text + "','" + tb_password_gebruiker.Text + "','C:/','No Summary','N')");
+}
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -67,6 +66,7 @@ namespace ICT4Events
                 foreach (User user in userList)
                 {
                     Listb_gebruikers.Items.Add(user.ToString());
+                    
                 }
             }
             if (evenementen != null)
@@ -75,8 +75,11 @@ namespace ICT4Events
                 foreach (Event event1 in evenementen)
                 {
                     Listb_Events.Items.Add(event1.ToString());
+                    cB_Event_ID_User.Items.Add(event1.ID_Event);
                 }
             }
+
+            
 
         }
 

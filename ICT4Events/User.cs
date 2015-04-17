@@ -12,8 +12,6 @@ namespace ICT4Events
     //teun van der wijst
     public class User
     {
-
-        private static int id = 0;
         private int id_user;
         private int permissionFk;
         private string rfid_tag;
@@ -115,9 +113,20 @@ namespace ICT4Events
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             User user;
+
             while (reader.Read())
             {
-                user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)), reader.GetString(19));
+
+                if (reader.IsDBNull(19) != true)
+                {
+                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)), reader.GetString(19));
+
+                }
+                else
+                {
+                    user = new User(reader.GetInt32(0), reader.GetInt32(1), reader.GetInt32(2), reader.GetInt32(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), reader.GetString(7), reader.GetString(8), reader.GetString(9), reader.GetString(10), reader.GetString(11), reader.GetString(12), reader.GetString(13), reader.GetString(14), reader.GetString(15), reader.GetString(16), reader.GetString(17), Convert.ToChar(reader.GetString(18)));
+
+                }
                 userList.Add(user);
             }
 
@@ -175,6 +184,10 @@ namespace ICT4Events
                 return null;
             }
 
+        }
+        public override string ToString()
+        {
+            return id_user.ToString() + "\t" + ID_EventFK.ToString() + "\t" + ID_ReservationFK.ToString() + "\t" + first_name + " " + sur_name;
         }
     }
 }

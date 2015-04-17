@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
-    public partial class LoginForm : Form
+    public partial class LoginFormStart : Form
     {
         User user;
-        public LoginForm()
+        public LoginFormStart()
         {
             InitializeComponent();
         }
