@@ -23,7 +23,38 @@ namespace ICT4Events
             User dataUser = new User();
             string userName = tbUsername.Text;
             string password = tbPassword.Text;
-            user = dataUser.LoginUser(userName, password);
+
+            try
+            {
+                user = dataUser.LoginUser(userName, password);
+
+                if (cbFormLoader.Text == "Social media")
+                {
+                    SocialSharing s = new SocialSharing(user);
+                    this.Close();
+                    s.Show();
+                }
+
+                else if (cbFormLoader.Text == "Event beheer")
+                {
+                    EventBeheerReservering ev = new EventBeheerReservering();
+                    this.Close();
+                    ev.Show();
+                }
+
+                else if (cbFormLoader.Text == "Materiaal verhuur")
+                {
+                    Hiresystem h = new Hiresystem();
+                    this.Close();
+                    h.Show();
+                }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Login error");
+            }
+            
 
             MessageBox.Show(user.Username);
         }

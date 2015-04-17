@@ -89,14 +89,12 @@ namespace ICT4Events
             return userList;
         }
 
-        public User LoginUser(string userName, string password)
+        public User LoginUser(string us, string ps)
         {
-
             try
             {
                 DatabaseConnection con = new DatabaseConnection();
-                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER FROM ICT4_USER";
-
+                string Querry = "SELECT ID_USER, RFIDTAG, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, COUNTRY FROM ICT4_USER WHERE UPPER(USERNAME) = '" + us.ToUpper() + "' AND PASSWORDUSER = '" + ps + "'";
                 OracleDataReader reader = con.SelectFromDatabase(Querry);
                 User user;
                 while (reader.Read())
