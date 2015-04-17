@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ICT4Events
 {
@@ -30,7 +31,12 @@ namespace ICT4Events
 
         OpenFileDialog fDialog;
 
-        public SocialSharing()
+        Image previewImag;
+
+        int mediaHeight = 80;
+        int mediaWidth = 120;
+
+        public SocialSharing(User user)
         {
             InitializeComponent();
             
@@ -212,12 +218,8 @@ namespace ICT4Events
             lMediaPath.Height = 20;
             pnlNewsFeed.Controls.Add(lMediaPath);
 
-            //Preview image
-            PictureBox previewImage = new PictureBox();
-            previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 3);
-            previewImage.BackColor = Color.Black;
-            previewImage.SizeMode = PictureBoxSizeMode.Zoom;
-            pnlNewsFeed.Controls.Add(previewImage);
+      
+            
 
             //Button mediapath
             Button bMediaPath = new Button();
@@ -229,25 +231,37 @@ namespace ICT4Events
                 OpenFileDialog fDialog = new OpenFileDialog();
                 fDialog.Title = "Open media";
                 fDialog.Filter = "IMAGE Files|*.jpg";
-                fDialog.InitialDirectory = @"C:\";
+                fDialog.InitialDirectory = Environment.SpecialFolder.MyPictures.ToString();
 
                 if (fDialog.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show(fDialog.FileName.ToString());
                     tMediaPath.Text = fDialog.FileName.ToString();
-                }
+                    previewImag = Image.FromFile(tMediaPath.Text);
+                  }
             };
             
-
+            //Preview image
+            /*
+            PictureBox previewImage = new PictureBox();
+            previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 3);
+            previewImage.BackColor = Color.Transparent;
+            previewImage.
+            previewImage.MaximumSize = new System.Drawing.Size(300, 100);
+            pnlNewsFeed.Controls.Add(previewImage);
+            */
             Button bTry = new Button();
             bTry.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 + bMediaPath.Height );
             bTry.Text = "Try";
             pnlNewsFeed.Controls.Add(bTry);
             bTry.Click += delegate
+                
             {
-                previewImage.Load(tMediaPath.Text);
+                if (File.Exists(tMediaPath.Text))
+                {
+                    previewImage.Load(tMediaPath.Text);
+                }
             };
-
 
             tMediaPath = new TextBox();
             tMediaPath.Location = new Point(lTitleOfMedia.Width + bMediaPath.Width + 10, pnlNewsFeed.Height / 10 * 5);
