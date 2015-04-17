@@ -36,7 +36,7 @@ namespace ICT4Events
         {
             InitializeComponent();
 
-            Media mediaData = new Media();
+            MediaManager mediaData = new MediaManager();
             mediaList = mediaData.RequestMedia();
 
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
@@ -134,7 +134,7 @@ namespace ICT4Events
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Media mediaData = new Media();
+            MediaManager mediaData = new MediaManager();
             mediaList = mediaData.RequestMedia();
 
             btnNextPage.Visible = true;
@@ -301,7 +301,7 @@ namespace ICT4Events
 
             bUpload.Click += delegate
             {
-                Media media = new Media();
+                MediaManager media = new MediaManager();
                 DateTime currentDate = DateTime.Now;
                 media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
             };

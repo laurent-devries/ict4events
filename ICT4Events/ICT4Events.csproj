@@ -101,6 +101,7 @@
       <DependentUpon>LoginFormStart.cs</DependentUpon>
     </Compile>
     <Compile Include="Media.cs" />
+    <Compile Include="MediaManager.cs" />
     <Compile Include="NewsFeedItem.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Permission.cs" />
