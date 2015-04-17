@@ -51,7 +51,7 @@ namespace ICT4Events
         public List<Media> RequestMedia()
         {
             DatabaseConnection con = new DatabaseConnection();
-            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), to_char(viewMedia) FROM ICT4_MEDIA";
+            string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), to_char(VIEWMEDIA) FROM ICT4_MEDIA";
 
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             Media media;
@@ -61,7 +61,6 @@ namespace ICT4Events
                 mediaList.Add(media);
             }
 
-            reader.Dispose();
 
             return mediaList;
 
