@@ -32,6 +32,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.gb_gebruikercreatie = new System.Windows.Forms.GroupBox();
+            this.cB_Reservation_ID_User = new System.Windows.Forms.ComboBox();
+            this.cB_Event_ID_User = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tb_achternaam_user = new System.Windows.Forms.TextBox();
@@ -77,8 +79,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Listb_Events = new System.Windows.Forms.ListBox();
-            this.cB_Event_ID_User = new System.Windows.Forms.ComboBox();
-            this.cB_Reservation_ID_User = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.gb_gebruikercreatie.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -157,6 +157,29 @@
             this.gb_gebruikercreatie.TabIndex = 3;
             this.gb_gebruikercreatie.TabStop = false;
             this.gb_gebruikercreatie.Text = "User Create / Change";
+            // 
+            // cB_Reservation_ID_User
+            // 
+            this.cB_Reservation_ID_User.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cB_Reservation_ID_User.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cB_Reservation_ID_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cB_Reservation_ID_User.FormattingEnabled = true;
+            this.cB_Reservation_ID_User.Location = new System.Drawing.Point(96, 57);
+            this.cB_Reservation_ID_User.Name = "cB_Reservation_ID_User";
+            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(141, 21);
+            this.cB_Reservation_ID_User.Sorted = true;
+            this.cB_Reservation_ID_User.TabIndex = 32;
+            // 
+            // cB_Event_ID_User
+            // 
+            this.cB_Event_ID_User.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cB_Event_ID_User.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cB_Event_ID_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cB_Event_ID_User.FormattingEnabled = true;
+            this.cB_Event_ID_User.Location = new System.Drawing.Point(96, 31);
+            this.cB_Event_ID_User.Name = "cB_Event_ID_User";
+            this.cB_Event_ID_User.Size = new System.Drawing.Size(141, 21);
+            this.cB_Event_ID_User.TabIndex = 31;
             // 
             // label12
             // 
@@ -539,7 +562,7 @@
             // 
             // btn_create_event
             // 
-            this.btn_create_event.Location = new System.Drawing.Point(308, 273);
+            this.btn_create_event.Location = new System.Drawing.Point(308, 360);
             this.btn_create_event.Name = "btn_create_event";
             this.btn_create_event.Size = new System.Drawing.Size(112, 23);
             this.btn_create_event.TabIndex = 10;
@@ -619,22 +642,6 @@
             this.Listb_Events.Name = "Listb_Events";
             this.Listb_Events.Size = new System.Drawing.Size(432, 199);
             this.Listb_Events.TabIndex = 6;
-            // 
-            // cB_Event_ID_User
-            // 
-            this.cB_Event_ID_User.FormattingEnabled = true;
-            this.cB_Event_ID_User.Location = new System.Drawing.Point(96, 31);
-            this.cB_Event_ID_User.Name = "cB_Event_ID_User";
-            this.cB_Event_ID_User.Size = new System.Drawing.Size(141, 21);
-            this.cB_Event_ID_User.TabIndex = 31;
-            // 
-            // cB_Reservation_ID_User
-            // 
-            this.cB_Reservation_ID_User.FormattingEnabled = true;
-            this.cB_Reservation_ID_User.Location = new System.Drawing.Point(96, 57);
-            this.cB_Reservation_ID_User.Name = "cB_Reservation_ID_User";
-            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(141, 21);
-            this.cB_Reservation_ID_User.TabIndex = 32;
             // 
             // EventBeheerReservering
             // 

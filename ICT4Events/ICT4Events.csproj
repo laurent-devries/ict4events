@@ -82,6 +82,7 @@
     <Compile Include="EventBeheerReservering.Designer.cs">
       <DependentUpon>EventBeheerReservering.cs</DependentUpon>
     </Compile>
+    <Compile Include="EventManager.cs" />
     <Compile Include="FormGathering.cs">
       <SubType>Form</SubType>
     </Compile>
