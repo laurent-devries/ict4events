@@ -563,7 +563,6 @@
             this.btn_create_event.TabIndex = 10;
             this.btn_create_event.Text = "Create / Change Event";
             this.btn_create_event.UseVisualStyleBackColor = true;
-            this.btn_create_event.Click += new System.EventHandler(this.btn_create_event_Click);
             // 
             // Event_Camping_Location
             // 
