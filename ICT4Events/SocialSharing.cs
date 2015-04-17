@@ -242,14 +242,14 @@ namespace ICT4Events
             };
             
             //Preview image
-            /*
+            
             PictureBox previewImage = new PictureBox();
             previewImage.Location = new Point(pnlNewsFeed.Width / 4 * 3 - 20, pnlNewsFeed.Height / 10 * 3);
             previewImage.BackColor = Color.Transparent;
-            previewImage.
+            previewImage.SizeMode = PictureBoxSizeMode.Zoom; 
             previewImage.MaximumSize = new System.Drawing.Size(300, 100);
             pnlNewsFeed.Controls.Add(previewImage);
-            */
+            
             Button bTry = new Button();
             bTry.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 + bMediaPath.Height );
             bTry.Text = "Try";
