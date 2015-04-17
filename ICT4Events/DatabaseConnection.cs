@@ -18,12 +18,13 @@ namespace ICT4Events
 
         private string user = "ICT4EVENT";//Naam van de server
         private string pw = "Welkom123";//Wachtwoord van de server
+        private string ds = "//172.16.0.15:1521/XE";
 
         private void Connect()
         {
             try
             {
-                oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + "//172.16.0.15:1521/XE" + ";");
+                oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + ds + ";");
             }
 
             catch (Exception e)
