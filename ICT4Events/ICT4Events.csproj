@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Borrow.cs" />
+    <Compile Include="BorrowManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
     <Compile Include="DatabaseConnection.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Note.cs" />
     <Compile Include="Permission.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservation.cs" />

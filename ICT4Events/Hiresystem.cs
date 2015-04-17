@@ -129,14 +129,11 @@ namespace ICT4Events
 
         public void LoadProducts()
         {
-            Product productData = new Product();
+            ProductManager productData = new ProductManager();
             producten = productData.RequestProducts();
             foreach (Product product in producten)
             {
                 listBox3.Items.Add(product);
-
-
-
             }
         }
 
@@ -169,8 +166,8 @@ namespace ICT4Events
             {
                 foreach (Product product in producten)
                 {
-                    if(product.)
-                    listBox2.
+                   // if(product.)
+                //    listBox2.
                 }
                 
 
