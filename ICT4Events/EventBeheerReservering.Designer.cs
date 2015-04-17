@@ -50,11 +50,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_telnr_gebruiker = new System.Windows.Forms.TextBox();
             this.lb_addres_stad_gebruiker = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tb_stad_user = new System.Windows.Forms.TextBox();
+            this.tb_number_user = new System.Windows.Forms.TextBox();
             this.lb_addres_nummer_gebruiker = new System.Windows.Forms.Label();
             this.lb_addres_straat_gebruiker = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_straat_user = new System.Windows.Forms.TextBox();
             this.cb_land_gebruiker = new System.Windows.Forms.ComboBox();
             this.lb_land_gebruiker = new System.Windows.Forms.Label();
             this.tb_email_gebruiker = new System.Windows.Forms.TextBox();
@@ -117,6 +117,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Change";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gb_gebruikercreatie
             // 
@@ -138,11 +139,11 @@
             this.gb_gebruikercreatie.Controls.Add(this.label1);
             this.gb_gebruikercreatie.Controls.Add(this.tb_telnr_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.lb_addres_stad_gebruiker);
-            this.gb_gebruikercreatie.Controls.Add(this.textBox4);
-            this.gb_gebruikercreatie.Controls.Add(this.textBox3);
+            this.gb_gebruikercreatie.Controls.Add(this.tb_stad_user);
+            this.gb_gebruikercreatie.Controls.Add(this.tb_number_user);
             this.gb_gebruikercreatie.Controls.Add(this.lb_addres_nummer_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.lb_addres_straat_gebruiker);
-            this.gb_gebruikercreatie.Controls.Add(this.textBox1);
+            this.gb_gebruikercreatie.Controls.Add(this.tb_straat_user);
             this.gb_gebruikercreatie.Controls.Add(this.cb_land_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.lb_land_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.tb_email_gebruiker);
@@ -312,21 +313,21 @@
             this.lb_addres_stad_gebruiker.TabIndex = 13;
             this.lb_addres_stad_gebruiker.Text = "Stad";
             // 
-            // textBox4
+            // tb_stad_user
             // 
-            this.textBox4.Location = new System.Drawing.Point(88, 230);
-            this.textBox4.MaxLength = 255;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(178, 20);
-            this.textBox4.TabIndex = 12;
+            this.tb_stad_user.Location = new System.Drawing.Point(88, 230);
+            this.tb_stad_user.MaxLength = 255;
+            this.tb_stad_user.Name = "tb_stad_user";
+            this.tb_stad_user.Size = new System.Drawing.Size(178, 20);
+            this.tb_stad_user.TabIndex = 12;
             // 
-            // textBox3
+            // tb_number_user
             // 
-            this.textBox3.Location = new System.Drawing.Point(332, 208);
-            this.textBox3.MaxLength = 10;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(88, 20);
-            this.textBox3.TabIndex = 11;
+            this.tb_number_user.Location = new System.Drawing.Point(332, 208);
+            this.tb_number_user.MaxLength = 10;
+            this.tb_number_user.Name = "tb_number_user";
+            this.tb_number_user.Size = new System.Drawing.Size(88, 20);
+            this.tb_number_user.TabIndex = 11;
             // 
             // lb_addres_nummer_gebruiker
             // 
@@ -346,13 +347,13 @@
             this.lb_addres_straat_gebruiker.TabIndex = 9;
             this.lb_addres_straat_gebruiker.Text = "Addres: Street";
             // 
-            // textBox1
+            // tb_straat_user
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 204);
-            this.textBox1.MaxLength = 255;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 8;
+            this.tb_straat_user.Location = new System.Drawing.Point(87, 204);
+            this.tb_straat_user.MaxLength = 255;
+            this.tb_straat_user.Name = "tb_straat_user";
+            this.tb_straat_user.Size = new System.Drawing.Size(179, 20);
+            this.tb_straat_user.TabIndex = 8;
             // 
             // cb_land_gebruiker
             // 
@@ -458,6 +459,7 @@
             this.dtp_geboortedatum_gebruiker.Name = "dtp_geboortedatum_gebruiker";
             this.dtp_geboortedatum_gebruiker.Size = new System.Drawing.Size(324, 20);
             this.dtp_geboortedatum_gebruiker.TabIndex = 3;
+            this.dtp_geboortedatum_gebruiker.Value = new System.DateTime(2015, 4, 17, 9, 46, 0, 0);
             // 
             // lb_geboortedatum_gebruiker
             // 
@@ -668,11 +670,11 @@
         private System.Windows.Forms.ListBox Listb_gebruikers;
         private System.Windows.Forms.Button btn_nieuwe_gebruiker;
         private System.Windows.Forms.Label lb_addres_stad_gebruiker;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox tb_stad_user;
+        private System.Windows.Forms.TextBox tb_number_user;
         private System.Windows.Forms.Label lb_addres_nummer_gebruiker;
         private System.Windows.Forms.Label lb_addres_straat_gebruiker;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_straat_user;
         private System.Windows.Forms.TextBox tb_password_gebruiker;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
