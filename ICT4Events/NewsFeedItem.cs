@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 using System.IO;
 
 namespace ICT4Events
@@ -22,6 +24,7 @@ namespace ICT4Events
         LinkLabel Like;
         private int count;
 
+        //Properties
         public int Count
         {
             get { return count; }
@@ -39,7 +42,7 @@ namespace ICT4Events
         
 
         //Constructor
-        public NewsFeedItem(string titel, string datum, string views, string likes, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight)
+        public NewsFeedItem(string titel, string datum, string views, string likes, string reports, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user)
         {
             this.count = count;
             this.panel = panel;
@@ -52,7 +55,7 @@ namespace ICT4Events
             int wSpace = 10;
             int hSpace = panel.Height / 10;
             
-
+            //Create newsfeeddesig + delegates
             Titel = new Label();
             Titel.Location = new Point(wSpace, 5);
             Titel.Text = titel;
@@ -114,6 +117,11 @@ namespace ICT4Events
             Report.Font = new Font("Georgia", 6);
             Report.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Report);
+            Report.Click += delegate
+            {
+                MediaManager m = new MediaManager();
+                m.UpdateReports(titel);
+            };
 
             Like = new LinkLabel();
             Like.Location = new Point(wSpace, 10 + hSpace * 9);
@@ -122,7 +130,11 @@ namespace ICT4Events
             Like.Font = new Font("Georgia", 6);
             Like.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Like);
-            
+            Like.Click += delegate
+            {
+                MediaManager m = new MediaManager();
+                m.UpdateLikes(titel);                
+            };
             
         }
     }

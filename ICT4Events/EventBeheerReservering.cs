@@ -16,13 +16,15 @@ namespace ICT4Events
     {
         List<Event> evenementen;
         List<User> userList;
+        List<Reservation> reservations;
         public EventBeheerReservering()
         {
             InitializeComponent();
-            Event Event = new Event();
+            EventManager Event = new EventManager();
             evenementen = Event.RequestEvent();
             UserManager Users = new UserManager();
             userList = Users.RequestUsers();
+            Reservation Reservation = new Reservation();
             lists();
         }
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace ICT4Events
         private void btn_create_gebruiker_Click(object sender, EventArgs e)
         {
             gb_gebruikercreatie.Enabled = false;
-
+            gb_gebruikercreatie.Text = null;
             DatabaseConnection conn = new DatabaseConnection();
             string maand;
             if (dtp_geboortedatum_gebruiker.Value.Month < 10)
@@ -76,6 +78,7 @@ namespace ICT4Events
                 {
                     Listb_Events.Items.Add(event1.ToString());
                     cB_Event_ID_User.Items.Add(event1.ID_Event);
+                    
                 }
             }
 

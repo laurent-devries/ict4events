@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,13 +12,33 @@ using System.Windows.Forms;
 
 namespace ICT4Events
 {
-    public partial class Reservering_systeem : Form
+    public partial class ReserveringSysteem : Form
     {
-        public Reservering_systeem()
+        public ReserveringSysteem()
         {
             InitializeComponent();
-            Event eventData = new Event();
-            List<Event> events = eventData.RequestEvent();
+            EventManager eventManager = new EventManager();
+            List<Event> eventList = eventManager.RequestEvent();
+
+            foreach (Event ev in eventList)
+            {
+                cbEvents.Items.Add(ev);
+            }
+        }
+
+        private void cbEvents_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Event el = cbEvents.SelectedItem as Event;
+            CampingPlaceManager cpManager = new CampingPlaceManager();
+            List<CampingPlace> campingPlaceList = cpManager.RequestCampingPlaces(el);
+            cbPlaces.Items.Clear();
+
+            foreach (CampingPlace place in campingPlaceList)
+            {
+                cbPlaces.Items.Add(place);
+                MessageBox.Show(place.PlaceNumber);
+            }
+
         }
     }
 }
