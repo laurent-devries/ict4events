@@ -25,7 +25,7 @@ namespace ICT4Events
 
         public override string ToString()
         {
-            return PlaceNumber + " aantal: " + MaxPeople + " type: " + CampingType; 
+            return "Nummer: " + PlaceNumber + " aantal: " + MaxPeople + " type: " + CampingType; 
         }
 
     }

@@ -65,6 +65,11 @@ namespace ICT4Events
             {
                 MessageBox.Show(ex.Description);
             }
+
+            catch (DllNotFoundException)
+            {
+                MessageBox.Show("Phidget Dll kan niet gevonden worden");
+            }
         }
 
 
