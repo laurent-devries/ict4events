@@ -46,7 +46,7 @@ namespace ICT4Events
         }
         public override string ToString()
         {
-            return Convert.ToString(id_reservation) + "/t" + Convert.ToString(id_campingPlaceFK) + "/t" + Convert.ToString(PaymentState);
+            return id_reservation.ToString();
         }
     }
 }
