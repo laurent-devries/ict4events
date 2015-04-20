@@ -30,6 +30,7 @@ namespace ICT4Events
         User user;
         FTPConnection ftp;
 
+
         public SocialSharing(User user)
         {
             InitializeComponent();
@@ -154,6 +155,7 @@ namespace ICT4Events
             ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
             string s = "";
             string q = "";
+            string localfile = "";
             //Titel
             Label Titel = new Label();
             Titel.Location = new Point(0, 5);
@@ -223,10 +225,11 @@ namespace ICT4Events
 
                 if (fDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show(fDialog.FileName.ToString());
-                    tMediaPath.Text = fDialog.FileName.ToString();
+                    MessageBox.Show(fDialog.FileName;
+                    tMediaPath.Text = fDialog.FileName;
                     previewImag = Image.FromFile(tMediaPath.Text);
                     s = Path.GetFileName(fDialog.FileName);
+                    localfile = fDialog.FileName;
                     q = Path.Combine("ftp://172.16.0.15/", s);
                 }
             };
@@ -308,6 +311,7 @@ namespace ICT4Events
                 MediaManager media = new MediaManager();
                 DateTime currentDate = DateTime.Now;
                 media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
+                ftp.upload(q, localfile);
             };
         }
     }

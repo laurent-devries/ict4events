@@ -158,7 +158,8 @@ namespace ICT4Events
                 FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/" , "client", "1233");
                 string s = Path.GetFileName(imagePath);
                 string q = Path.Combine("ftp://172.16.0.15/", s);
-                ftp.download( q, System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments));
+                string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
+                ftp.download( q, i);
             };
             
         }
