@@ -159,7 +159,7 @@ namespace ICT4Events
                 string s = Path.GetFileName(imagePath);
                 string q = Path.Combine("ftp://172.16.0.15/", s);
                 string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
-                ftp.download( q, i);
+                ftp.download(q, i);
             };
             
         }
