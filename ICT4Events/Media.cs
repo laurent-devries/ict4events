@@ -27,14 +27,13 @@ namespace ICT4Events
         public int Views { get { return views; } set { views = value; } }
         public string File_path { get; set; }
         public string Type_Media { get; set; }
-        public int ID_Media { get { return id_media; } }
+        public int ID_Media { get { return id_media; } set { id_media = value; } }
         public int Likes { get { return likes; } set { likes = value; } }
         public int Reports { get { return reports; } set { reports = value; } }
         //Methods
-        public Media(string title, string date, string summary, int views, int likes, int reports, string file_Path, string type_Media)
+        public Media(string title, string date, string summary, int views, int likes, int reports, string file_Path, string type_Media, int idmedia)
         {
-            this.id_media = idnumber;
-            idnumber++;
+            ID_Media = idmedia;
             Title = title;
             Date = date;
             Summary = summary;

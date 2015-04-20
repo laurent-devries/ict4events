@@ -11,13 +11,15 @@ namespace ICT4Events
     {
         //Fields
         int id_Comment;
+        int id_media;
         string comment;
         DateTime Date { get; set; }
 
         //Constructor
-        public Comment(int id_Comment, DateTime date, string comment)
+        public Comment(int id_Comment, DateTime date, string comment, int id_media)
         {
             this.id_Comment = id_Comment;
+            this.id_media = id_media;
             this.comment = comment;
             Date = date;
         }
@@ -25,6 +27,11 @@ namespace ICT4Events
         public bool checkAbuse()
         {
             return true;
+        }
+
+        public override string ToString()
+        {
+            return comment;
         }
     }
 }

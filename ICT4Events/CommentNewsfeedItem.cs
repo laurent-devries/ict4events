@@ -13,13 +13,16 @@ namespace ICT4Events
     public partial class CommentNewsfeedItem : Form
     {
         MediaManager m;
-        public CommentNewsfeedItem(string titel, int id, Panel panel)
+        Label lblOpenComment;
+        int i = 0;
+        int id;
+        List<Media> medialist;
+        List<Comment> commentList;
+        public CommentNewsfeedItem(string titel, int id)
         {
             InitializeComponent();
-
+            this.id = id;
             m = new MediaManager();
-            List<Media> medialist = new List<Media>();
-            List<Comment> commentList = new List<Comment>();
             medialist = m.RequestMedia();
             commentList = m.RequestComments(id);
             
@@ -44,20 +47,20 @@ namespace ICT4Events
                 }
             }
 
-            for (int i = 0; i<commentList.Count; i++)
+            foreach (Comment c in commentList)
             {
-                RichTextBox rtbComment = new RichTextBox();
-                int height = panel.Height / 8 * (4 + i);
-                rtbComment.Height = height;
-                rtbComment.Width = 10;
-            }
-            
+                lblOpenComment = new Label();
+                
+                lblOpenComment.Location = new Point(0, lbCommentLoader.Height / 6 * i);
+                i++;
+                lbCommentLoader.Items.Add(c.ToString());
+            }          
             
         }
 
         private void btnUploadComment_Click(object sender, EventArgs e)
         {
-            m.InsertComment(rtbComment.Text);
+            m.InsertComment(rtbComment.Text, id);
         }
 
         private void CommentNewsfeedItem_Load(object sender, EventArgs e)
