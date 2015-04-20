@@ -29,10 +29,7 @@ namespace ICT4Events
             List<CampingPlace> campingPlaceList = cpManager.RequestFreeCampingPlaces(dtpAankomst.Value, dtpVertrek.Value, el);
             cbPlaces.Items.Clear();
 
-            foreach (CampingPlace place in campingPlaceList)
-            {
-                cbPlaces.Items.Add(place);
-            }
+            cbPlaces.DataSource = campingPlaceList;
 
         }
 
