@@ -26,8 +26,7 @@ namespace ICT4Events
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
         RichTextBox tMediaDescription;
-        Image previewImag;
-        User user;
+        Image previewImag;       
 
         public SocialSharing(User user)
         {
@@ -136,7 +135,7 @@ namespace ICT4Events
         }
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
-        {           
+        {
             loadMedia(loadStarter, loadEnder);
         }
 
@@ -151,6 +150,9 @@ namespace ICT4Events
 
         public void loadUploadingScreen()
         {
+            ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
+            string s = "";
+            string q = "";
             //Titel
             Label Titel = new Label();
             Titel.Location = new Point(0, 5);
@@ -223,6 +225,8 @@ namespace ICT4Events
                     MessageBox.Show(fDialog.FileName.ToString());
                     tMediaPath.Text = fDialog.FileName.ToString();
                     previewImag = Image.FromFile(tMediaPath.Text);
+                    s = Path.GetFileName(fDialog.FileName);
+                    q = Path.Combine("ftp://172.16.0.15/", s);
                 }
             };
 
@@ -302,20 +306,9 @@ namespace ICT4Events
                 MediaManager media = new MediaManager();
                 DateTime currentDate = DateTime.Now;
                 media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
-
-                MessageBox.Show("Succesfully updated");
             };
-
-
-
         }
-
-
-
-
     }
-
-
 }
 
 
