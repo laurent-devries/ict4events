@@ -48,7 +48,7 @@ namespace ICT4Events
         {
             this.count = count;
             this.panel = panel;
-            this.id = id;
+            ID = id;
 
 
             panel.Location = new Point(nieuwsfeedPanel.Width / 3 * countWidth + 10, nieuwsfeedPanel.Height / 2 * countHeight + 10);
@@ -70,7 +70,7 @@ namespace ICT4Events
             Titel.BringToFront();
             Titel.Click += delegate
             {
-                CommentNewsfeedItem commentNFI = new CommentNewsfeedItem(titel, id, panel);
+                CommentNewsfeedItem commentNFI = new CommentNewsfeedItem(titel, id);
                 commentNFI.Show();
             };
 
