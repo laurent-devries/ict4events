@@ -96,7 +96,7 @@
             // lblAankomst
             // 
             this.lblAankomst.AutoSize = true;
-            this.lblAankomst.Location = new System.Drawing.Point(16, 65);
+            this.lblAankomst.Location = new System.Drawing.Point(16, 70);
             this.lblAankomst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAankomst.Name = "lblAankomst";
             this.lblAankomst.Size = new System.Drawing.Size(74, 17);
@@ -106,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 97);
+            this.label2.Location = new System.Drawing.Point(16, 102);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 17);
@@ -142,7 +142,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 143);
+            this.label3.Location = new System.Drawing.Point(16, 128);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(109, 17);
@@ -152,7 +152,7 @@
             // cbPlaces
             // 
             this.cbPlaces.FormattingEnabled = true;
-            this.cbPlaces.Location = new System.Drawing.Point(151, 143);
+            this.cbPlaces.Location = new System.Drawing.Point(151, 125);
             this.cbPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPlaces.Name = "cbPlaces";
             this.cbPlaces.Size = new System.Drawing.Size(265, 24);
@@ -527,7 +527,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 191);
+            this.label7.Location = new System.Drawing.Point(16, 160);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 17);
@@ -546,7 +546,7 @@
             "6",
             "7",
             "8"});
-            this.cbPersonsAmount.Location = new System.Drawing.Point(151, 191);
+            this.cbPersonsAmount.Location = new System.Drawing.Point(151, 157);
             this.cbPersonsAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPersonsAmount.Name = "cbPersonsAmount";
             this.cbPersonsAmount.Size = new System.Drawing.Size(265, 24);

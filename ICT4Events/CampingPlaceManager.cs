@@ -74,15 +74,13 @@ namespace ICT4Events
                 endDay = Convert.ToString(endDate.Day);
             }
 
-            string Querry = "SELECT CP.ID_CAMPINGPLACE, CP.ID_EVENTFK, CP.PLACENUMBER, CP.MAXPEOPLE, CP.CAMPINGTYPE FROM ICT4_RESERVATION R, ICT4_CAMPING_PLACE CP WHERE CP.ID_CAMPINGPLACE = R.ID_CAMPINGPLACEFK AND to_date('" + startDay + startMonth + Convert.ToString(startDate.Year) + "','DDMMYYYY') > R.STARTDATE  OR  R.ENDDATE > to_date('" + endDay + endMonth + Convert.ToString(endDate.Year) + "','DDMMYYYY') AND R.ID_EVENTFK = CP.ID_EVENTFK AND CP.ID_EVENTFK = " + Convert.ToString(e.ID_Event) ;
-            MessageBox.Show(Querry);
+            string Querry = "SELECT CP.ID_CAMPINGPLACE, CP.ID_EVENTFK, CP.PLACENUMBER, CP.MAXPEOPLE, CP.CAMPINGTYPE FROM ICT4_RESERVATION R, ICT4_CAMPING_PLACE CP WHERE CP.ID_CAMPINGPLACE != R.ID_CAMPINGPLACEFK AND ((to_date('" + startDay + startMonth + Convert.ToString(startDate.Year) + "','DDMMYYYY') > R.STARTDATE)  OR  R.ENDDATE > (to_date('" + endDay + endMonth + Convert.ToString(endDate.Year) + "','DDMMYYYY'))) AND R.ID_EVENTFK = CP.ID_EVENTFK AND CP.ID_EVENTFK = " + Convert.ToString(e.ID_Event);
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             CampingPlace campingPlace;
             while (reader.Read())
             {
                 campingPlace = new CampingPlace(reader.GetInt32(0), reader.GetInt32(1), reader.GetString(2), reader.GetInt32(3), reader.GetString(4));
                 campingPlaceList.Add(campingPlace);
-                MessageBox.Show(reader.GetString(2));
             }
             reader.Dispose();
 
