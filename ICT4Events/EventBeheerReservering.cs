@@ -17,14 +17,12 @@ namespace ICT4Events
         List<Event> evenementen;
         List<User> userList;
         List<Reservation> reservations;
+        EventManager Event = new EventManager();
+        UserManager Users = new UserManager();
+        ReservationManager Reservation = new ReservationManager();
         public EventBeheerReservering()
         {
             InitializeComponent();
-            EventManager Event = new EventManager();
-            evenementen = Event.RequestEvent();
-            UserManager Users = new UserManager();
-            userList = Users.RequestUsers();
-            Reservation Reservation = new Reservation();
             lists();
         }
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -34,12 +32,13 @@ namespace ICT4Events
 
         private void btn_nieuwe_gebruiker_Click(object sender, EventArgs e)
         {
-            gb_gebruikercreatie.Enabled = true;
+            cB_Event_ID_User.Enabled = true;
         }
 
         private void btn_create_gebruiker_Click(object sender, EventArgs e)
         {
             gb_gebruikercreatie.Enabled = false;
+            cB_Event_ID_User.Enabled = false;
             gb_gebruikercreatie.Text = null;
             DatabaseConnection conn = new DatabaseConnection();
             string maand;
@@ -51,9 +50,18 @@ namespace ICT4Events
             {
                 maand = Convert.ToString(dtp_geboortedatum_gebruiker.Value.Month);
             }
+            string dag;
+            if (dtp_geboortedatum_gebruiker.Value.Day < 10)
+            {
+                dag = "0" + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day);
+            }
+            else
+            {
+                dag = Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day);
+            }
             MessageBox.Show(maand);
-            conn.InsertOrUpdate("INSERT INTO ICT4_USER (id_user,id_eventFK,id_reservationFK,id_permissionFK,firstName,surName,birthDate,email,country,street,houseNumber,city,cellphoneNumber,loginName,userName,passwordUser,profilePic,summaryUser,presentUser) VALUES(USER_SEQ.NEXTVAL," + Convert.ToInt32(cB_Event_ID_User.Text) + "," + Convert.ToInt32(cB_Reservation_ID_User.Text) + "," + 1 + ",'" + tb_voornaam_gebruiker.Text + "','" + tb_achternaam_user.Text + "', to_date('" + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day) + maand + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Year) + "','DDMMYYYY') ,'" + tb_email_gebruiker.Text + "','" + cb_land_gebruiker.Text + "','" + tb_straat_user.Text + "','" + tb_number_user.Text + "','" + tb_stad_user.Text + "','" + tb_telnr_gebruiker.Text + "','" + tb_loginname_gebruiker.Text + "','" + tb_username_gebruiker.Text + "','" + tb_password_gebruiker.Text + "','C:/','No Summary','N')");
-}
+            conn.InsertOrUpdate("INSERT INTO ICT4_USER (id_user,id_eventFK,id_reservationFK,id_permissionFK,firstName,surName,birthDate,email,country,street,houseNumber,city,cellphoneNumber,loginName,userName,passwordUser,profilePic,summaryUser,presentUser) VALUES(USER_SEQ.NEXTVAL," + Convert.ToInt32(cB_Event_ID_User.Text) + "," + Convert.ToInt32(cB_Reservation_ID_User.Text) + "," + 1 + ",'" + tb_voornaam_gebruiker.Text + "','" + tb_achternaam_user.Text + "', to_date('" + dag + maand + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Year) + "','DDMMYYYY') ,'" + tb_email_gebruiker.Text + "','" + cb_land_gebruiker.Text + "','" + tb_straat_user.Text + "','" + tb_number_user.Text + "','" + tb_stad_user.Text + "','" + tb_telnr_gebruiker.Text + "','" + tb_loginname_gebruiker.Text + "','" + tb_username_gebruiker.Text + "','" + tb_password_gebruiker.Text + "','C:/','No Summary','N')");
+        }
 
         private void Listb_gebruikers_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -61,7 +69,22 @@ namespace ICT4Events
         }
         private void lists()
         {
+            evenementen = Event.RequestEvent();
+            userList = Users.RequestUsers();
+            int userid;
+            try
+            {
+                int.TryParse(cB_Event_ID_User.Text, out userid);
+                reservations = Reservation.RequestReservations(userid);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("error");
+            }
 
+            
+
+            
             if (userList != null)
             {
                 Listb_gebruikers.Items.Clear();
@@ -81,7 +104,15 @@ namespace ICT4Events
                     
                 }
             }
+            if (reservations != null)
+            {
+                cB_Reservation_ID_User.Items.Clear();
+                foreach(Reservation reservation in reservations)
+                {
+                    cB_Reservation_ID_User.Items.Add(reservations.ToString());
+                }
 
+            }
             
 
         }
@@ -90,6 +121,12 @@ namespace ICT4Events
         {
             MessageBox.Show(Convert.ToString(dtp_geboortedatum_gebruiker.Value.Day) + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Month) + Convert.ToString(dtp_geboortedatum_gebruiker.Value.Year));
 
+        }
+
+        private void cB_Event_ID_User_TextChanged(object sender, EventArgs e)
+        {
+            lists();
+            gb_gebruikercreatie.Enabled = true;
         }
 
         //private void btn_create_event_Click(object sender, EventArgs e)
