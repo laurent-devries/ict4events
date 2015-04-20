@@ -50,6 +50,26 @@ namespace ICT4Events
             mediaList = new List<Media>();
 
         }
+        
+        //public List<Media> RequestMedia()
+        //{
+        //    DatabaseConnection con = new DatabaseConnection();
+        //    string Querry = "SELECT TITLE, SUMMARYMEDIA, to_char(DATEMEDIA), to_char(viewMedia) FROM ICT4_MEDIA";
+
+        //    OracleDataReader reader = con.SelectFromDatabase(Querry);
+        //    Media media;
+        //    while (reader.Read())
+        //    {
+        //        media = new Media(reader.GetString(0), Convert.ToString(reader.GetString(2)), reader.GetString(1), Convert.ToInt32(reader.GetString(3)), "tttt", "VIDEO");
+        //        mediaList.Add(media);
+        //    }
+
+        //    reader.Dispose();
+
+        //    return mediaList;
+
+            
+        //}
 
         public bool CheckAbuse(string abusiveWord)
         {
