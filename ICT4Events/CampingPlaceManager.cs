@@ -36,6 +36,8 @@ namespace ICT4Events
             DatabaseConnection con = new DatabaseConnection();
             string startMonth;
             string endMonth;
+            string startDay;
+            string endDay;
             if (startDate.Month < 10)
             {
                 startMonth = "0" + Convert.ToString(startDate.Month);
@@ -53,8 +55,26 @@ namespace ICT4Events
             {
                 endMonth = Convert.ToString(endDate.Month);
             }
-            string currentDate = "10042015";
-            string Querry = "SELECT CP.ID_CAMPINGPLACE, CP.ID_EVENTFK, CP.PLACENUMBER, CP.MAXPEOPLE, CP.CAMPINGTYPE FROM ICT4_RESERVATION R, ICT4_CAMPING_PLACE CP WHERE CP.ID_CAMPINGPLACE = R.ID_CAMPINGPLACEFK AND to_date('" + Convert.ToString(startDate.Day) + startMonth + Convert.ToString(startDate.Year) + "','DDMMYYYY') < R.STARTDATE  OR  R.ENDDATE < to_date('" + Convert.ToString(endDate.Day) + endMonth + Convert.ToString(endDate.Year) + "','DDMMYYYY') AND R.ID_EVENTFK = CP.ID_EVENTFK AND CP.ID_EVENTFK = " + Convert.ToString(e.ID_Event) ;
+
+            if (startDate.Day < 10)
+            {
+                startDay = "0" + Convert.ToString(startDate.Day);
+            }
+            else
+            {
+                startDay = Convert.ToString(startDate.Day);
+            }
+
+            if (endDate.Day < 10)
+            {
+                endDay = "0" + Convert.ToString(endDate.Day);
+            }
+            else
+            {
+                endDay = Convert.ToString(endDate.Day);
+            }
+
+            string Querry = "SELECT CP.ID_CAMPINGPLACE, CP.ID_EVENTFK, CP.PLACENUMBER, CP.MAXPEOPLE, CP.CAMPINGTYPE FROM ICT4_RESERVATION R, ICT4_CAMPING_PLACE CP WHERE CP.ID_CAMPINGPLACE = R.ID_CAMPINGPLACEFK AND to_date('" + startDay + startMonth + Convert.ToString(startDate.Year) + "','DDMMYYYY') > R.STARTDATE  OR  R.ENDDATE > to_date('" + endDay + endMonth + Convert.ToString(endDate.Year) + "','DDMMYYYY') AND R.ID_EVENTFK = CP.ID_EVENTFK AND CP.ID_EVENTFK = " + Convert.ToString(e.ID_Event) ;
             MessageBox.Show(Querry);
             OracleDataReader reader = con.SelectFromDatabase(Querry);
             CampingPlace campingPlace;

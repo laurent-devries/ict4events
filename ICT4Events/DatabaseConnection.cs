@@ -16,8 +16,8 @@ namespace ICT4Events
     {
         private OracleConnection oracleConn;
 
-        private string user = "ICT4EVENT";//Wachtwoord van de server
-        private string pw = "Welkom123";//Wachtwoord van de server
+        private string user = "system";//Wachtwoord van de server
+        private string pw = "visisdood";//Wachtwoord van de server
 
         private void Connect()
         {

@@ -68,6 +68,7 @@ namespace ICT4Events
             this.location = Location;
         }
 
+
         public void CheckIn(User user)
         {
             participants.Add(user);
