@@ -147,8 +147,8 @@ namespace ICT4Events
             };
 
             LinkLabel lblDownload = new LinkLabel();
-            lblDownload.Location = new Point(panel.Width / 2 - wSpace, 10 + hSpace * 9);
-            lblDownload.Text = "lblDownload";
+            lblDownload.Location = new Point(panel.Width / 2 - wSpace * 2, 10 + hSpace * 9);
+            lblDownload.Text = "Download";
             lblDownload.Height = 15;
             lblDownload.Font = new Font("Georgia", 6);
             lblDownload.ForeColor = Color.DarkOrange;
