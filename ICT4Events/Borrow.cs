@@ -9,8 +9,8 @@ namespace ICT4Events
     //teun van der wijst
     public class Borrow
     {
-        private static int idnumber = 0;
-        private int ID_borrow;
+       // private static int idnumber = 0;
+        private int iD_borrow;
         private DateTime hire_date;
         private DateTime return_date;
         private DateTime returned_date;
@@ -42,18 +42,20 @@ namespace ICT4Events
             set { hire_date = value; }
         }
         
-        public int ID_Borrow
+        public int iD_Borrow
         {
-            get { return ID_borrow; }
+            get { return iD_borrow; }
             
         }
         
-        public Borrow(DateTime hire_date, DateTime return_date)
+        public Borrow(int iD_borrow, DateTime hire_date, DateTime return_date)
         {
-            ID_borrow = idnumber;
-            idnumber++;
+         //   ID_borrow = idnumber;
+           // idnumber++;
+            this.iD_borrow = iD_borrow;
             this.hire_date = hire_date;
             this.return_date = return_date;
+            
         }
 
         public void AddProduct(Product product)

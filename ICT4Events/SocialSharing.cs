@@ -26,16 +26,13 @@ namespace ICT4Events
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
         RichTextBox tMediaDescription;
-        OpenFileDialog fDialog;
         Image previewImag;
-        FTPConnection ftp;
-
-        int mediaHeight = 80;
-        int mediaWidth = 120;
+        User user;
 
         public SocialSharing(User user)
         {
             InitializeComponent();
+            this.user = user;
 
             MediaManager mediaData = new MediaManager();
             mediaList = mediaData.RequestMedia();
@@ -83,6 +80,11 @@ namespace ICT4Events
 
         public void loadMedia(int start, int end)
         {
+            MediaManager mediaData = new MediaManager();
+            mediaList = mediaData.RequestMedia();
+
+            btnNextPage.Visible = true;
+            btnPreviousPage.Visible = true; 
             LoadMediaFiles(start, end);
 
             foreach (NewsFeedItem item in itemlist)
@@ -118,7 +120,7 @@ namespace ICT4Events
             {
                 Media media = mediaList[i];
                 Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight);
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user);
 
                 countWidth++;
 
@@ -134,12 +136,7 @@ namespace ICT4Events
         }
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
-        {
-            MediaManager mediaData = new MediaManager();
-            mediaList = mediaData.RequestMedia();
-
-            btnNextPage.Visible = true;
-            btnPreviousPage.Visible = true;            
+        {           
             loadMedia(loadStarter, loadEnder);
         }
 
@@ -154,9 +151,6 @@ namespace ICT4Events
 
         public void loadUploadingScreen()
         {
-            ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
-            string s = "";
-            string q = "";
             //Titel
             Label Titel = new Label();
             Titel.Location = new Point(0, 5);
@@ -229,8 +223,6 @@ namespace ICT4Events
                     MessageBox.Show(fDialog.FileName.ToString());
                     tMediaPath.Text = fDialog.FileName.ToString();
                     previewImag = Image.FromFile(tMediaPath.Text);
-                    s = Path.GetFileName(fDialog.FileName);
-                    q = Path.Combine("ftp://172.16.0.15/", s);
                 }
             };
 
@@ -310,10 +302,20 @@ namespace ICT4Events
                 MediaManager media = new MediaManager();
                 DateTime currentDate = DateTime.Now;
                 media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
-                ftp.upload(q, fDialog.FileName);
+
+                MessageBox.Show("Succesfully updated");
             };
+
+
+
         }
+
+
+
+
     }
+
+
 }
 
 

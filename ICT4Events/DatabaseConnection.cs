@@ -16,15 +16,14 @@ namespace ICT4Events
     {
         private OracleConnection oracleConn;
 
-        private string user = "ICT4EVENT";//Naam van de server
-        private string pw = "Welkom123";//Wachtwoord van de server
-        private string ds = "//172.16.0.15:1521/XE";
+        private string user = "system";//Wachtwoord van de server
+        private string pw = "visisdood";//Wachtwoord van de server
 
         private void Connect()
         {
             try
             {
-                oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + ds + ";");
+                oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + "//localhost:1521/XE" + ";");
             }
 
             catch (Exception e)
@@ -38,19 +37,16 @@ namespace ICT4Events
         {
             try
             {
-                using (oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + ds + ";"))
-                {
-                    OracleCommand cmd = new OracleCommand();
-                    cmd.Connection = oracleConn;
-                    cmd.CommandText = Querry;
-                    cmd.CommandType = CommandType.Text;
-                    oracleConn.Open();
-                    using (OracleDataReader reader = cmd.ExecuteReader())
-                    {
-                        return reader;
-                    }
-                }
+                Connect();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = oracleConn;
+                cmd.CommandText = Querry;
+                cmd.CommandType = CommandType.Text;
+                oracleConn.Open();
+                OracleDataReader reader = cmd.ExecuteReader();
+                return reader;
             }
+
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
@@ -62,16 +58,15 @@ namespace ICT4Events
         {
             try
             {
-                using (oracleConn = new OracleConnection("User Id=" + user + ";Password=" + pw + ";Data Source=" + ds + ";"))
-                {
-                    OracleCommand cmd = new OracleCommand();
-                    cmd.Connection = oracleConn;
-                    cmd.CommandText = Querry;
-                    cmd.CommandType = CommandType.Text;
-                    oracleConn.Open();
-                    OracleDataReader reader = cmd.ExecuteReader();
-                    return true;
-                }
+                Connect();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = oracleConn;
+                cmd.CommandText = Querry;
+                cmd.CommandType = CommandType.Text;
+                oracleConn.Open();
+                OracleDataReader reader = cmd.ExecuteReader();
+                oracleConn.Dispose();
+                return true;
             }
             catch(Exception e)
             {

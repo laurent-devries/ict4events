@@ -34,6 +34,9 @@ namespace ICT4Events
         private void Hiresystem_Load(object sender, EventArgs e)
         {
 
+
+
+
         }
 
 
@@ -64,6 +67,11 @@ namespace ICT4Events
             catch (PhidgetException ex)
             {
                 MessageBox.Show(ex.Description);
+            }
+
+            catch (DllNotFoundException)
+            {
+                MessageBox.Show("Phidget Dll kan niet gevonden worden");
             }
         }
 
@@ -126,14 +134,11 @@ namespace ICT4Events
 
         public void LoadProducts()
         {
-            Product productData = new Product();
+            ProductManager productData = new ProductManager();
             producten = productData.RequestProducts();
             foreach (Product product in producten)
             {
                 listBox3.Items.Add(product);
-
-
-
             }
         }
 
@@ -164,6 +169,11 @@ namespace ICT4Events
 
             private void refresh()
             {
+                foreach (Product product in producten)
+                {
+                   // if(product.)
+                //    listBox2.
+                }
                 
 
             }
