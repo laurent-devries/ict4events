@@ -26,7 +26,9 @@ namespace ICT4Events
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
         RichTextBox tMediaDescription;
-        Image previewImag;       
+        Image previewImag;
+        User user;
+        FTPConnection ftp;
 
         public SocialSharing(User user)
         {
