@@ -44,8 +44,9 @@ namespace ICT4Events
         
 
         //Constructor
-        public NewsFeedItem(string titel, string datum, string views, string likes, string reports, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user, int id)
+        public NewsFeedItem(Media media, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user, int id)
         {
+            // NewsFeedItem(string titel, string datum, string views, string likes, string reports, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user, int id, User user)
             this.count = count;
             this.panel = panel;
             ID = id;
@@ -62,7 +63,7 @@ namespace ICT4Events
             //Create newsfeeddesig + delegates
             Titel = new Label();
             Titel.Location = new Point(wSpace, 5);
-            Titel.Text = titel;
+            Titel.Text = media.Title;
             Titel.ForeColor = Color.DarkOrange;
             Titel.Font = new Font("Georgia", 11);
             Titel.Width = panel.Width - wSpace;
@@ -70,20 +71,20 @@ namespace ICT4Events
             Titel.BringToFront();
             Titel.Click += delegate
             {
-                CommentNewsfeedItem commentNFI = new CommentNewsfeedItem(titel, id);
+                CommentNewsfeedItem commentNFI = new CommentNewsfeedItem(media.Title, id, user);
                 commentNFI.Show();
             };
 
             Datum = new Label();
             Datum.Location = new Point(wSpace, 10 + hSpace);
-            Datum.Text = datum;
+            Datum.Text = media.Date;
             Datum.Height = 15;
             Datum.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Datum);
 
             Views = new Label();
             Views.Location = new Point(wSpace, 10 + hSpace * 2);
-            Views.Text = "Views: " + views;
+            Views.Text = "Views: " + media.Views;
             Views.ForeColor = Color.DarkOrange;
             Views.Width = panel.Width / 2 - wSpace;
             Views.Height = 15;
@@ -91,7 +92,7 @@ namespace ICT4Events
 
             Likes = new Label();
             Likes.Location = new Point(panel.Width / 2, 10 + hSpace * 2);
-            Likes.Text = "Likes: " + likes;
+            Likes.Text = "Likes: " + media.Likes;
             Likes.Height = 15;
             Likes.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Likes);
@@ -101,9 +102,9 @@ namespace ICT4Events
             p.BackColor = Color.Black;
             p.Width = panel.Width - wSpace * 2;
             p.SizeMode = PictureBoxSizeMode.StretchImage;
-            if (File.Exists(imagePath))
+            if (File.Exists(media.File_path))
             {
-              p.Load(imagePath);
+              p.Load(media.File_path);
             }
             
 
@@ -114,7 +115,7 @@ namespace ICT4Events
             Message.Width = panel.Width - wSpace * 2;
             Message.Height = 60;
             Message.BackColor = Color.BlanchedAlmond;
-            Message.Text = message;
+            Message.Text = media.Summary;
             Message.ForeColor = Color.DarkOrange;
             Message.BorderStyle = BorderStyle.FixedSingle;
             panel.Controls.Add(Message);
@@ -129,7 +130,7 @@ namespace ICT4Events
             Report.Click += delegate
             {
                 MediaManager m = new MediaManager();
-                m.UpdateReports(titel);
+                m.UpdateReports(media.Title);
             };
 
             Like = new LinkLabel();
@@ -143,7 +144,7 @@ namespace ICT4Events
             Like.Click += delegate
             {
                 MediaManager m = new MediaManager();
-                m.UpdateLikes(titel);                
+                m.UpdateLikes(media.Title);                
             };
 
             LinkLabel lblDownload = new LinkLabel();
@@ -156,7 +157,7 @@ namespace ICT4Events
             lblDownload.Click += delegate
             {
                 FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
-                string s = Path.GetFileName(imagePath);
+                string s = Path.GetFileName(media.File_path);
                 string q = Path.Combine("ftp://172.16.0.15/", s);
                 string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
                 ftp.download(q, i);

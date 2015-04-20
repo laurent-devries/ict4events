@@ -84,7 +84,7 @@ namespace ICT4Events
        }
         
 
-        public void InsertMedia(string title, string summaryMedia, string filePath, string typeMedia, DateTime currentDate)
+        public bool InsertMedia(string title, string summaryMedia, string filePath, string typeMedia, DateTime currentDate)
         {
             DatabaseConnection con = new DatabaseConnection();
 
@@ -94,15 +94,17 @@ namespace ICT4Events
                 dateMonth = "0" + dateMonth;
             }
 
-            string Query = "INSERT INTO ICT4_MEDIA(ID_MEDIA,TITLE,DATEMEDIA,SUMMARYMEDIA,VIEWMEDIA,FILEPATH,TYPEMEDIA) VALUES(232323,'" + title + "', to_date('" + Convert.ToString(currentDate.Day) + dateMonth + Convert.ToString(currentDate.Year) + "', 'DDMMYYYY'),'" + summaryMedia + "', 50000,'" + filePath + "','" + typeMedia + "')";
+            string Query = "INSERT INTO ICT4_MEDIA(ID_MEDIA,TITLE,DATEMEDIA,SUMMARYMEDIA,VIEWMEDIA,FILEPATH,TYPEMEDIA) VALUES(media_seq.nextval,'" + title + "', to_date('" + Convert.ToString(currentDate.Day) + dateMonth + Convert.ToString(currentDate.Year) + "', 'DDMMYYYY'),'" + summaryMedia + "', 50000,'" + filePath + "','" + typeMedia + "')";
             bool writer = con.InsertOrUpdate(Query);
+            return writer;
         }
 
         public void UpdateLikes(string title)
         {
             DatabaseConnection con = new DatabaseConnection();
 
-            string Query = "UPDATE ICT4_MEDIA SET likes = likes + 1 WHERE title = '" + title + "'";
+            //string Query = "UPDATE ICT4_MEDIA SET likes = likes + 1 WHERE title = '" + title + "'";
+            string Query = "INSERT INTO ICT4_NOTE(ID_NOTE, ID_USERFK, ID_COMMENTFK, LIKENOTE) VALUESVALUES (note_seq.nextval, 3, 1, 'Y')";
             bool writer = con.InsertOrUpdate(Query);
         }
 
