@@ -49,7 +49,6 @@ namespace ICT4Events
             if (startup == false)
             {
                 loadMedia(0, 6);
-
             }
 
             lblIngelogdNaam.Text = user.Username;
@@ -119,7 +118,7 @@ namespace ICT4Events
             {
                 Media media = mediaList[i];
                 Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user);
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user, media.ID_Media);
 
                 countWidth++;
 

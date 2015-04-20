@@ -104,6 +104,12 @@
     <Compile Include="CampingPlaceManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="CommentNewsfeedItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommentNewsfeedItem.Designer.cs">
+      <DependentUpon>CommentNewsfeedItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventBeheerReservering.cs">
@@ -157,6 +163,9 @@
     <Compile Include="Tag.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserManager.cs" />
+    <EmbeddedResource Include="CommentNewsfeedItem.resx">
+      <DependentUpon>CommentNewsfeedItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EventBeheerReservering.resx">
       <DependentUpon>EventBeheerReservering.cs</DependentUpon>
     </EmbeddedResource>
