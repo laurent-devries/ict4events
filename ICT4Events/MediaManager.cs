@@ -11,6 +11,7 @@ namespace ICT4Events
 {
     class MediaManager
     {
+       
         List<Media> mediaList = new List<Media>();
         List<Comment> commentList = new List<Comment>();
         public List<Media> RequestMedia()
@@ -34,7 +35,7 @@ namespace ICT4Events
                     aantalLikes = 0;
                     aantalReports = 0;
                 }
-                media = new Media(reader.GetString(0), reader.GetString(1), reader.GetString(2), Convert.ToInt32(reader.GetString(3)), aantalLikes, aantalReports, reader.GetString(6), "VIDEO");
+                media = new Media(reader.GetString(0), reader.GetString(1), reader.GetString(2), Convert.ToInt32(reader.GetString(3)), aantalLikes, aantalReports, reader.GetString(6), "VIDEO", reader.GetInt32(7));
                 mediaList.Add(media);
             }
 
@@ -46,13 +47,12 @@ namespace ICT4Events
        public List<Comment> RequestComments(int mediaID)
         {
             DatabaseConnection con = new DatabaseConnection();
-           string Querry = "SELECT id_comment, to_char(dateComment), commentComment FROM ICT4_COMMENT WHERE id_comment = '"+ mediaID +"'";
-
-            OracleDataReader reader = con.SelectFromDatabase(Querry);
+            string Query = "SELECT id_comment, id_mediaFK, dateComment, commentComment FROM ICT4_COMMENT WHERE id_mediaFk = '"+ mediaID +"'";
+            OracleDataReader reader = con.SelectFromDatabase(Query);
             Comment comment;
             while (reader.Read())
             {
-                comment = new Comment(Convert.ToInt32(reader.GetString(0)), Convert.ToDateTime(reader.GetString(1)), reader.GetString(2));
+                comment = new Comment(reader.GetInt32(0), reader.GetDateTime(2), reader.GetString(3), reader.GetInt32(1));
                 commentList.Add(comment);
             }
 
@@ -61,14 +61,14 @@ namespace ICT4Events
             return commentList;
         }
 
-       public void InsertComment(string comment)
+       public void InsertComment(string comment, int id_media)
        {
            DatabaseConnection con = new DatabaseConnection();
            DateTime currentDate = DateTime.Now;
-           MessageBox.Show(currentDate.ToString());
            string dateMonth = Convert.ToString(currentDate.Month);
            string dateDay = Convert.ToString(currentDate.Day);
            string dateYear = Convert.ToString(currentDate.Year);
+
            if (currentDate.Month < 10)
            {
                dateMonth = "0" + dateMonth;
@@ -77,9 +77,9 @@ namespace ICT4Events
            {
                dateDay = "0" + dateDay;
            }
-           
-           string Query = "INSERT INTO ICT4_COMMENT(comment_id, dateComment, commentComment) VALUES(com_seq, to_date('" + dateDay + dateMonth + dateYear +"','DDMMYYYY'),'" + comment + "')";
-           MessageBox.Show(Query);
+
+           string Query = "INSERT INTO ICT4_COMMENT(ID_COMMENT, id_MediaFK , dateComment, commentComment) VAlues(com_seq.nextval, '" + id_media + "', to_date('" + dateDay + dateMonth + dateYear + "', 'DDMMYYYY'), '" + comment + "')";
+         
            bool writer = con.InsertOrUpdate(Query);
        }
         

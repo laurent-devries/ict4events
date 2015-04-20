@@ -210,7 +210,6 @@ namespace ICT4Events
             pnlNewsFeed.Controls.Add(lMediaPath);
 
 
-
             //Button mediapath
             Button bMediaPath = new Button();
             bMediaPath.Location = new Point(lTitleOfMedia.Width + 10, pnlNewsFeed.Height / 10 * 5 - 1);
