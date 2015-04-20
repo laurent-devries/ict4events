@@ -105,6 +105,7 @@
     <Compile Include="CampingPlaceManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="CommentManager.cs" />
     <Compile Include="CommentNewsfeedItem.cs">
       <SubType>Form</SubType>
     </Compile>
