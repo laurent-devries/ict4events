@@ -31,7 +31,7 @@
             this.btn_verwijder_gebruiker = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_changeuser = new System.Windows.Forms.Button();
             this.cB_Event_ID_User = new System.Windows.Forms.ComboBox();
             this.gb_gebruikercreatie = new System.Windows.Forms.GroupBox();
             this.cB_Reservation_ID_User = new System.Windows.Forms.ComboBox();
@@ -66,8 +66,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.tb_idevent_event = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.Event_End_Date = new System.Windows.Forms.DateTimePicker();
             this.Event_Start_Date = new System.Windows.Forms.DateTimePicker();
             this.btn_create_event = new System.Windows.Forms.Button();
@@ -80,6 +78,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Listb_Events = new System.Windows.Forms.ListBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gb_gebruikercreatie.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,11 +93,12 @@
             this.btn_verwijder_gebruiker.TabIndex = 0;
             this.btn_verwijder_gebruiker.Text = "Delete";
             this.btn_verwijder_gebruiker.UseVisualStyleBackColor = true;
+            this.btn_verwijder_gebruiker.Click += new System.EventHandler(this.btn_verwijder_gebruiker_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_changeuser);
             this.groupBox1.Controls.Add(this.cB_Event_ID_User);
             this.groupBox1.Controls.Add(this.gb_gebruikercreatie);
             this.groupBox1.Controls.Add(this.Listb_gebruikers);
@@ -122,15 +122,15 @@
             this.label10.TabIndex = 32;
             this.label10.Text = "User_ID      ID_Event                 ID_Reservation               Name";
             // 
-            // button1
+            // btn_changeuser
             // 
-            this.button1.Location = new System.Drawing.Point(94, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Change";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_changeuser.Location = new System.Drawing.Point(94, 19);
+            this.btn_changeuser.Name = "btn_changeuser";
+            this.btn_changeuser.Size = new System.Drawing.Size(75, 23);
+            this.btn_changeuser.TabIndex = 5;
+            this.btn_changeuser.Text = "Change";
+            this.btn_changeuser.UseVisualStyleBackColor = true;
+            this.btn_changeuser.Click += new System.EventHandler(this.button1_Click);
             // 
             // cB_Event_ID_User
             // 
@@ -147,6 +147,7 @@
             // 
             // gb_gebruikercreatie
             // 
+            this.gb_gebruikercreatie.Controls.Add(this.btnCancel);
             this.gb_gebruikercreatie.Controls.Add(this.cB_Reservation_ID_User);
             this.gb_gebruikercreatie.Controls.Add(this.label12);
             this.gb_gebruikercreatie.Controls.Add(this.tb_achternaam_user);
@@ -190,7 +191,7 @@
             this.cB_Reservation_ID_User.FormattingEnabled = true;
             this.cB_Reservation_ID_User.Location = new System.Drawing.Point(96, 19);
             this.cB_Reservation_ID_User.Name = "cB_Reservation_ID_User";
-            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(141, 21);
+            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(324, 21);
             this.cB_Reservation_ID_User.Sorted = true;
             this.cB_Reservation_ID_User.TabIndex = 32;
             // 
@@ -523,8 +524,6 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.tb_idevent_event);
-            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.Event_End_Date);
             this.groupBox3.Controls.Add(this.Event_Start_Date);
             this.groupBox3.Controls.Add(this.btn_create_event);
@@ -536,69 +535,54 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Location = new System.Drawing.Point(6, 254);
+            this.groupBox3.Location = new System.Drawing.Point(6, 311);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(432, 389);
+            this.groupBox3.Size = new System.Drawing.Size(432, 332);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Event Create / Change";
             // 
-            // tb_idevent_event
-            // 
-            this.tb_idevent_event.Location = new System.Drawing.Point(103, 33);
-            this.tb_idevent_event.Name = "tb_idevent_event";
-            this.tb_idevent_event.Size = new System.Drawing.Size(317, 20);
-            this.tb_idevent_event.TabIndex = 14;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(11, 36);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "ID_Event:";
-            // 
             // Event_End_Date
             // 
-            this.Event_End_Date.Location = new System.Drawing.Point(103, 102);
+            this.Event_End_Date.Location = new System.Drawing.Point(103, 68);
             this.Event_End_Date.Name = "Event_End_Date";
             this.Event_End_Date.Size = new System.Drawing.Size(317, 20);
             this.Event_End_Date.TabIndex = 12;
             // 
             // Event_Start_Date
             // 
-            this.Event_Start_Date.Location = new System.Drawing.Point(103, 77);
+            this.Event_Start_Date.Location = new System.Drawing.Point(103, 43);
             this.Event_Start_Date.Name = "Event_Start_Date";
             this.Event_Start_Date.Size = new System.Drawing.Size(317, 20);
             this.Event_Start_Date.TabIndex = 11;
             // 
             // btn_create_event
             // 
-            this.btn_create_event.Location = new System.Drawing.Point(308, 360);
+            this.btn_create_event.Location = new System.Drawing.Point(314, 298);
             this.btn_create_event.Name = "btn_create_event";
             this.btn_create_event.Size = new System.Drawing.Size(112, 23);
             this.btn_create_event.TabIndex = 10;
             this.btn_create_event.Text = "Create / Change Event";
             this.btn_create_event.UseVisualStyleBackColor = true;
+            this.btn_create_event.Click += new System.EventHandler(this.btn_create_event_Click_1);
             // 
             // Event_Camping_Location
             // 
-            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 154);
+            this.Event_Camping_Location.Location = new System.Drawing.Point(103, 120);
             this.Event_Camping_Location.Name = "Event_Camping_Location";
             this.Event_Camping_Location.Size = new System.Drawing.Size(317, 20);
             this.Event_Camping_Location.TabIndex = 9;
             // 
             // Event_Camping_Name
             // 
-            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 130);
+            this.Event_Camping_Name.Location = new System.Drawing.Point(103, 96);
             this.Event_Camping_Name.Name = "Event_Camping_Name";
             this.Event_Camping_Name.Size = new System.Drawing.Size(317, 20);
             this.Event_Camping_Name.TabIndex = 6;
             // 
             // Event_Title
             // 
-            this.Event_Title.Location = new System.Drawing.Point(103, 57);
+            this.Event_Title.Location = new System.Drawing.Point(103, 23);
             this.Event_Title.Name = "Event_Title";
             this.Event_Title.Size = new System.Drawing.Size(317, 20);
             this.Event_Title.TabIndex = 5;
@@ -606,7 +590,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 157);
+            this.label8.Location = new System.Drawing.Point(11, 123);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 13);
             this.label8.TabIndex = 4;
@@ -615,7 +599,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 133);
+            this.label7.Location = new System.Drawing.Point(11, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 3;
@@ -624,7 +608,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 83);
+            this.label6.Location = new System.Drawing.Point(11, 49);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 2;
@@ -633,7 +617,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 108);
+            this.label5.Location = new System.Drawing.Point(11, 74);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 1;
@@ -642,7 +626,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 60);
+            this.label4.Location = new System.Drawing.Point(11, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 0;
@@ -651,10 +635,20 @@
             // Listb_Events
             // 
             this.Listb_Events.FormattingEnabled = true;
-            this.Listb_Events.Location = new System.Drawing.Point(6, 48);
+            this.Listb_Events.Location = new System.Drawing.Point(6, 64);
             this.Listb_Events.Name = "Listb_Events";
             this.Listb_Events.Size = new System.Drawing.Size(432, 199);
             this.Listb_Events.TabIndex = 6;
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(264, 298);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 33;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // EventBeheerReservering
             // 
@@ -707,7 +701,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_telnr_gebruiker;
         private System.Windows.Forms.Button btn_Confirm_user;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_changeuser;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox Listb_Events;
         private System.Windows.Forms.DateTimePicker Event_End_Date;
@@ -725,11 +719,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tb_idevent_event;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cB_Reservation_ID_User;
         private System.Windows.Forms.ComboBox cB_Event_ID_User;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 

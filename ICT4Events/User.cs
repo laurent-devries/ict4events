@@ -99,7 +99,7 @@ namespace ICT4Events
             this.profile_pic = profile_pic;
             this.summary = summary;
             this.present = present;
-            this.present = present;
+
 
         }
         
