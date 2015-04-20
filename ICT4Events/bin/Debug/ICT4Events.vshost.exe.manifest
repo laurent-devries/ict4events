@@ -13,18 +13,6 @@
         <defaultAssemblyRequest permissionSetReference="Custom" />
       </applicationRequestMinimum>
       <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
-        <!--
-          UAC Manifest Options
-          If you want to change the Windows User Account Control level replace the 
-          requestedExecutionLevel node with one of the following.
-
-        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
-        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
-        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
-
-         If you want to utilize File and Registry Virtualization for backward 
-         compatibility then delete the requestedExecutionLevel node.
-    -->
         <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
@@ -42,14 +30,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ICT4Events.exe" size="1914368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ICT4Events.exe" size="1916928">
       <assemblyIdentity name="ICT4Events" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VG6mkI58hf8J6lWYD95UNxdCyfMuso7qOmoYmZuWJIk=</dsig:DigestValue>
+        <dsig:DigestValue>hBgBxbJpriYeMUD36fiSbJrOEY4RJkGfQkagKQrU6Mo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,6 +65,33 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="bin\Debug\ICT4Events.exe" size="1914368">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>VG6mkI58hf8J6lWYD95UNxdCyfMuso7qOmoYmZuWJIk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\Debug\ICT4Events.pdb" size="218624">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Qkpfi0jV/5Yhl2S+bNE+7r2EWTFvR1EULk8vPx6Qgv4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="bin\x64\Debug\ICT4Events.vshost.exe" size="24216">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>XNN/+1gta5Nm8FoyaK/Ib2Xv6jsq1saFZFhBaRnTLTM=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="ICT4Events.exe.config" size="187">
     <hash>
       <dsig:Transforms>
@@ -84,6 +99,33 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="obj\x64\Debug\ICT4Events.csproj.FileListAbsolute.txt" size="88">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>XfQ1tRtAHhXG+7q+6IXwha0VK55Q0ZoGPKc+B6Iaacc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="References\Phidget21.NET.dll" size="142848">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sDrmA8gA/HIB9Dkc4dPx9DCiuw/Jz6MxYTuYGP1MicA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Camping_ReeënDal.png" size="1435397">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YhZjeW5MH3HoYeKhx/RoXmCyYG12wSsDBlukf5CY0Z0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
