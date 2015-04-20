@@ -23,6 +23,7 @@ namespace ICT4Events
         LinkLabel Report;
         LinkLabel Like;
         private int count;
+        private int id;
 
         //Properties
         public int Count
@@ -38,14 +39,17 @@ namespace ICT4Events
             get { return panel; }
             set { panel = value; }
         }
-        
+
+        public int ID { get; set; }
         
 
         //Constructor
-        public NewsFeedItem(string titel, string datum, string views, string likes, string reports, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user)
+        public NewsFeedItem(string titel, string datum, string views, string likes, string reports, string message, string imagePath, Panel panel, Panel nieuwsfeedPanel, int count, int countWidth, int countHeight, User user, int id)
         {
             this.count = count;
             this.panel = panel;
+            this.id = id;
+
 
             panel.Location = new Point(nieuwsfeedPanel.Width / 3 * countWidth + 10, nieuwsfeedPanel.Height / 2 * countHeight + 10);
             panel.Height = nieuwsfeedPanel.Height / 2 - 20;
@@ -64,6 +68,11 @@ namespace ICT4Events
             Titel.Width = panel.Width - wSpace;
             panel.Controls.Add(Titel);
             Titel.BringToFront();
+            Titel.Click += delegate
+            {
+                CommentNewsfeedItem commentNFI = new CommentNewsfeedItem(titel, id, panel);
+                commentNFI.Show();
+            };
 
             Datum = new Label();
             Datum.Location = new Point(wSpace, 10 + hSpace);
@@ -127,6 +136,7 @@ namespace ICT4Events
             Like.Location = new Point(wSpace, 10 + hSpace * 9);
             Like.Text = "Like";
             Like.Height = 15;
+            Like.Width = 50;
             Like.Font = new Font("Georgia", 6);
             Like.ForeColor = Color.DarkOrange;
             panel.Controls.Add(Like);
@@ -134,6 +144,22 @@ namespace ICT4Events
             {
                 MediaManager m = new MediaManager();
                 m.UpdateLikes(titel);                
+            };
+
+            LinkLabel lblDownload = new LinkLabel();
+            lblDownload.Location = new Point(panel.Width / 2 - wSpace * 2, 10 + hSpace * 9);
+            lblDownload.Text = "Download";
+            lblDownload.Height = 15;
+            lblDownload.Font = new Font("Georgia", 6);
+            lblDownload.ForeColor = Color.DarkOrange;
+            panel.Controls.Add(lblDownload);
+            lblDownload.Click += delegate
+            {
+                FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
+                string s = Path.GetFileName(imagePath);
+                string q = Path.Combine("ftp://172.16.0.15/", s);
+                string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
+                ftp.download(q, i);
             };
             
         }

@@ -28,6 +28,8 @@ namespace ICT4Events
         RichTextBox tMediaDescription;
         Image previewImag;
         User user;
+        FTPConnection ftp;
+
 
         public SocialSharing(User user)
         {
@@ -50,7 +52,6 @@ namespace ICT4Events
             if (startup == false)
             {
                 loadMedia(0, 6);
-
             }
 
             lblIngelogdNaam.Text = user.Username;
@@ -120,7 +121,7 @@ namespace ICT4Events
             {
                 Media media = mediaList[i];
                 Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user);
+                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user, media.ID_Media);
 
                 countWidth++;
 
@@ -136,7 +137,7 @@ namespace ICT4Events
         }
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
-        {           
+        {
             loadMedia(loadStarter, loadEnder);
         }
 
@@ -151,6 +152,10 @@ namespace ICT4Events
 
         public void loadUploadingScreen()
         {
+            ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
+            string s = "";
+            string q = "";
+            string localfile = "";
             //Titel
             Label Titel = new Label();
             Titel.Location = new Point(0, 5);
@@ -220,9 +225,11 @@ namespace ICT4Events
 
                 if (fDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show(fDialog.FileName.ToString());
-                    tMediaPath.Text = fDialog.FileName.ToString();
+                    tMediaPath.Text = fDialog.FileName;
                     previewImag = Image.FromFile(tMediaPath.Text);
+                    s = Path.GetFileName(fDialog.FileName);
+                    localfile = fDialog.FileName;
+                    q = Path.Combine("ftp://172.16.0.15/", s);
                 }
             };
 
@@ -297,25 +304,16 @@ namespace ICT4Events
             bUpload.Height = 30;
             pnlNewsFeed.Controls.Add(bUpload);
 
+
             bUpload.Click += delegate
             {
                 MediaManager media = new MediaManager();
                 DateTime currentDate = DateTime.Now;
                 media.InsertMedia(tTitleOfMedia.Text, tMediaDescription.Text, tMediaPath.Text, "anus", currentDate);
-
-                MessageBox.Show("Succesfully updated");
+                ftp.upload(q, localfile);
             };
-
-
-
         }
-
-
-
-
     }
-
-
 }
 
 
