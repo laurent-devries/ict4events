@@ -60,7 +60,7 @@ namespace ICT4Events
             int wSpace = 10;
             int hSpace = panel.Height / 10;
             
-            //Create newsfeeddesig + delegates
+            //Create Newsfeeddesign + delegates
             Titel = new Label();
             Titel.Location = new Point(wSpace, 5);
             Titel.Text = media.Title;
@@ -131,6 +131,8 @@ namespace ICT4Events
             {
                 MediaManager m = new MediaManager();
                 m.UpdateReports(media.Title);
+                MessageBox.Show("Succesfully reported");
+                Report.Visible = false;
             };
 
             Like = new LinkLabel();
@@ -143,8 +145,11 @@ namespace ICT4Events
             panel.Controls.Add(Like);
             Like.Click += delegate
             {
+                /*
                 MediaManager m = new MediaManager();
-                m.UpdateLikes(media.Title);                
+                m.UpdateLikes(media.Title);
+                 */
+                MessageBox.Show("This item will be likeable soon");
             };
 
             LinkLabel lblDownload = new LinkLabel();
@@ -156,11 +161,14 @@ namespace ICT4Events
             panel.Controls.Add(lblDownload);
             lblDownload.Click += delegate
             {
-                FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
+                MessageBox.Show("Coming soon");
+               
+                /*FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
                 string s = Path.GetFileName(media.File_path);
                 string q = Path.Combine("ftp://172.16.0.15/", s);
                 string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
                 ftp.download(q, i);
+                 */
             };
             
         }
