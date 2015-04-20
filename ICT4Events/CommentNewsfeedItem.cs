@@ -12,15 +12,16 @@ namespace ICT4Events
 {
     public partial class CommentNewsfeedItem : Form
     {
+        MediaManager m;
         public CommentNewsfeedItem(string titel, int id, Panel panel)
         {
             InitializeComponent();
 
-            MediaManager m = new MediaManager();
+            m = new MediaManager();
             List<Media> medialist = new List<Media>();
             List<Comment> commentList = new List<Comment>();
             medialist = m.RequestMedia();
-            //commentList = m.RequestComments(id);
+            commentList = m.RequestComments(id);
             
 
             foreach (Media media in medialist)
@@ -56,7 +57,7 @@ namespace ICT4Events
 
         private void btnUploadComment_Click(object sender, EventArgs e)
         {
-           
+            m.InsertComment(rtbComment.Text);
         }
 
         private void CommentNewsfeedItem_Load(object sender, EventArgs e)
