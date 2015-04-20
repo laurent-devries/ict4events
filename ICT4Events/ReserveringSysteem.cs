@@ -68,7 +68,15 @@ namespace ICT4Events
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gb_gebruikercreatie.Enabled = true;
+            if(cbEvents.SelectedItem != null && cbPlaces.SelectedItem != null && cbPersonsAmount.SelectedItem != null)
+            {
+                gb_gebruikercreatie.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Voer eerst alle gegevens in voordat u een account aan kunt maken.");
+            }
+
 
         }
     }
