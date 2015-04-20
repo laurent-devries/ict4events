@@ -155,7 +155,7 @@ namespace ICT4Events
             panel.Controls.Add(lblDownload);
             lblDownload.Click += delegate
             {
-                FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/" , "client", "1233");
+                FTPConnection ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
                 string s = Path.GetFileName(imagePath);
                 string q = Path.Combine("ftp://172.16.0.15/", s);
                 string i = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), s);
