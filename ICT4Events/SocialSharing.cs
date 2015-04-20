@@ -16,29 +16,36 @@ namespace ICT4Events
 
     public partial class SocialSharing : Form
     {
+        //maakt alle fields aan
         int countWidth = 0;
         int countHeight = 0;
         int loadStarter = 0;
         int loadEnder = 6;
+        
         bool startup = false;
+        
         List<NewsFeedItem> itemlist = new List<NewsFeedItem>();
         List<Media> mediaList;
+        
         TextBox tTitleOfMedia;
         TextBox tMediaPath;
+        
         RichTextBox tMediaDescription;
         Image previewImag;
         User user;
         FTPConnection ftp;
 
-
+        //Geeft een user mee die gebruikt wordt om te kijken welke user ingelogd is
         public SocialSharing(User user)
         {
             InitializeComponent();
             this.user = user;
 
+            //Vraagt alle media tijdens het starten op
             MediaManager mediaData = new MediaManager();
             mediaList = mediaData.RequestMedia();
 
+            //Laad de gegevens van de gebruiker
             lblIngelogdNaam.Location = new Point(this.Width - lblIngelogdNaam.Width - 30, 18);
             pbProfilePicture.Location = new Point(this.Width - lblIngelogdNaam.Width - 85, 2);
 
@@ -78,18 +85,57 @@ namespace ICT4Events
             btnNextPage.Enabled = true;
         }
 
-
         public void loadMedia(int start, int end)
         {
+            //Laad de media bestanden op het form
             MediaManager mediaData = new MediaManager();
             mediaList = mediaData.RequestMedia();
 
             btnNextPage.Visible = true;
-            btnPreviousPage.Visible = true; 
-            LoadMediaFiles(start, end);
+            btnPreviousPage.Visible = true;
+
+            //Vraagt de specifieke media bestanden op die nodig zijn die tussen start en end zitten
+                if (mediaList.Count < end)
+                {
+                    end = mediaList.Count;
+                    btnNextPage.Enabled = false;
+                }
+                
+                //Er kan terug geklikt worden wanneer 6 items zijn
+                if (end <= 6)
+                {
+                    btnPreviousPage.Enabled = false;
+                }
+
+                pnlNewsFeed.Controls.Clear();
+                itemlist.Clear();
+                countWidth = 0;
+                countHeight = 0;
+                
+                //Zet alle media bestanden op de juise plek neer
+                for (int i = start; i < end; i++)
+                {
+                    Media media = mediaList[i];
+                    Panel p = new Panel();                                            
+                    NewsFeedItem item = new NewsFeedItem(media, p, pnlNewsFeed, i, countWidth, countHeight, user, media.ID_Media);
+                    
+
+                    //Geeft de positie op de x as aan
+                    countWidth++;
+
+                    if (countWidth > 2)
+                    {
+                        //Geeft positie op y as en reset de x as
+                        countHeight++;
+                        countWidth = 0;
+                    }
+                    //Voegt de items aan de itemlist toe
+                    itemlist.Add(item);
+                }
 
             foreach (NewsFeedItem item in itemlist)
             {
+                //Alle medie/newsfeeditems worden aan het form toegevoegd
                 pnlNewsFeed.Controls.Add(item.Panel);
                 Panel p = item.Panel;
                 p.ForeColor = Color.CadetBlue;
@@ -97,44 +143,6 @@ namespace ICT4Events
             }
         }
 
-
-        //CreateNewsFeedItems
-        public void LoadMediaFiles(int start, int end)
-        {
-            if (mediaList.Count < end)
-            {
-                end = mediaList.Count;
-                btnNextPage.Enabled = false;
-            }
-
-            if (end <= 6)
-            {
-                btnPreviousPage.Enabled = false;
-            }
-
-            pnlNewsFeed.Controls.Clear();
-            itemlist.Clear();
-            countWidth = 0;
-            countHeight = 0;
-
-            for (int i = start; i < end; i++)
-            {
-                Media media = mediaList[i];
-                Panel p = new Panel();
-                NewsFeedItem item = new NewsFeedItem(media.Title, media.Date, media.Views.ToString(), media.Likes.ToString(), media.Reports.ToString(), media.Summary, media.File_path, p, pnlNewsFeed, i, countWidth, countHeight, user, media.ID_Media);
-
-                countWidth++;
-
-
-                if (countWidth > 2)
-                {
-                    countHeight++;
-                    countWidth = 0;
-                }
-
-                itemlist.Add(item);
-            }
-        }
         //HomeButton
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -152,6 +160,7 @@ namespace ICT4Events
 
         public void loadUploadingScreen()
         {
+            //Maakt de ftp connectie
             ftp = new FTPConnection(@"ftp://172.16.0.15/", "client", "1233");
             string s = "";
             string q = "";
