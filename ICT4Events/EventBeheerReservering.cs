@@ -133,7 +133,7 @@ namespace ICT4Events
                 {
                     Listb_Events.Items.Add(event1.ToString());
                     cB_Event_ID_User.Items.Add(event1.ID_Event);
-
+                    cb_showusersonevent.Items.Add(event1.ID_Event);
                 }
             }
 
@@ -204,7 +204,7 @@ namespace ICT4Events
             bool trueorfalse = false;
             foreach (User user in userList)
             {
-                if (user.ToString() == Listb_gebruikers.GetItemText(Listb_gebruikers.SelectedItem) ||  trueorfalse == false)
+                if (user.ToString() == Listb_gebruikers.GetItemText(Listb_gebruikers.SelectedItem) || trueorfalse == false)
                 {
                     DatabaseConnection conn = new DatabaseConnection();
                     string querry = "DELETE FROM ICT4_USER WHERE ID_USER = " + user.ID_User;
@@ -265,6 +265,31 @@ namespace ICT4Events
             string querry = "INSERT INTO (ID_EVENT, TITLE, STARTDATE,ENDDATE,CAMPINGNAME,LOCATION) VALUES (event_seq,'" + Event_Title.Text + "',to_date('" + startday + startmonth + Convert.ToString(Event_Start_Date.Value.Year) + "','DDMMYYYY'),to_date('" + endday + endmonth + Event_End_Date.Value.Year + "','DDMMYYYY')";
             conn.InsertOrUpdate(querry);
 
+        }
+
+        private void cB_Event_ID_User_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_show_users_Click(object sender, EventArgs e)
+        {
+            lb_show_user_on_event.Items.Clear();
+            DatabaseConnection conn = new DatabaseConnection();
+            string querry = "select u.ID_USER, u.FIRSTNAME, u.SURNAME, u.PRESENTUSER FROM ICT4_USER u, ICT4_EVENT e WHERE e.ID_EVENT = u.ID_EVENTFK and u.ID_EVENTFK = " + Convert.ToInt32(cb_showusersonevent.Text);
+            OracleDataReader reader = conn.SelectFromDatabase(querry);
+            while (reader.Read())
+            {
+                lb_show_user_on_event.Items.Add("ID: "+Convert.ToString(reader.GetInt32(0)) + "\t"+"naam: " + reader.GetString(1) + " " + reader.GetString(2) + "   \t\t"+"present: " + reader.GetString(3));
+            }
+
+
+        }
+
+        private void btn_printlistusers_Click(object sender, EventArgs e)
+        {
+            // deze button moet een lijst uitprinten van alle users op het event.
+            // deze is nog niet uitgewerkt.
         }
     }
 }

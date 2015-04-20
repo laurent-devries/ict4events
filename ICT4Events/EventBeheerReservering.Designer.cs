@@ -34,6 +34,7 @@
             this.btn_changeuser = new System.Windows.Forms.Button();
             this.cB_Event_ID_User = new System.Windows.Forms.ComboBox();
             this.gb_gebruikercreatie = new System.Windows.Forms.GroupBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.cB_Reservation_ID_User = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tb_achternaam_user = new System.Windows.Forms.TextBox();
@@ -78,11 +79,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Listb_Events = new System.Windows.Forms.ListBox();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.gB_aanwezige_gebruikers = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lb_show_user_on_event = new System.Windows.Forms.ListBox();
+            this.btn_show_users = new System.Windows.Forms.Button();
+            this.cb_showusersonevent = new System.Windows.Forms.ComboBox();
+            this.btn_printlistusers = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.gb_gebruikercreatie.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.gB_aanwezige_gebruikers.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_verwijder_gebruiker
@@ -143,6 +152,7 @@
             this.cB_Event_ID_User.Name = "cB_Event_ID_User";
             this.cB_Event_ID_User.Size = new System.Drawing.Size(141, 21);
             this.cB_Event_ID_User.TabIndex = 31;
+            this.cB_Event_ID_User.SelectedIndexChanged += new System.EventHandler(this.cB_Event_ID_User_SelectedIndexChanged);
             this.cB_Event_ID_User.TextChanged += new System.EventHandler(this.cB_Event_ID_User_TextChanged);
             // 
             // gb_gebruikercreatie
@@ -182,6 +192,16 @@
             this.gb_gebruikercreatie.TabIndex = 3;
             this.gb_gebruikercreatie.TabStop = false;
             this.gb_gebruikercreatie.Text = "User Create / Change";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(264, 298);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 33;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cB_Reservation_ID_User
             // 
@@ -640,21 +660,84 @@
             this.Listb_Events.Size = new System.Drawing.Size(432, 199);
             this.Listb_Events.TabIndex = 6;
             // 
-            // btnCancel
+            // gB_aanwezige_gebruikers
             // 
-            this.btnCancel.Location = new System.Drawing.Point(264, 298);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 33;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.gB_aanwezige_gebruikers.Controls.Add(this.lb_show_user_on_event);
+            this.gB_aanwezige_gebruikers.Controls.Add(this.groupBox5);
+            this.gB_aanwezige_gebruikers.Location = new System.Drawing.Point(913, 12);
+            this.gB_aanwezige_gebruikers.Name = "gB_aanwezige_gebruikers";
+            this.gB_aanwezige_gebruikers.Size = new System.Drawing.Size(507, 649);
+            this.gB_aanwezige_gebruikers.TabIndex = 3;
+            this.gB_aanwezige_gebruikers.TabStop = false;
+            this.gB_aanwezige_gebruikers.Text = "Show Users on Event";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btn_printlistusers);
+            this.groupBox5.Controls.Add(this.cb_showusersonevent);
+            this.groupBox5.Controls.Add(this.btn_show_users);
+            this.groupBox5.Controls.Add(this.label13);
+            this.groupBox5.Location = new System.Drawing.Point(6, 505);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(495, 138);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Show Users";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 26);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(55, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Event_ID:";
+            // 
+            // lb_show_user_on_event
+            // 
+            this.lb_show_user_on_event.FormattingEnabled = true;
+            this.lb_show_user_on_event.Location = new System.Drawing.Point(15, 64);
+            this.lb_show_user_on_event.Name = "lb_show_user_on_event";
+            this.lb_show_user_on_event.Size = new System.Drawing.Size(480, 420);
+            this.lb_show_user_on_event.TabIndex = 1;
+            // 
+            // btn_show_users
+            // 
+            this.btn_show_users.Location = new System.Drawing.Point(414, 104);
+            this.btn_show_users.Name = "btn_show_users";
+            this.btn_show_users.Size = new System.Drawing.Size(75, 23);
+            this.btn_show_users.TabIndex = 2;
+            this.btn_show_users.Text = "Show users";
+            this.btn_show_users.UseVisualStyleBackColor = true;
+            this.btn_show_users.Click += new System.EventHandler(this.btn_show_users_Click);
+            // 
+            // cb_showusersonevent
+            // 
+            this.cb_showusersonevent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cb_showusersonevent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_showusersonevent.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_showusersonevent.FormattingEnabled = true;
+            this.cb_showusersonevent.Location = new System.Drawing.Point(67, 23);
+            this.cb_showusersonevent.Name = "cb_showusersonevent";
+            this.cb_showusersonevent.Size = new System.Drawing.Size(422, 21);
+            this.cb_showusersonevent.TabIndex = 3;
+            // 
+            // btn_printlistusers
+            // 
+            this.btn_printlistusers.Location = new System.Drawing.Point(320, 104);
+            this.btn_printlistusers.Name = "btn_printlistusers";
+            this.btn_printlistusers.Size = new System.Drawing.Size(75, 23);
+            this.btn_printlistusers.TabIndex = 4;
+            this.btn_printlistusers.Text = "PrintList";
+            this.btn_printlistusers.UseVisualStyleBackColor = true;
+            this.btn_printlistusers.Click += new System.EventHandler(this.btn_printlistusers_Click);
             // 
             // EventBeheerReservering
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 673);
+            this.ClientSize = new System.Drawing.Size(1432, 673);
+            this.Controls.Add(this.gB_aanwezige_gebruikers);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "EventBeheerReservering";
@@ -666,6 +749,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.gB_aanwezige_gebruikers.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -723,6 +809,13 @@
         private System.Windows.Forms.ComboBox cB_Event_ID_User;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.GroupBox gB_aanwezige_gebruikers;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ListBox lb_show_user_on_event;
+        private System.Windows.Forms.Button btn_show_users;
+        private System.Windows.Forms.ComboBox cb_showusersonevent;
+        private System.Windows.Forms.Button btn_printlistusers;
     }
 }
 
