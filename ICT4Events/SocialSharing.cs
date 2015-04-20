@@ -302,6 +302,7 @@ namespace ICT4Events
             bUpload.Height = 30;
             pnlNewsFeed.Controls.Add(bUpload);
 
+
             bUpload.Click += delegate
             {
                 MediaManager media = new MediaManager();
