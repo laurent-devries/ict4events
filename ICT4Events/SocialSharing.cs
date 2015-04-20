@@ -225,7 +225,6 @@ namespace ICT4Events
 
                 if (fDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show(fDialog.FileName;
                     tMediaPath.Text = fDialog.FileName;
                     previewImag = Image.FromFile(tMediaPath.Text);
                     s = Path.GetFileName(fDialog.FileName);
