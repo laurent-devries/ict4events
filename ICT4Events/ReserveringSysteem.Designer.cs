@@ -67,7 +67,7 @@
             this.tb_voornaam_gebruiker = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbPersonsAmount = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEventSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).BeginInit();
             this.gb_gebruikercreatie.SuspendLayout();
             this.SuspendLayout();
@@ -343,7 +343,7 @@
             this.tb_stad_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_stad_user.MaxLength = 255;
             this.tb_stad_user.Name = "tb_stad_user";
-            this.tb_stad_user.Size = new System.Drawing.Size(236, 22);
+            this.tb_stad_user.Size = new System.Drawing.Size(238, 22);
             this.tb_stad_user.TabIndex = 12;
             // 
             // tb_number_user
@@ -552,23 +552,23 @@
             this.cbPersonsAmount.Size = new System.Drawing.Size(265, 24);
             this.cbPersonsAmount.TabIndex = 11;
             // 
-            // button1
+            // btnEventSettings
             // 
-            this.button1.Location = new System.Drawing.Point(480, 239);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEventSettings.Location = new System.Drawing.Point(151, 189);
+            this.btnEventSettings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEventSettings.Name = "btnEventSettings";
+            this.btnEventSettings.Size = new System.Drawing.Size(265, 28);
+            this.btnEventSettings.TabIndex = 12;
+            this.btnEventSettings.Text = "Confirm event settings";
+            this.btnEventSettings.UseVisualStyleBackColor = true;
+            this.btnEventSettings.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReserveringSysteem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1906, 1008);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEventSettings);
             this.Controls.Add(this.cbPersonsAmount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gb_gebruikercreatie);
@@ -633,6 +633,6 @@
         private System.Windows.Forms.TextBox tb_voornaam_gebruiker;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbPersonsAmount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEventSettings;
     }
 }
