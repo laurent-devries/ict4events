@@ -38,8 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbPlaces = new System.Windows.Forms.ComboBox();
             this.gb_gebruikercreatie = new System.Windows.Forms.GroupBox();
-            this.cB_Reservation_ID_User = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.tb_achternaam_user = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_password_gebruiker = new System.Windows.Forms.TextBox();
@@ -67,7 +65,7 @@
             this.tb_voornaam_gebruiker = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.cbPersonsAmount = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEventSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).BeginInit();
             this.gb_gebruikercreatie.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +74,7 @@
             // 
             this.pbCampingPlaces.Image = global::ICT4Events.Properties.Resources.Camping_ReeënDal;
             this.pbCampingPlaces.Location = new System.Drawing.Point(596, 97);
-            this.pbCampingPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbCampingPlaces.Margin = new System.Windows.Forms.Padding(4);
             this.pbCampingPlaces.Name = "pbCampingPlaces";
             this.pbCampingPlaces.Size = new System.Drawing.Size(1251, 1061);
             this.pbCampingPlaces.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -117,7 +115,7 @@
             // 
             this.cbEvents.FormattingEnabled = true;
             this.cbEvents.Location = new System.Drawing.Point(151, 36);
-            this.cbEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(4);
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(265, 24);
             this.cbEvents.TabIndex = 4;
@@ -126,7 +124,7 @@
             // dtpAankomst
             // 
             this.dtpAankomst.Location = new System.Drawing.Point(151, 65);
-            this.dtpAankomst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpAankomst.Margin = new System.Windows.Forms.Padding(4);
             this.dtpAankomst.Name = "dtpAankomst";
             this.dtpAankomst.Size = new System.Drawing.Size(265, 22);
             this.dtpAankomst.TabIndex = 5;
@@ -134,7 +132,7 @@
             // dtpVertrek
             // 
             this.dtpVertrek.Location = new System.Drawing.Point(151, 97);
-            this.dtpVertrek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpVertrek.Margin = new System.Windows.Forms.Padding(4);
             this.dtpVertrek.Name = "dtpVertrek";
             this.dtpVertrek.Size = new System.Drawing.Size(265, 22);
             this.dtpVertrek.TabIndex = 6;
@@ -153,15 +151,13 @@
             // 
             this.cbPlaces.FormattingEnabled = true;
             this.cbPlaces.Location = new System.Drawing.Point(151, 125);
-            this.cbPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPlaces.Margin = new System.Windows.Forms.Padding(4);
             this.cbPlaces.Name = "cbPlaces";
             this.cbPlaces.Size = new System.Drawing.Size(265, 24);
             this.cbPlaces.TabIndex = 8;
             // 
             // gb_gebruikercreatie
             // 
-            this.gb_gebruikercreatie.Controls.Add(this.cB_Reservation_ID_User);
-            this.gb_gebruikercreatie.Controls.Add(this.label12);
             this.gb_gebruikercreatie.Controls.Add(this.tb_achternaam_user);
             this.gb_gebruikercreatie.Controls.Add(this.label9);
             this.gb_gebruikercreatie.Controls.Add(this.tb_password_gebruiker);
@@ -189,41 +185,18 @@
             this.gb_gebruikercreatie.Controls.Add(this.tb_voornaam_gebruiker);
             this.gb_gebruikercreatie.Enabled = false;
             this.gb_gebruikercreatie.Location = new System.Drawing.Point(20, 274);
-            this.gb_gebruikercreatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_gebruikercreatie.Margin = new System.Windows.Forms.Padding(4);
             this.gb_gebruikercreatie.Name = "gb_gebruikercreatie";
-            this.gb_gebruikercreatie.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_gebruikercreatie.Padding = new System.Windows.Forms.Padding(4);
             this.gb_gebruikercreatie.Size = new System.Drawing.Size(568, 409);
             this.gb_gebruikercreatie.TabIndex = 9;
             this.gb_gebruikercreatie.TabStop = false;
             this.gb_gebruikercreatie.Text = "User Create";
             // 
-            // cB_Reservation_ID_User
-            // 
-            this.cB_Reservation_ID_User.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cB_Reservation_ID_User.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cB_Reservation_ID_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cB_Reservation_ID_User.FormattingEnabled = true;
-            this.cB_Reservation_ID_User.Location = new System.Drawing.Point(128, 23);
-            this.cB_Reservation_ID_User.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cB_Reservation_ID_User.Name = "cB_Reservation_ID_User";
-            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(187, 24);
-            this.cB_Reservation_ID_User.Sorted = true;
-            this.cB_Reservation_ID_User.TabIndex = 32;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(9, 27);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Reservation_ID";
-            // 
             // tb_achternaam_user
             // 
             this.tb_achternaam_user.Location = new System.Drawing.Point(367, 54);
-            this.tb_achternaam_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_achternaam_user.Margin = new System.Windows.Forms.Padding(4);
             this.tb_achternaam_user.Name = "tb_achternaam_user";
             this.tb_achternaam_user.Size = new System.Drawing.Size(192, 22);
             this.tb_achternaam_user.TabIndex = 27;
@@ -241,7 +214,7 @@
             // tb_password_gebruiker
             // 
             this.tb_password_gebruiker.Location = new System.Drawing.Point(127, 335);
-            this.tb_password_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_password_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_password_gebruiker.MaxLength = 255;
             this.tb_password_gebruiker.Name = "tb_password_gebruiker";
             this.tb_password_gebruiker.ShortcutsEnabled = false;
@@ -252,7 +225,7 @@
             // btn_Confirm_user
             // 
             this.btn_Confirm_user.Location = new System.Drawing.Point(460, 367);
-            this.btn_Confirm_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Confirm_user.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Confirm_user.Name = "btn_Confirm_user";
             this.btn_Confirm_user.Size = new System.Drawing.Size(100, 28);
             this.btn_Confirm_user.TabIndex = 4;
@@ -283,7 +256,7 @@
             // tb_loginname_gebruiker
             // 
             this.tb_loginname_gebruiker.Location = new System.Drawing.Point(128, 271);
-            this.tb_loginname_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_loginname_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_loginname_gebruiker.MaxLength = 17;
             this.tb_loginname_gebruiker.Name = "tb_loginname_gebruiker";
             this.tb_loginname_gebruiker.Size = new System.Drawing.Size(431, 22);
@@ -292,7 +265,7 @@
             // tb_username_gebruiker
             // 
             this.tb_username_gebruiker.Location = new System.Drawing.Point(127, 303);
-            this.tb_username_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_username_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_username_gebruiker.MaxLength = 255;
             this.tb_username_gebruiker.Name = "tb_username_gebruiker";
             this.tb_username_gebruiker.Size = new System.Drawing.Size(432, 22);
@@ -321,7 +294,7 @@
             // tb_telnr_gebruiker
             // 
             this.tb_telnr_gebruiker.Location = new System.Drawing.Point(127, 239);
-            this.tb_telnr_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_telnr_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_telnr_gebruiker.MaxLength = 20;
             this.tb_telnr_gebruiker.Name = "tb_telnr_gebruiker";
             this.tb_telnr_gebruiker.Size = new System.Drawing.Size(432, 22);
@@ -340,16 +313,16 @@
             // tb_stad_user
             // 
             this.tb_stad_user.Location = new System.Drawing.Point(127, 207);
-            this.tb_stad_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_stad_user.Margin = new System.Windows.Forms.Padding(4);
             this.tb_stad_user.MaxLength = 255;
             this.tb_stad_user.Name = "tb_stad_user";
-            this.tb_stad_user.Size = new System.Drawing.Size(236, 22);
+            this.tb_stad_user.Size = new System.Drawing.Size(238, 22);
             this.tb_stad_user.TabIndex = 12;
             // 
             // tb_number_user
             // 
             this.tb_number_user.Location = new System.Drawing.Point(444, 175);
-            this.tb_number_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_number_user.Margin = new System.Windows.Forms.Padding(4);
             this.tb_number_user.MaxLength = 10;
             this.tb_number_user.Name = "tb_number_user";
             this.tb_number_user.Size = new System.Drawing.Size(116, 22);
@@ -378,7 +351,7 @@
             // tb_straat_user
             // 
             this.tb_straat_user.Location = new System.Drawing.Point(128, 175);
-            this.tb_straat_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_straat_user.Margin = new System.Windows.Forms.Padding(4);
             this.tb_straat_user.MaxLength = 255;
             this.tb_straat_user.Name = "tb_straat_user";
             this.tb_straat_user.Size = new System.Drawing.Size(237, 22);
@@ -451,7 +424,7 @@
             "Zweden",
             "Zwitserland"});
             this.cb_land_gebruiker.Location = new System.Drawing.Point(128, 145);
-            this.cb_land_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_land_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.cb_land_gebruiker.Name = "cb_land_gebruiker";
             this.cb_land_gebruiker.Size = new System.Drawing.Size(431, 24);
             this.cb_land_gebruiker.Sorted = true;
@@ -470,7 +443,7 @@
             // tb_email_gebruiker
             // 
             this.tb_email_gebruiker.Location = new System.Drawing.Point(128, 114);
-            this.tb_email_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_email_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_email_gebruiker.MaxLength = 255;
             this.tb_email_gebruiker.Name = "tb_email_gebruiker";
             this.tb_email_gebruiker.Size = new System.Drawing.Size(431, 22);
@@ -489,7 +462,7 @@
             // dtp_geboortedatum_gebruiker
             // 
             this.dtp_geboortedatum_gebruiker.Location = new System.Drawing.Point(128, 84);
-            this.dtp_geboortedatum_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_geboortedatum_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_geboortedatum_gebruiker.Name = "dtp_geboortedatum_gebruiker";
             this.dtp_geboortedatum_gebruiker.Size = new System.Drawing.Size(431, 22);
             this.dtp_geboortedatum_gebruiker.TabIndex = 3;
@@ -518,7 +491,7 @@
             // tb_voornaam_gebruiker
             // 
             this.tb_voornaam_gebruiker.Location = new System.Drawing.Point(128, 55);
-            this.tb_voornaam_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_voornaam_gebruiker.Margin = new System.Windows.Forms.Padding(4);
             this.tb_voornaam_gebruiker.MaxLength = 255;
             this.tb_voornaam_gebruiker.Name = "tb_voornaam_gebruiker";
             this.tb_voornaam_gebruiker.Size = new System.Drawing.Size(132, 22);
@@ -547,28 +520,28 @@
             "7",
             "8"});
             this.cbPersonsAmount.Location = new System.Drawing.Point(151, 157);
-            this.cbPersonsAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbPersonsAmount.Margin = new System.Windows.Forms.Padding(4);
             this.cbPersonsAmount.Name = "cbPersonsAmount";
             this.cbPersonsAmount.Size = new System.Drawing.Size(265, 24);
             this.cbPersonsAmount.TabIndex = 11;
             // 
-            // button1
+            // btnEventSettings
             // 
-            this.button1.Location = new System.Drawing.Point(480, 239);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEventSettings.Location = new System.Drawing.Point(151, 189);
+            this.btnEventSettings.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEventSettings.Name = "btnEventSettings";
+            this.btnEventSettings.Size = new System.Drawing.Size(265, 28);
+            this.btnEventSettings.TabIndex = 12;
+            this.btnEventSettings.Text = "Confirm event settings";
+            this.btnEventSettings.UseVisualStyleBackColor = true;
+            this.btnEventSettings.Click += new System.EventHandler(this.button1_Click);
             // 
             // ReserveringSysteem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1906, 1008);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEventSettings);
             this.Controls.Add(this.cbPersonsAmount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.gb_gebruikercreatie);
@@ -581,7 +554,7 @@
             this.Controls.Add(this.lblAankomst);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCampingPlaces);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReserveringSysteem";
             this.Text = "ReserveringSysteem";
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).EndInit();
@@ -604,8 +577,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbPlaces;
         private System.Windows.Forms.GroupBox gb_gebruikercreatie;
-        private System.Windows.Forms.ComboBox cB_Reservation_ID_User;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_achternaam_user;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_password_gebruiker;
@@ -633,6 +604,6 @@
         private System.Windows.Forms.TextBox tb_voornaam_gebruiker;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbPersonsAmount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEventSettings;
     }
 }

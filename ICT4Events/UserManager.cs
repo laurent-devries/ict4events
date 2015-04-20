@@ -14,6 +14,7 @@ namespace ICT4Events
         List<User> userlist = new List<User>();
         public List<User> RequestUsers()
         {
+            userlist = new List<User>();
             DatabaseConnection con = new DatabaseConnection();
             string Querry = "SELECT ID_USER, ID_EVENTFK, ID_RESERVATIONFK, id_permissionFK, FIRSTNAME, SURNAME, BIRTHDATE, EMAIL, COUNTRY, STREET, HOUSENUMBER, CITY, CELLPHONENUMBER, LOGINNAME, USERNAME, PASSWORDUSER, PROFILEPIC, SUMMARYUSER, PRESENTUSER, RFIDTAG  FROM ICT4_USER";
 
