@@ -10,6 +10,7 @@ namespace ICT4Events
     class EventManager
     {
         private List<Event> evenementen;
+        public Event a;
         public EventManager()
         {
             evenementen = new List<Event>();
@@ -23,6 +24,7 @@ namespace ICT4Events
             {
                 Event event1 = new Event(reader.GetString(1), reader.GetDateTime(2), reader.GetDateTime(4), reader.GetString(5), reader.GetString(6), reader.GetInt32(0));
                 evenementen.Add(event1);
+                a = event1;
             }
             return evenementen;
         }

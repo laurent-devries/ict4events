@@ -13,7 +13,6 @@ namespace ICT4Events
      */
     public class Event
     {
-        private static int idnumber = 0;
         private int id_event;
         private string title;
         private DateTime startdate;
@@ -67,6 +66,7 @@ namespace ICT4Events
             this.campingname = Campingname;
             this.location = Location;
         }
+
 
         public void CheckIn(User user)
         {
