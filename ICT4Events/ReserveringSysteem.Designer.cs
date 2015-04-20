@@ -75,9 +75,10 @@
             // pbCampingPlaces
             // 
             this.pbCampingPlaces.Image = global::ICT4Events.Properties.Resources.Camping_ReeënDal;
-            this.pbCampingPlaces.Location = new System.Drawing.Point(447, 79);
+            this.pbCampingPlaces.Location = new System.Drawing.Point(596, 97);
+            this.pbCampingPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbCampingPlaces.Name = "pbCampingPlaces";
-            this.pbCampingPlaces.Size = new System.Drawing.Size(938, 862);
+            this.pbCampingPlaces.Size = new System.Drawing.Size(1251, 1061);
             this.pbCampingPlaces.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCampingPlaces.TabIndex = 0;
             this.pbCampingPlaces.TabStop = false;
@@ -85,68 +86,76 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 29);
+            this.label1.Location = new System.Drawing.Point(16, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Kies een event:";
             // 
             // lblAankomst
             // 
             this.lblAankomst.AutoSize = true;
-            this.lblAankomst.Location = new System.Drawing.Point(12, 53);
+            this.lblAankomst.Location = new System.Drawing.Point(16, 65);
+            this.lblAankomst.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAankomst.Name = "lblAankomst";
-            this.lblAankomst.Size = new System.Drawing.Size(57, 13);
+            this.lblAankomst.Size = new System.Drawing.Size(74, 17);
             this.lblAankomst.TabIndex = 2;
             this.lblAankomst.Text = "Aankomst:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 79);
+            this.label2.Location = new System.Drawing.Point(16, 97);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Vertrek:";
             // 
             // cbEvents
             // 
             this.cbEvents.FormattingEnabled = true;
-            this.cbEvents.Location = new System.Drawing.Point(113, 29);
+            this.cbEvents.Location = new System.Drawing.Point(151, 36);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbEvents.Name = "cbEvents";
-            this.cbEvents.Size = new System.Drawing.Size(200, 21);
+            this.cbEvents.Size = new System.Drawing.Size(265, 24);
             this.cbEvents.TabIndex = 4;
             this.cbEvents.SelectedValueChanged += new System.EventHandler(this.cbEvents_SelectedValueChanged);
             // 
             // dtpAankomst
             // 
-            this.dtpAankomst.Location = new System.Drawing.Point(113, 53);
+            this.dtpAankomst.Location = new System.Drawing.Point(151, 65);
+            this.dtpAankomst.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpAankomst.Name = "dtpAankomst";
-            this.dtpAankomst.Size = new System.Drawing.Size(200, 20);
+            this.dtpAankomst.Size = new System.Drawing.Size(265, 22);
             this.dtpAankomst.TabIndex = 5;
             // 
             // dtpVertrek
             // 
-            this.dtpVertrek.Location = new System.Drawing.Point(113, 79);
+            this.dtpVertrek.Location = new System.Drawing.Point(151, 97);
+            this.dtpVertrek.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpVertrek.Name = "dtpVertrek";
-            this.dtpVertrek.Size = new System.Drawing.Size(200, 20);
+            this.dtpVertrek.Size = new System.Drawing.Size(265, 22);
             this.dtpVertrek.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 116);
+            this.label3.Location = new System.Drawing.Point(16, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(109, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Kies een plaats:";
             // 
             // cbPlaces
             // 
             this.cbPlaces.FormattingEnabled = true;
-            this.cbPlaces.Location = new System.Drawing.Point(113, 116);
+            this.cbPlaces.Location = new System.Drawing.Point(151, 143);
+            this.cbPlaces.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPlaces.Name = "cbPlaces";
-            this.cbPlaces.Size = new System.Drawing.Size(200, 21);
+            this.cbPlaces.Size = new System.Drawing.Size(265, 24);
             this.cbPlaces.TabIndex = 8;
             // 
             // gb_gebruikercreatie
@@ -179,12 +188,14 @@
             this.gb_gebruikercreatie.Controls.Add(this.lb_naam_gebruiker);
             this.gb_gebruikercreatie.Controls.Add(this.tb_voornaam_gebruiker);
             this.gb_gebruikercreatie.Enabled = false;
-            this.gb_gebruikercreatie.Location = new System.Drawing.Point(15, 223);
+            this.gb_gebruikercreatie.Location = new System.Drawing.Point(20, 274);
+            this.gb_gebruikercreatie.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gb_gebruikercreatie.Name = "gb_gebruikercreatie";
-            this.gb_gebruikercreatie.Size = new System.Drawing.Size(426, 332);
+            this.gb_gebruikercreatie.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gb_gebruikercreatie.Size = new System.Drawing.Size(568, 409);
             this.gb_gebruikercreatie.TabIndex = 9;
             this.gb_gebruikercreatie.TabStop = false;
-            this.gb_gebruikercreatie.Text = "User Create / Change";
+            this.gb_gebruikercreatie.Text = "User Create";
             // 
             // cB_Reservation_ID_User
             // 
@@ -192,52 +203,58 @@
             this.cB_Reservation_ID_User.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cB_Reservation_ID_User.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cB_Reservation_ID_User.FormattingEnabled = true;
-            this.cB_Reservation_ID_User.Location = new System.Drawing.Point(96, 19);
+            this.cB_Reservation_ID_User.Location = new System.Drawing.Point(128, 23);
+            this.cB_Reservation_ID_User.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cB_Reservation_ID_User.Name = "cB_Reservation_ID_User";
-            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(141, 21);
+            this.cB_Reservation_ID_User.Size = new System.Drawing.Size(187, 24);
             this.cB_Reservation_ID_User.Sorted = true;
             this.cB_Reservation_ID_User.TabIndex = 32;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(7, 22);
+            this.label12.Location = new System.Drawing.Point(9, 27);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
+            this.label12.Size = new System.Drawing.Size(105, 17);
             this.label12.TabIndex = 30;
             this.label12.Text = "Reservation_ID";
             // 
             // tb_achternaam_user
             // 
-            this.tb_achternaam_user.Location = new System.Drawing.Point(275, 44);
+            this.tb_achternaam_user.Location = new System.Drawing.Point(367, 54);
+            this.tb_achternaam_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_achternaam_user.Name = "tb_achternaam_user";
-            this.tb_achternaam_user.Size = new System.Drawing.Size(145, 20);
+            this.tb_achternaam_user.Size = new System.Drawing.Size(192, 22);
             this.tb_achternaam_user.TabIndex = 27;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(202, 48);
+            this.label9.Location = new System.Drawing.Point(269, 59);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.Size = new System.Drawing.Size(80, 17);
             this.label9.TabIndex = 26;
             this.label9.Text = "Last Name:";
             // 
             // tb_password_gebruiker
             // 
-            this.tb_password_gebruiker.Location = new System.Drawing.Point(95, 272);
+            this.tb_password_gebruiker.Location = new System.Drawing.Point(127, 335);
+            this.tb_password_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_password_gebruiker.MaxLength = 255;
             this.tb_password_gebruiker.Name = "tb_password_gebruiker";
             this.tb_password_gebruiker.ShortcutsEnabled = false;
-            this.tb_password_gebruiker.Size = new System.Drawing.Size(325, 20);
+            this.tb_password_gebruiker.Size = new System.Drawing.Size(432, 22);
             this.tb_password_gebruiker.TabIndex = 19;
             this.tb_password_gebruiker.UseSystemPasswordChar = true;
             // 
             // btn_Confirm_user
             // 
-            this.btn_Confirm_user.Location = new System.Drawing.Point(345, 298);
+            this.btn_Confirm_user.Location = new System.Drawing.Point(460, 367);
+            this.btn_Confirm_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Confirm_user.Name = "btn_Confirm_user";
-            this.btn_Confirm_user.Size = new System.Drawing.Size(75, 23);
+            this.btn_Confirm_user.Size = new System.Drawing.Size(100, 28);
             this.btn_Confirm_user.TabIndex = 4;
             this.btn_Confirm_user.Text = "Confirm";
             this.btn_Confirm_user.UseVisualStyleBackColor = true;
@@ -246,112 +263,125 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 275);
+            this.label4.Location = new System.Drawing.Point(9, 338);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.Size = new System.Drawing.Size(73, 17);
             this.label4.TabIndex = 22;
             this.label4.Text = "Password:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 223);
+            this.label5.Location = new System.Drawing.Point(9, 274);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 13);
+            this.label5.Size = new System.Drawing.Size(82, 17);
             this.label5.TabIndex = 21;
             this.label5.Text = "Loginname:";
             // 
             // tb_loginname_gebruiker
             // 
-            this.tb_loginname_gebruiker.Location = new System.Drawing.Point(96, 220);
+            this.tb_loginname_gebruiker.Location = new System.Drawing.Point(128, 271);
+            this.tb_loginname_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_loginname_gebruiker.MaxLength = 17;
             this.tb_loginname_gebruiker.Name = "tb_loginname_gebruiker";
-            this.tb_loginname_gebruiker.Size = new System.Drawing.Size(324, 20);
+            this.tb_loginname_gebruiker.Size = new System.Drawing.Size(431, 22);
             this.tb_loginname_gebruiker.TabIndex = 17;
             // 
             // tb_username_gebruiker
             // 
-            this.tb_username_gebruiker.Location = new System.Drawing.Point(95, 246);
+            this.tb_username_gebruiker.Location = new System.Drawing.Point(127, 303);
+            this.tb_username_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_username_gebruiker.MaxLength = 255;
             this.tb_username_gebruiker.Name = "tb_username_gebruiker";
-            this.tb_username_gebruiker.Size = new System.Drawing.Size(325, 20);
+            this.tb_username_gebruiker.Size = new System.Drawing.Size(432, 22);
             this.tb_username_gebruiker.TabIndex = 18;
             // 
             // lb_Username_gebruiker
             // 
             this.lb_Username_gebruiker.AutoSize = true;
-            this.lb_Username_gebruiker.Location = new System.Drawing.Point(7, 249);
+            this.lb_Username_gebruiker.Location = new System.Drawing.Point(9, 306);
+            this.lb_Username_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_Username_gebruiker.Name = "lb_Username_gebruiker";
-            this.lb_Username_gebruiker.Size = new System.Drawing.Size(58, 13);
+            this.lb_Username_gebruiker.Size = new System.Drawing.Size(77, 17);
             this.lb_Username_gebruiker.TabIndex = 18;
             this.lb_Username_gebruiker.Text = "Username:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 197);
+            this.label6.Location = new System.Drawing.Point(9, 242);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(51, 17);
             this.label6.TabIndex = 17;
             this.label6.Text = "Tel.Nr:";
             // 
             // tb_telnr_gebruiker
             // 
-            this.tb_telnr_gebruiker.Location = new System.Drawing.Point(95, 194);
+            this.tb_telnr_gebruiker.Location = new System.Drawing.Point(127, 239);
+            this.tb_telnr_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_telnr_gebruiker.MaxLength = 20;
             this.tb_telnr_gebruiker.Name = "tb_telnr_gebruiker";
-            this.tb_telnr_gebruiker.Size = new System.Drawing.Size(325, 20);
+            this.tb_telnr_gebruiker.Size = new System.Drawing.Size(432, 22);
             this.tb_telnr_gebruiker.TabIndex = 16;
             // 
             // lb_addres_stad_gebruiker
             // 
             this.lb_addres_stad_gebruiker.AutoSize = true;
-            this.lb_addres_stad_gebruiker.Location = new System.Drawing.Point(46, 171);
+            this.lb_addres_stad_gebruiker.Location = new System.Drawing.Point(9, 210);
+            this.lb_addres_stad_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_addres_stad_gebruiker.Name = "lb_addres_stad_gebruiker";
-            this.lb_addres_stad_gebruiker.Size = new System.Drawing.Size(29, 13);
+            this.lb_addres_stad_gebruiker.Size = new System.Drawing.Size(37, 17);
             this.lb_addres_stad_gebruiker.TabIndex = 13;
             this.lb_addres_stad_gebruiker.Text = "Stad";
             // 
             // tb_stad_user
             // 
-            this.tb_stad_user.Location = new System.Drawing.Point(95, 168);
+            this.tb_stad_user.Location = new System.Drawing.Point(127, 207);
+            this.tb_stad_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_stad_user.MaxLength = 255;
             this.tb_stad_user.Name = "tb_stad_user";
-            this.tb_stad_user.Size = new System.Drawing.Size(178, 20);
+            this.tb_stad_user.Size = new System.Drawing.Size(236, 22);
             this.tb_stad_user.TabIndex = 12;
             // 
             // tb_number_user
             // 
-            this.tb_number_user.Location = new System.Drawing.Point(332, 146);
+            this.tb_number_user.Location = new System.Drawing.Point(444, 175);
+            this.tb_number_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_number_user.MaxLength = 10;
             this.tb_number_user.Name = "tb_number_user";
-            this.tb_number_user.Size = new System.Drawing.Size(88, 20);
+            this.tb_number_user.Size = new System.Drawing.Size(116, 22);
             this.tb_number_user.TabIndex = 11;
             // 
             // lb_addres_nummer_gebruiker
             // 
             this.lb_addres_nummer_gebruiker.AutoSize = true;
-            this.lb_addres_nummer_gebruiker.Location = new System.Drawing.Point(281, 149);
+            this.lb_addres_nummer_gebruiker.Location = new System.Drawing.Point(376, 178);
+            this.lb_addres_nummer_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_addres_nummer_gebruiker.Name = "lb_addres_nummer_gebruiker";
-            this.lb_addres_nummer_gebruiker.Size = new System.Drawing.Size(44, 13);
+            this.lb_addres_nummer_gebruiker.Size = new System.Drawing.Size(58, 17);
             this.lb_addres_nummer_gebruiker.TabIndex = 10;
             this.lb_addres_nummer_gebruiker.Text = "Number";
             // 
             // lb_addres_straat_gebruiker
             // 
             this.lb_addres_straat_gebruiker.AutoSize = true;
-            this.lb_addres_straat_gebruiker.Location = new System.Drawing.Point(7, 145);
+            this.lb_addres_straat_gebruiker.Location = new System.Drawing.Point(9, 178);
+            this.lb_addres_straat_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_addres_straat_gebruiker.Name = "lb_addres_straat_gebruiker";
-            this.lb_addres_straat_gebruiker.Size = new System.Drawing.Size(74, 13);
+            this.lb_addres_straat_gebruiker.Size = new System.Drawing.Size(99, 17);
             this.lb_addres_straat_gebruiker.TabIndex = 9;
             this.lb_addres_straat_gebruiker.Text = "Addres: Street";
             // 
             // tb_straat_user
             // 
-            this.tb_straat_user.Location = new System.Drawing.Point(96, 142);
+            this.tb_straat_user.Location = new System.Drawing.Point(128, 175);
+            this.tb_straat_user.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_straat_user.MaxLength = 255;
             this.tb_straat_user.Name = "tb_straat_user";
-            this.tb_straat_user.Size = new System.Drawing.Size(179, 20);
+            this.tb_straat_user.Size = new System.Drawing.Size(237, 22);
             this.tb_straat_user.TabIndex = 8;
             // 
             // cb_land_gebruiker
@@ -420,78 +450,87 @@
             "Vaticaanstad",
             "Zweden",
             "Zwitserland"});
-            this.cb_land_gebruiker.Location = new System.Drawing.Point(96, 118);
+            this.cb_land_gebruiker.Location = new System.Drawing.Point(128, 145);
+            this.cb_land_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cb_land_gebruiker.Name = "cb_land_gebruiker";
-            this.cb_land_gebruiker.Size = new System.Drawing.Size(324, 21);
+            this.cb_land_gebruiker.Size = new System.Drawing.Size(431, 24);
             this.cb_land_gebruiker.Sorted = true;
             this.cb_land_gebruiker.TabIndex = 7;
             // 
             // lb_land_gebruiker
             // 
             this.lb_land_gebruiker.AutoSize = true;
-            this.lb_land_gebruiker.Location = new System.Drawing.Point(7, 118);
+            this.lb_land_gebruiker.Location = new System.Drawing.Point(9, 145);
+            this.lb_land_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_land_gebruiker.Name = "lb_land_gebruiker";
-            this.lb_land_gebruiker.Size = new System.Drawing.Size(46, 13);
+            this.lb_land_gebruiker.Size = new System.Drawing.Size(61, 17);
             this.lb_land_gebruiker.TabIndex = 6;
             this.lb_land_gebruiker.Text = "Country:";
             // 
             // tb_email_gebruiker
             // 
-            this.tb_email_gebruiker.Location = new System.Drawing.Point(96, 93);
+            this.tb_email_gebruiker.Location = new System.Drawing.Point(128, 114);
+            this.tb_email_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_email_gebruiker.MaxLength = 255;
             this.tb_email_gebruiker.Name = "tb_email_gebruiker";
-            this.tb_email_gebruiker.Size = new System.Drawing.Size(324, 20);
+            this.tb_email_gebruiker.Size = new System.Drawing.Size(431, 22);
             this.tb_email_gebruiker.TabIndex = 5;
             // 
             // lb_email_gebruiker
             // 
             this.lb_email_gebruiker.AutoSize = true;
-            this.lb_email_gebruiker.Location = new System.Drawing.Point(7, 96);
+            this.lb_email_gebruiker.Location = new System.Drawing.Point(9, 118);
+            this.lb_email_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_email_gebruiker.Name = "lb_email_gebruiker";
-            this.lb_email_gebruiker.Size = new System.Drawing.Size(39, 13);
+            this.lb_email_gebruiker.Size = new System.Drawing.Size(51, 17);
             this.lb_email_gebruiker.TabIndex = 4;
             this.lb_email_gebruiker.Text = "E-Mail:";
             // 
             // dtp_geboortedatum_gebruiker
             // 
-            this.dtp_geboortedatum_gebruiker.Location = new System.Drawing.Point(96, 68);
+            this.dtp_geboortedatum_gebruiker.Location = new System.Drawing.Point(128, 84);
+            this.dtp_geboortedatum_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp_geboortedatum_gebruiker.Name = "dtp_geboortedatum_gebruiker";
-            this.dtp_geboortedatum_gebruiker.Size = new System.Drawing.Size(324, 20);
+            this.dtp_geboortedatum_gebruiker.Size = new System.Drawing.Size(431, 22);
             this.dtp_geboortedatum_gebruiker.TabIndex = 3;
             this.dtp_geboortedatum_gebruiker.Value = new System.DateTime(2015, 4, 17, 9, 46, 0, 0);
             // 
             // lb_geboortedatum_gebruiker
             // 
             this.lb_geboortedatum_gebruiker.AutoSize = true;
-            this.lb_geboortedatum_gebruiker.Location = new System.Drawing.Point(7, 74);
+            this.lb_geboortedatum_gebruiker.Location = new System.Drawing.Point(9, 91);
+            this.lb_geboortedatum_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_geboortedatum_gebruiker.Name = "lb_geboortedatum_gebruiker";
-            this.lb_geboortedatum_gebruiker.Size = new System.Drawing.Size(52, 13);
+            this.lb_geboortedatum_gebruiker.Size = new System.Drawing.Size(69, 17);
             this.lb_geboortedatum_gebruiker.TabIndex = 2;
             this.lb_geboortedatum_gebruiker.Text = "Birthdate:";
             // 
             // lb_naam_gebruiker
             // 
             this.lb_naam_gebruiker.AutoSize = true;
-            this.lb_naam_gebruiker.Location = new System.Drawing.Point(6, 47);
+            this.lb_naam_gebruiker.Location = new System.Drawing.Point(8, 58);
+            this.lb_naam_gebruiker.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_naam_gebruiker.Name = "lb_naam_gebruiker";
-            this.lb_naam_gebruiker.Size = new System.Drawing.Size(60, 13);
+            this.lb_naam_gebruiker.Size = new System.Drawing.Size(80, 17);
             this.lb_naam_gebruiker.TabIndex = 1;
             this.lb_naam_gebruiker.Text = "First Name:";
             // 
             // tb_voornaam_gebruiker
             // 
-            this.tb_voornaam_gebruiker.Location = new System.Drawing.Point(96, 45);
+            this.tb_voornaam_gebruiker.Location = new System.Drawing.Point(128, 55);
+            this.tb_voornaam_gebruiker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tb_voornaam_gebruiker.MaxLength = 255;
             this.tb_voornaam_gebruiker.Name = "tb_voornaam_gebruiker";
-            this.tb_voornaam_gebruiker.Size = new System.Drawing.Size(100, 20);
+            this.tb_voornaam_gebruiker.Size = new System.Drawing.Size(132, 22);
             this.tb_voornaam_gebruiker.TabIndex = 0;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 155);
+            this.label7.Location = new System.Drawing.Point(20, 191);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
+            this.label7.Size = new System.Drawing.Size(112, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Aantal personen";
             // 
@@ -507,16 +546,18 @@
             "6",
             "7",
             "8"});
-            this.cbPersonsAmount.Location = new System.Drawing.Point(113, 155);
+            this.cbPersonsAmount.Location = new System.Drawing.Point(151, 191);
+            this.cbPersonsAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbPersonsAmount.Name = "cbPersonsAmount";
-            this.cbPersonsAmount.Size = new System.Drawing.Size(200, 21);
+            this.cbPersonsAmount.Size = new System.Drawing.Size(265, 24);
             this.cbPersonsAmount.TabIndex = 11;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(360, 194);
+            this.button1.Location = new System.Drawing.Point(480, 239);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 12;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -524,9 +565,9 @@
             // 
             // ReserveringSysteem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 819);
+            this.ClientSize = new System.Drawing.Size(1906, 1008);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbPersonsAmount);
             this.Controls.Add(this.label7);
@@ -540,6 +581,7 @@
             this.Controls.Add(this.lblAankomst);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbCampingPlaces);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ReserveringSysteem";
             this.Text = "ReserveringSysteem";
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingPlaces)).EndInit();

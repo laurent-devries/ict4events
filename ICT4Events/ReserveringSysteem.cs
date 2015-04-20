@@ -20,6 +20,7 @@ namespace ICT4Events
             EventManager eventManager = new EventManager();
             List<Event> eventList = eventManager.RequestEvent();
             cbEvents.DataSource = eventList;
+            cbEvents.Refresh();
         }
 
         private void cbEvents_SelectedValueChanged(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace ICT4Events
             cbPlaces.Items.Clear();
 
             cbPlaces.DataSource = campingPlaceList;
+            cbPlaces.Refresh();
 
         }
 
@@ -73,12 +75,8 @@ namespace ICT4Events
             CampingPlaceManager cpManager = new CampingPlaceManager();
             List<CampingPlace> campingPlaceList = cpManager.RequestFreeCampingPlaces(dtpAankomst.Value, dtpVertrek.Value, el);
             cbPlaces.Items.Clear();
-
-            foreach (CampingPlace place in campingPlaceList)
-            {
-                cbPlaces.Items.Add(place);
-            }
-
+            cbPlaces.DataSource = campingPlaceList;
+            cbPlaces.Refresh();
         }
     }
 }
